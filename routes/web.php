@@ -11,11 +11,6 @@
 |
 */
 
-
-Route::get('/test', function () {
-    dd(config('app.debug'));
-})->name('test');
-
 Route::get('/', function () { return view('landing'); })->name('landing');
 
 Route::get('/faqs', function () { abort(404); })->name('faqs');
@@ -33,7 +28,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return redirect('admin/home');
         if (Auth::user()->hasRole('staff'))
             return redirect('staff/home');
-    });
+    })->name('route-verify');
 
     Route::group([
         'prefix'=>'account',
@@ -41,15 +36,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'namespace' => 'Account'
     ], function () {
         Route::group(['prefix' => 'activity'], function () {
-            // Dashboards
             Route::get('/', 'ActivityController@index')->name('activity');
             Route::get('/cleared', ['uses' => 'ActivityController@showClearedActivityLog'])->name('cleared');
-            // Drill Downs
             Route::get('/log/{id}', 'ActivityController@show');
             Route::get('/cleared/log/{id}', 'ActivityController@showClearedAccessLogEntry');
-            // Forms
-            Route::delete('/clear-activity', ['uses' => 'ActivityController@clearActivityLog'])->name('clear-activity');
-            Route::delete('/destroy-activity', ['uses' => 'ActivityController@destroyAccessActivityLog'])->name('destroy-activity');
+            Route::delete('/clear-activity', ['uses' => 'ActivityController@clearActivityLog'])
+                ->name('clear-activity')
+                ->middleware('password.confirm');
+            Route::delete('/destroy-activity', ['uses' => 'ActivityController@destroyAccessActivityLog'])
+                ->name('destroy-activity')
+                ->middleware('password.confirm');
             Route::post('/restore-log', ['uses' => 'ActivityController@restoreClearedAccessActivityLog'])->name('restore-activity');
         });
 
@@ -67,9 +63,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('/home', 'HomeController@index')->name('home');
 
-        // Route::get('/home', function () {
-        //     echo "hello from admin page";
-        // });
     });
 
     Route::group([
@@ -82,11 +75,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('/home', 'HomeController@index')->name('home');
 
-        // Route::get('/home', function () {
-        //     echo "hello from staff page";
-        // });
-
     });
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

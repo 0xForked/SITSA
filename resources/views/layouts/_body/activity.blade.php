@@ -14,9 +14,9 @@
                 </a>
             </div>
 
-            <a href="{{ route('account.profile') }}" class="btn btn-primary mb-5 ml-3">
+            <a href="{{ route('route-verify') }}" class="btn btn-primary mb-5 ml-3">
                 <i class="fas fa-chevron-circle-left"></i>
-                Back to My Profile
+                Back to Home
             </a>
 
             @yield('content')

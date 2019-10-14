@@ -107,9 +107,9 @@
 
     <div class="panel @if($isClearedEntry) panel-danger @else panel-default @endif">
         <div class="{{ $containerClass }} @if($isClearedEntry) panel-danger @else panel-default @endif">
-        <div class="{{ $containerHeaderClass }} @if($isClearedEntry) bg-danger text-white @else @endif" >
+        <div class="{{ $containerHeaderClass }} @if($isClearedEntry) bg-danger text-white @else @endif " >
             {!! trans('Activity Log :id', ['id' => $activity->id]) !!}
-            <a href="@if($isClearedEntry) {{route('account.cleared')}} @else {{route('account.activity')}} @endif " class="ml-3 btn @if($isClearedEntry) btn-default @else btn-info @endif btn-sm pull-right">
+            <a href="@if($isClearedEntry) {{route('account.cleared')}} @else {{route('account.activity')}} @endif " class="ml-3 btn @if($isClearedEntry) btn-default @else btn-info @endif btn-sm float-right">
                 <i class="fas fa-reply fa-fw" aria-hidden="true"></i>
                 {!! '<span class="hidden-xs hidden-sm">Back to </span><span class="hidden-xs">Activity Log</span>' !!}
             </a>
