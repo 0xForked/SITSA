@@ -11,6 +11,19 @@
 |
 */
 
+// dd(parse_url('https://aasumitro.id/blog'))
+// hasilnya
+// array:3 [
+//   "scheme" => "https"
+//   "host" => "aasumitro.id"
+//   "path" => "/blog"
+// ]
+
+Route::get('/test', function() {
+    // test your function here
+});
+
+
 Route::get('/', function () { return view('landing'); })->name('landing');
 
 Route::get('/faqs', function () { abort(404); })->name('faqs');
@@ -35,21 +48,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'as' => 'account.',
         'namespace' => 'Account'
     ], function () {
+        Route::get('/', function() { return redirect('account/profile'); });
         Route::group(['prefix' => 'activity'], function () {
             Route::get('/', 'ActivityController@index')->name('activity');
             Route::get('/cleared', ['uses' => 'ActivityController@showClearedActivityLog'])->name('cleared');
             Route::get('/log/{id}', 'ActivityController@show');
             Route::get('/cleared/log/{id}', 'ActivityController@showClearedAccessLogEntry');
-            Route::delete('/clear-activity', ['uses' => 'ActivityController@clearActivityLog'])
-                ->name('clear-activity')
-                ->middleware('password.confirm');
+            Route::delete('/clear-activity', ['uses' => 'ActivityController@clearActivityLog'])->name('clear-activity');
             Route::delete('/destroy-activity', ['uses' => 'ActivityController@destroyAccessActivityLog'])
                 ->name('destroy-activity')
                 ->middleware('password.confirm');
             Route::post('/restore-log', ['uses' => 'ActivityController@restoreClearedAccessActivityLog'])->name('restore-activity');
         });
-
         Route::get('/profile', 'ProfileController@index')->name('profile');
+
+        Route::put('/profile/password', 'ProfileController@setPassword')->name('password');
+        Route::put('/profile/basic', 'ProfileController@setBasicInfo')->name('basic');
+
     });
 
 
@@ -60,9 +75,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'middleware' => ['role:admin', 'access.log']
     ], function () {
         Route::get('/', function () { return redirect('admin/home'); });
-
         Route::get('/home', 'HomeController@index')->name('home');
-
     });
 
     Route::group([
@@ -72,9 +85,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'middleware' => ['role:staff', 'access.log']
     ], function () {
         Route::get('/', function () { return redirect('staff/home'); });
-
         Route::get('/home', 'HomeController@index')->name('home');
-
     });
 
 });

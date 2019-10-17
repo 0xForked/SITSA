@@ -1,10 +1,10 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">E-Office</a>
+            <a href="index.html">{{ config('app.name', 'laravel') }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">V2</a>
+            <a href="index.html">V{{ config('app.version', '1') }}</a>
         </div>
         <ul class="sidebar-menu">
             <li>

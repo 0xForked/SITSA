@@ -3,6 +3,6 @@
       Copyright &copy; {{ date('Y') }} Pemerintah Kota Manado
     </div>
     <div class="footer-right">
-        <span class="badge badge-pill badge-light">v2.0.0-rc</span>
+        <span class="badge badge-pill badge-light">v{{ config('app.version', '1') }}</span>
     </div>
 </footer>
