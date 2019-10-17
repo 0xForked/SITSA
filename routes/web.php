@@ -49,6 +49,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'namespace' => 'Account'
     ], function () {
         Route::get('/', function() { return redirect('account/profile'); });
+
         Route::group(['prefix' => 'activity'], function () {
             Route::get('/', 'ActivityController@index')->name('activity');
             Route::get('/cleared', ['uses' => 'ActivityController@showClearedActivityLog'])->name('cleared');
@@ -60,13 +61,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
                 ->middleware('password.confirm');
             Route::post('/restore-log', ['uses' => 'ActivityController@restoreClearedAccessActivityLog'])->name('restore-activity');
         });
-        Route::get('/profile', 'ProfileController@index')->name('profile');
 
-        Route::put('/profile/password', 'ProfileController@setPassword')->name('password');
-        Route::put('/profile/basic', 'ProfileController@setBasicInfo')->name('basic');
-
+        Route::group([
+            'middleware' => ['access.log']
+        ], function () {
+            Route::get('/profile', 'ProfileController@index')->name('profile');
+            Route::put('/profile/password', 'ProfileController@setPassword')->name('password');
+            Route::put('/profile/basic', 'ProfileController@setBasicInfo')->name('basic');
+        });
     });
-
 
     Route::group([
         'prefix'=>'admin',
@@ -89,7 +92,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
 });
-
 
 Auth::routes();
 
