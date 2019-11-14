@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         //
@@ -19,7 +26,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::paginate(10);
+        return view('admin.user-mgmt.roles.index', compact('roles'));
     }
 
     /**

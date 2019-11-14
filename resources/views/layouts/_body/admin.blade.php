@@ -23,7 +23,11 @@
             @include('layouts._part.footer')
         </div>
     </div>
+@endsection
 
-    @include('auth.logout')
+
+@section('custom-script')
+    <!-- JS Libraies -->
+    <script src="{{ asset('assets/js/modules/jquery-ui.min.js') }}"></script>
 @endsection
 

@@ -8,7 +8,7 @@
             <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
                 <div class="p-4 m-3">
                     <img
-                        src="{{ asset('assets/img/manado.png') }}"
+                        src="{{ asset('assets/img/p-250.png') }}"
                         alt="logo" width="80"
                         class="shadow-light mb-5 mt-2"
                     >
@@ -24,12 +24,12 @@
                         @csrf
                         <div class="form-group">
                             <div class="d-block">
-                                <label for="email" class="control-label">{{ __('E-Mail Address') }}</label>
+                                <label for="identity" class="control-label">{{ __('E-Mail Address or Username') }}</label>
                             </div>
 
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" tabindex="1" autofocus>
+                            <input id="identity" type="text" class="form-control @error('identity') is-invalid @enderror" name="identity" value="{{ old('identity') }}" required tabindex="1" autofocus>
 
-                            @error('email')
+                            @error('identity')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -74,17 +74,7 @@
                             Don't have an account? <a href="{{ route('register') }}">Create new one</a>
                         </div>
                     </form>
-
-                    <div class="text-center mt-5 text-small">
-                        Copyright &copy; Pemerintah Kota Manado</a>.
-                        <div class="mt-2">
-                            <a href="{{ route('faqs') }}" target="_blank">FAQs</a>
-                            <div class="bullet"></div>
-                            <a href="{{ route('docs') }}" target="_blank">Docs</a>
-                            <div class="bullet"></div>
-                            <a href="{{ route('helps') }}" target="_blank">Helps</a>
-                        </div>
-                    </div>
+                    @include('auth.items.footer-nav')
                 </div>
             </div>
             @include('auth.items.background-walk')

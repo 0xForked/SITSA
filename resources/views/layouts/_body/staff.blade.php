@@ -23,6 +23,4 @@
             @include('layouts._part.footer')
         </div>
     </div>
-
-    @include('auth.logout')
 @endsection

@@ -79,6 +79,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ], function () {
         Route::get('/', function () { return redirect('admin/home'); });
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('/users', 'UserController@index')->name('users');
+        Route::get('/users/roles', 'RoleController@index')->name('users.roles');
+        Route::get('/users/permissions', 'PermissionController@index')->name('users.permissions');
+
+        Route::get('/settings', 'SettingController@index')->name('app.setting');
     });
 
     Route::group([

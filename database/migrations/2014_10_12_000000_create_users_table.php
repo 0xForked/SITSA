@@ -16,20 +16,19 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phone')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->unsignedInteger('office_id')
+            $table->unsignedInteger('congregational_id')
                     ->nullable()
-                    ->comment('relasi dengan dinas/office');
-            $table->unsignedInteger('scope_id')
-                    ->nullable()
-                    ->comment('relasi dengan bidang/scope');
-            $table->unsignedInteger('position_id')
-                    ->nullable()
-                    ->comment('relasi dengan jabatan/position');
+                    ->comment('relasi dengan data jemaat');
+            $table->enum('status', [
+                'ACTIVE',
+                'DEACTIVE'
+            ])->default('ACTIVE');
             $table->timestamps();
         });
     }

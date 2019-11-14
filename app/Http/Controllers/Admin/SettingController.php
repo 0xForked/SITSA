@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         //
@@ -19,7 +25,7 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.settings.app-setting');
     }
 
     /**

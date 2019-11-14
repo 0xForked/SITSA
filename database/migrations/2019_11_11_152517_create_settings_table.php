@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateScopeTable extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateScopeTable extends Migration
      */
     public function up()
     {
-        Schema::create('scopes', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('code');
-            $table->string('name');
-            $table->string('description')->nullable();
+
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateScopeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scopes');
+        Schema::dropIfExists('settings');
     }
 }

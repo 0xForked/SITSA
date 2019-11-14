@@ -1,0 +1,1 @@
+requirement php-curl php-intl
