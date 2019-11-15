@@ -1,13 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Data;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ScopeController extends Controller
+class DieController extends Controller
 {
-    /**
+    public function __construct()
+    {
+        //
+    }
+
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

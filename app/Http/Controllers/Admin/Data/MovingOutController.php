@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Data;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class OfficeController extends Controller
+class MovingOutController extends Controller
 {
     public function __construct()
     {
