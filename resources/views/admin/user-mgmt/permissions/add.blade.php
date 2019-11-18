@@ -11,7 +11,7 @@
         <form
             method="post"
             action=""
-            {{-- {{ route('dash.permissions.store') }} --}}
+            {{ route('admin.permissions.store') }}
         >
             @csrf
 

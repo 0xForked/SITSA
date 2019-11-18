@@ -104,20 +104,27 @@
                 </ul>
             </li>
             <li class="menu-header">Situs</li>
-            <li class="nav-item dropdown {{ (Request::segment(2) == 'users') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{
+                (
+                    Route::is('admin.users.*')
+                    || Route::is('admin.roles.*')
+                    || Route::is('admin.permissions.*')
+                ) ? 'active' : ''
+            }}
+            ">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-users"></i>
                     <span>Pengguna</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="{{ (Request::segment(2) == 'users' && Request::segment(3) == '') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.users') }}">Pengguna</a>
+                    <li class="{{ Route::is('admin.users.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.users.index') }}">Pengguna</a>
                     </li>
-                    <li class="{{ (Request::segment(3) == 'roles') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.users.roles') }}">Peran</a>
+                    <li class="{{ Route::is('admin.roles.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.roles.index') }}">Peran</a>
                     </li>
-                    <li class="{{ (Request::segment(3) == 'permissions') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.users.permissions') }}">Izin</a>
+                    <li class="{{ Route::is('admin.permissions.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.permissions.index') }}">Izin</a>
                     </li>
                 </ul>
             </li>

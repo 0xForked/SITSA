@@ -6,11 +6,7 @@
 <div class="section-body">
     <h2 class="section-title">This is Example Page</h2>
     <p class="section-lead">This page is just an example for you to create your own page.</p>
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
+    @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -26,7 +22,11 @@
                             </div>
                         </form>
                     </div>
-                    <button class="btn btn-primary ml-2"><i class="fas fa-plus"></i> Create</button>
+                    <button
+                        class="btn btn-primary ml-2"
+                        data-toggle="modal"
+                        data-target="#addRole"
+                    ><i class="fas fa-plus"></i> Create</button>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -39,15 +39,23 @@
                             </tr>
                             @foreach ($roles as $role)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
+                                    <td class="text-center">
+                                        {{ ($roles->currentpage()-1) * $roles->perpage() + $loop->iteration }}
+                                    </td>
                                     <td>{{ $role->name }}</td>
                                     <td>{{ $role->guard_name }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">
+                                        <a
+                                            href="#"
+                                            class="btn btn-primary"
+                                            data-toggle="modal"
+                                            data-target="#detailRole"
+                                            data-role="{{ $role }}"
+                                        >
                                             <i class="fas fa-info"></i> Detail
                                         </a>
-                                        <a href="#" class="btn btn-warning">
-                                            <i class="fas fa-edit"></i> Update
+                                        <a href="{{ route('admin.roles.edit', $role->id) }}" class="btn btn-warning">
+                                            <i class="fas fa-edit"></i> Edit
                                         </a>
                                         <a
                                             href="#"
@@ -75,4 +83,13 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('custom-include')
+@include('admin.user-mgmt.roles.add')
+@include('admin.user-mgmt.roles.detail')
+@endsection
+
+@section('custom-script')
+@include('admin.user-mgmt.roles.script')
 @endsection

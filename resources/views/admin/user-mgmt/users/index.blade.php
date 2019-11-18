@@ -6,11 +6,7 @@
 <div class="section-body">
     <h2 class="section-title">This is Example Page</h2>
     <p class="section-lead">This page is just an example for you to create your own page.</p>
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
+    @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -26,7 +22,7 @@
                             </div>
                         </form>
                     </div>
-                    <button class="btn btn-primary ml-2"><i class="fas fa-plus"></i> Create</button>
+                    <button class="btn btn-primary ml-2" onClick="window.location='{{ route('admin.users.create') }}'"><i class="fas fa-plus"></i> Create</button>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -37,28 +33,49 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>Role</th>
                                 <th>Status</th>
                                 <th width="300">Action</th>
                             </tr>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
+                                    <td class="text-center">
+                                        {{ ($users->currentpage()-1) * $users->perpage() + $loop->iteration }}
+                                    </td>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>
-                                        @if ($user->status == 'ACTIVE')
-                                            <div class="badge badge-success">{{$user->status}}</div>
-                                        @else
-                                            <div class="badge badge-secondary">{{$user->status}}</div>
-                                        @endif
+                                        <div class="badge badge-light">
+                                            {{ $user->getRoleNames()->first() }}
+                                        </div>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">
-                                            <i class="fas fa-info"></i> Detail
+                                        <a
+                                            href="#"
+                                            data-toggle="modal"
+                                            data-target="#statusModal"
+                                            data-status="{{ $user->status }}"
+                                        >
+                                            @if ($user->status == 'ACTIVE')
+                                                <div class="badge badge-success">{{$user->status}}</div>
+                                            @else
+                                                <div class="badge badge-secondary">{{$user->status}}</div>
+                                            @endif
                                         </a>
-                                        <a href="#" class="btn btn-danger">
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="btn btn-danger"
+                                            onclick="deleteData({{ $user->id }}, 'users')"
+                                            data-toggle="modal"
+                                            data-target="#deleteModal"
+                                        >
                                             <i class="fas fa-trash"></i> Delete
                                         </a>
                                     </td>
@@ -78,4 +95,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('custom-include')
+@include('admin.user-mgmt.users.status')
+@endsection
+
+@section('custom-script')
+@include('admin.user-mgmt.users.script')
 @endsection

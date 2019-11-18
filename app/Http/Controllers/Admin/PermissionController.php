@@ -39,7 +39,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -50,7 +50,27 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|unique:permissions,name',
+        ]);
+
+        $name = $request['name'];
+        $roles = $request['roles'];
+
+        $permission = Permission::create(['name' => $name]);
+
+        if (!empty($request['roles'])) {
+            foreach ($roles as $role) {
+                $r = Role::where('id', '=', $role)->firstOrFail();
+                $permission = Permission::where('name', '=', $name)->first();
+                $r->givePermissionTo($permission);
+            }
+        }
+
+        return redirect()
+                ->route('admin.permissions.index')
+                ->with('success','Permission created successfully');
+
     }
 
     /**
@@ -61,7 +81,7 @@ class PermissionController extends Controller
      */
     public function show($id)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -72,7 +92,7 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -84,7 +104,7 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return abort('404');
     }
 
     /**
@@ -95,6 +115,9 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Permission::findOrFail($id)->delete();
+        return redirect()
+                ->route('admin.permissions.index')
+                ->with('success','Permission delete successfully');
     }
 }

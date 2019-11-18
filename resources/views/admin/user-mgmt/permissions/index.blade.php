@@ -6,11 +6,7 @@
 <div class="section-body">
     <h2 class="section-title">This is Example Page</h2>
     <p class="section-lead">This page is just an example for you to create your own page.</p>
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
+    @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -43,7 +39,9 @@
                             </tr>
                             @foreach ($permissions as $permission)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
+                                    <td class="text-center">
+                                        {{ ($permissions->currentpage()-1) * $permissions->perpage() + $loop->iteration }}
+                                    </td>
                                     <td>{{ $permission->name }}</td>
                                     <td>{{ $permission->guard_name }}</td>
                                     <td>

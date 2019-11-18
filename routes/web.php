@@ -79,9 +79,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ], function () {
         Route::get('/', function () { return redirect('admin/home'); });
         Route::get('/home', 'HomeController@index')->name('home');
-        Route::get('/users', 'UserController@index')->name('users');
-        Route::get('/users/roles', 'RoleController@index')->name('users.roles');
-        Route::get('/users/permissions', 'PermissionController@index')->name('users.permissions');
+        // Route::get('/users', 'UserController@index')->name('users');
+
+        Route::resource('users', 'UserController')
+        ->only(['index', 'create', 'store', 'show', 'edit', 'update']);;
+        Route::get('users/{id}/delete', 'UserController@destroy');
+
+        Route::resource('roles', 'RoleController')
+        ->only(['index', 'create', 'store', 'show', 'edit', 'update']);
+        Route::get('/roles/{id}/delete', 'RoleController@destroy');
+
+        Route::resource('permissions', 'PermissionController')
+        ->only(['index', 'store']);
+        Route::get('/permissions/{id}/delete', 'PermissionController@destroy');
 
         Route::get('/settings', 'SettingController@index')->name('app.setting');
     });
