@@ -124,6 +124,12 @@
                 </ul>
             </li>
             <li class="menu-header">Situs</li>
+            <li class="{{ (Request::segment(2) == 'verification') ? 'active' : '' }}">
+                <a class="nav-link beep beep-sidebar" href="">
+                    <i class="fas fa-check-square"></i>
+                    <span>Verifikasi</span>
+                </a>
+            </li>
             <li class="nav-item dropdown {{
                 (
                     Route::is('admin.users.*')
