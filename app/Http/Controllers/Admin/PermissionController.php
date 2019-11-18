@@ -25,10 +25,19 @@ class PermissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $permissions = Permission::paginate(10);
         $roles = Role::all();
+
+        if ($request->search) {
+            $permissions = Permission::where(
+                'name',
+                'LIKE',
+                "%$request->search%"
+            )->paginate(10);
+        }
+
         return view('admin.user-mgmt.permissions.index', compact('permissions', 'roles'));
     }
 

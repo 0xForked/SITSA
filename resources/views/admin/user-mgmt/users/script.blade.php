@@ -1,4 +1,8 @@
 <script type="text/javascript">
+    $('input[type=search]').on('search', function () {
+        window.location='{{ route('admin.users.index') }}'
+    });
+
     $('#statusModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
         var status = button.data('status')

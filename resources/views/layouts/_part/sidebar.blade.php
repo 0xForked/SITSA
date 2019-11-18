@@ -58,6 +58,26 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Umum</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a class="nav-link" href="">Tentang Jemaat</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Aset</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Komisi BIPRA</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Komisi Kerja</a>
+                    </li>
+                </ul>
+            </li>
             <li class="menu-header">Pelaporan</li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown">

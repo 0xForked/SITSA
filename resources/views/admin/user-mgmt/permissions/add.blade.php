@@ -10,8 +10,7 @@
     >
         <form
             method="post"
-            action=""
-            {{ route('admin.permissions.store') }}
+            action="{{ route('admin.permissions.store') }}"
         >
             @csrf
 

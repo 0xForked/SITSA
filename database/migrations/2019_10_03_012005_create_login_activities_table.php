@@ -20,7 +20,6 @@ class CreateLoginActivitiesTable extends Migration
             $table->string('ip_address', 45);
             $table->timestamps();
             $table->softDeletes();
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }

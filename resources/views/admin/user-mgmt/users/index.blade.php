@@ -13,11 +13,22 @@
                 <div class="card-header">
                     <h4>User List</h4>
                     <div class="card-header-form">
-                        <form>
+                        <form
+                            method="GET"
+                            action="{{ route('admin.users.index') }}"
+                        >
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input
+                                    type="search"
+                                    class="form-control"
+                                    placeholder="Search"
+                                    name="search"
+                                    value="{{ (app('request')->input('search')) ? app('request')->input('search') : ''}}"
+                                >
                                 <div class="input-group-btn">
-                                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-primary" value="search">
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>

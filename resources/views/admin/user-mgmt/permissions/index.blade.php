@@ -13,11 +13,22 @@
                 <div class="card-header">
                     <h4>Permissions List</h4>
                     <div class="card-header-form">
-                        <form>
+                        <form
+                            method="GET"
+                            action="{{ route('admin.permissions.index') }}"
+                        >
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input
+                                    type="search"
+                                    class="form-control"
+                                    placeholder="Search"
+                                    name="search"
+                                    value="{{ (app('request')->input('search')) ? app('request')->input('search') : ''}}"
+                                >
                                 <div class="input-group-btn">
-                                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-primary" value="search">
+                                        <i class="fas fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -75,5 +86,9 @@
 @endsection
 
 @section('custom-include')
-    @include('admin.user-mgmt.permissions.add')
+@include('admin.user-mgmt.permissions.add')
+@endsection
+
+@section('custom-script')
+@include('admin.user-mgmt.permissions.script')
 @endsection

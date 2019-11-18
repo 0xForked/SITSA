@@ -79,7 +79,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     ], function () {
         Route::get('/', function () { return redirect('admin/home'); });
         Route::get('/home', 'HomeController@index')->name('home');
-        // Route::get('/users', 'UserController@index')->name('users');
 
         Route::resource('users', 'UserController')
         ->only(['index', 'create', 'store', 'show', 'edit', 'update']);;
@@ -107,7 +106,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
