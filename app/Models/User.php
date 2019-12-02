@@ -37,4 +37,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * An user has last login
+     *
+     * @var array
+     */
+    public function login()
+    {
+        return $this->hasMany("App\Models\Activity\Login");
+    }
 }

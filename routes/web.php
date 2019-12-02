@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Dump;
+use Illuminate\Support\Facades\Response;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,16 +14,28 @@
 |
 */
 
-// dd(parse_url('https://aasumitro.id/blog'))
-// hasilnya
-// array:3 [
-//   "scheme" => "https"
-//   "host" => "aasumitro.id"
-//   "path" => "/blog"
-// ]
+Route::get('/dump', function() {
+    $headers = array(
+        "Content-type" => "text/csv",
+        "Content-Disposition" => "attachment; filename=wilayah.csv",
+        "Pragma" => "no-cache",
+        "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+        "Expires" => "0"
+    );
 
-Route::get('/test', function() {
-    // test your function here
+    $dump_data = Dump::all();
+
+    $callback = function() use ($dump_data)
+    {
+        $file = fopen('php://output', 'w');
+        // fputcsv($file, $columns);
+
+        foreach($dump_data as $data) {
+            fputcsv($file, array($data->wilayah));
+        }
+        fclose($file);
+    };
+    return Response::stream($callback, 200, $headers);
 });
 
 
