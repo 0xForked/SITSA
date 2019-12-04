@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin\Data\General;
 
 use App\Http\Controllers\Controller;
-use App\Models\General\DisabilityType;
+use App\Models\General\JobType;
 use Illuminate\Http\Request;
 
-class DisabilityTypeController extends Controller
+class JobTypeController extends Controller
 {
 
     /**
@@ -26,17 +26,17 @@ class DisabilityTypeController extends Controller
      */
     public function index(Request $request)
     {
-        $disabilities = DisabilityType::paginate(5);
+        $jobs = JobType::paginate(5);
 
         if ($request->search) {
-            $disabilities = DisabilityType::where(
+            $jobs = JobType::where(
                 'name',
                 'LIKE',
                 "%$request->search%"
             )->paginate(5);
         }
 
-        return view('admin.general-data-mgmt.disabilities.index', compact('disabilities'));
+        return view('admin.general-data-mgmt.jobs.index', compact('jobs'));
     }
 
     /**
@@ -47,8 +47,8 @@ class DisabilityTypeController extends Controller
      */
     public function show($id)
     {
-        $disability = DisabilityType::findOrFail($id);
-        return response()->json($disability);
+        $job = JobType::findOrFail($id);
+        return response()->json($job);
     }
 
     /**
@@ -64,16 +64,17 @@ class DisabilityTypeController extends Controller
             'description' => 'required',
         ]);
 
-        $disability = $request->only('name', 'description');
-        $action = DisabilityType::create($disability);
+        $job = $request->only('name', 'description');
+        $action = JobType::create($job);
 
         if (!$action) {
-            return redirect()->route('admin.general.disabilities.index')
-                ->with('error','Failed add new Disability type');
+            return redirect()->route('admin.general.jobs.index')
+                ->with('error','Failed add new Job');
         }
 
-        return redirect()->route('admin.general.disabilities.index')
-                        ->with('success','Disability type created successfully');
+        return redirect()->route('admin.general.jobs.index')
+                        ->with('success','Job created successfully');
+
     }
 
     /**
@@ -89,13 +90,14 @@ class DisabilityTypeController extends Controller
             'name' => 'required',
         ]);
 
-        $disability = DisabilityType::findOrFail($request->id);
-        $disability->name = $request->name;
-        $disability->description = $request->description;
-        $disability->save();
+        $job = JobType::findOrFail($request->id);
+        $job->name = $request->name;
+        $job->description = $request->description;
+        $job->save();
 
-        return redirect()->route('admin.general.disabilities.index')
-                        ->with('success','Disability type updated successfully');
+        return redirect()->route('admin.general.jobs.index')
+                        ->with('success','Job updated successfully');
+
     }
 
     /**
@@ -106,9 +108,9 @@ class DisabilityTypeController extends Controller
      */
     public function destroy($id)
     {
-        DisabilityType::findOrFail($id)->delete();
+        JobType::findOrFail($id)->delete();
         return redirect()
-                ->route('admin.general.disabilities.index')
-                ->with('success', 'Disability type delete successfully');
+                ->route('admin.general.jobs.index')
+                ->with('success', 'Job delete successfully');
     }
 }

@@ -14,29 +14,32 @@ use Illuminate\Support\Facades\Response;
 |
 */
 
-// Route::get('/dump', function() {
-//     $headers = array(
-//         "Content-type" => "text/csv",
-//         "Content-Disposition" => "attachment; filename=wilayah.csv",
-//         "Pragma" => "no-cache",
-//         "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
-//         "Expires" => "0"
-//     );
+Route::get('/dump', function() {
+    // $day = cal_days_in_month(CAL_GREGORIAN, 12, 2019);
+    // dd($day);
 
-//     $dump_data = Dump::all();
+    // $headers = array(
+    //     "Content-type" => "text/csv",
+    //     "Content-Disposition" => "attachment; filename=wilayah.csv",
+    //     "Pragma" => "no-cache",
+    //     "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+    //     "Expires" => "0"
+    // );
 
-//     $callback = function() use ($dump_data)
-//     {
-//         $file = fopen('php://output', 'w');
-//         // fputcsv($file, $columns);
+    // $dump_data = Dump::all();
 
-//         foreach($dump_data as $data) {
-//             fputcsv($file, array($data->wilayah));
-//         }
-//         fclose($file);
-//     };
-//     return Response::stream($callback, 200, $headers);
-// });
+    // $callback = function() use ($dump_data)
+    // {
+    //     $file = fopen('php://output', 'w');
+    //     // fputcsv($file, $columns);
+
+    //     foreach($dump_data as $data) {
+    //         fputcsv($file, array($data->wilayah));
+    //     }
+    //     fclose($file);
+    // };
+    // return Response::stream($callback, 200, $headers);
+});
 
 
 Route::get('/', function () { return view('landing'); })->name('landing');
@@ -126,20 +129,27 @@ Route::middleware(['auth', 'verified'])->group(function () {
             // });
 
             // Route::group([
-            //     'prefix'=>'jobs',
-            //     'as' => 'job.',
-            //     'namespace' => 'Job'
-            // ], function () {
-            //     Route::get('/', 'JobOverviewController@index')->name('overview');
-            // });
-
-            // Route::group([
             //     'prefix'=>'zone',
             //     'as' => 'zone.',
             //     'namespace' => 'Zone'
             // ], function () {
             //     Route::get('/', 'ZoneOverviewController@index')->name('overview');
             // });
+
+            Route::resource('jobs', 'JobTypeController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/jobs', 'JobTypeController@update')->name('jobs.update');
+            Route::get('/jobs/{id}/delete', 'JobTypeController@destroy');
+
+            Route::resource('bloods', 'BloodTypeController')
+            ->only(['index', 'show']);
+            Route::put('/bloods', 'BloodTypeController@update')->name('bloods.update');
+            Route::get('/bloods/{id}/delete', 'BloodTypeController@destroy');
+
+            Route::resource('disabilities', 'DisabilityTypeController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/disabilities', 'DisabilityTypeController@update')->name('disabilities.update');
+            Route::get('/disabilities/{id}/delete', 'DisabilityTypeController@destroy');
 
             Route::resource('trainings', 'TrainingTypeController')
             ->only(['index', 'show', 'store']);

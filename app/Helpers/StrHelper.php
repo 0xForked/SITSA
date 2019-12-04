@@ -38,8 +38,8 @@ if (! function_exists('lastLoggedin')) {
     {
         $diff = $date->diffForHumans();
         return str_replace(
-            ["hours", "minutes", "seconds", "ago"],
-            ["Jam", "Menit", "Detik", "lalu"],
+            ["hour", "hours", "minute", "minutes", "seconds", "seconds", "ago"],
+            ["Jam", "Jam", "Menit", "Menit", "Detik", "Detik", "lalu"],
             $diff
         );
     }

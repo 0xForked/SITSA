@@ -1,11 +1,11 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Data Umum - Jenis Pekerjaan')
+@section('title', 'Data Umum - Jenis Disabilitas')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">Jenis Pekerjaan</h2>
-    <p class="section-lead">Daftar Jenis Pekerjaan.</p>
+    <h2 class="section-title">Jenis Disabilitas</h2>
+    <p class="section-lead">Daftar referensi jenis Disabilitas.</p>
     @include('layouts._part.flash')
 
     <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <form
                         method="post"
-                        action="{{ route('admin.general.jobs.store') }}"
+                        action="{{ route('admin.general.disabilities.store') }}"
                     >
                         @csrf
                         <div class="form-group">
@@ -41,11 +41,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar Jenis Pekerjaan ({{ $jobs->count() }}) </h4>
+                    <h4>Daftar Jenis Disabilitas ({{ $disabilities->count() }}) </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
-                            action="{{ route('admin.general.jobs.index') }}"
+                            action="{{ route('admin.general.disabilities.index') }}"
                         >
                             <div class="input-group">
                                 <input
@@ -69,35 +69,35 @@
                         <table class="table table-bordered table-md">
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Nama</th>
+                                <th width="200">Nama</th>
                                 <th>Deskripsi</th>
                                 <th width="200">Aksi</th>
                             </tr>
-                            @foreach ($jobs as $job)
+                            @foreach ($disabilities as $disability)
                                 <tr>
                                     <td class="text-center">
-                                        {{ ($jobs->currentpage()-1) * $jobs->perpage() + $loop->iteration }}
+                                        {{ ($disabilities->currentpage()-1) * $disabilities->perpage() + $loop->iteration }}
                                     </td>
                                     <td>
-                                        {{ $job->name }}
+                                        {{ $disability->name }}
                                     </td>
                                     <td>
-                                        {{ $job->description }}
+                                        {{ $disability->description }}
                                     </td>
                                     <td>
                                         <a
                                             href="#"
                                             class="btn btn-warning"
-                                            onclick="showJob({{ $job->id }})"
+                                            onclick="showDisability({{ $disability->id }})"
                                             data-toggle="modal"
-                                            data-target="#editJob"
+                                            data-target="#editDisability"
                                         >
                                             <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
                                             class="btn btn-danger"
-                                            onclick="deleteData({{ $job->id }}, 'jobs')"
+                                            onclick="deleteData({{ $disability->id }}, 'disabilities')"
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
@@ -112,7 +112,7 @@
                 <div class="card-footer bg-whitesmoke text-center">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                            {{ $jobs->links() }}
+                            {{ $disabilities->links() }}
                         </ul>
                     </nav>
                 </div>
@@ -123,9 +123,9 @@
 @endsection
 
 @section('custom-include')
-@include('admin.general-data-mgmt.jobs.edit')
+@include('admin.general-data-mgmt.disabilities.edit')
 @endsection
 
 @section('custom-script')
-@include('admin.general-data-mgmt.jobs.script')
+@include('admin.general-data-mgmt.disabilities.script')
 @endsection

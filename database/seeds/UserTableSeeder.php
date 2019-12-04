@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
-class RelationTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class RelationTableSeeder extends Seeder
             'name' => 'Super Admin',
             'username' => 'admin',
             'phone' => '+6282270001111',
-            'email' => 'admin@sitgmim.id',
+            'email' => 'admin@gmim.co.id',
             'email_verified_at' => now(),
             'password' => Hash::make('secret'),
             'status' => 'ACTIVE'

@@ -1,51 +1,22 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Data Umum - Jenis Pekerjaan')
+@section('title', 'Data Umum - Tipe Darah')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">Jenis Pekerjaan</h2>
-    <p class="section-lead">Daftar Jenis Pekerjaan.</p>
+    <h2 class="section-title">Tipe Darah</h2>
+    <p class="section-lead">Daftar referensi Tipe Darah.</p>
     @include('layouts._part.flash')
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Tambah baru</h4>
-                </div>
-                <div class="card-body">
-                    <form
-                        method="post"
-                        action="{{ route('admin.general.jobs.store') }}"
-                    >
-                        @csrf
-                        <div class="form-group">
-                            <label>Nama</label>
-                            <input type="text" name="name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Deskripsi</label>
-                            <textarea class="form-control h-auto" name="description"></textarea>
-                        </div>.
-                        <button
-                            type="submit"
-                            class="btn btn-primary float-right"
-                        >
-                            Simpan
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Daftar Jenis Pekerjaan ({{ $jobs->count() }}) </h4>
+                    <h4>Daftar Tipe Darah ({{ $bloods->count() }}) </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
-                            action="{{ route('admin.general.jobs.index') }}"
+                            action="{{ route('admin.general.bloods.index') }}"
                         >
                             <div class="input-group">
                                 <input
@@ -69,35 +40,35 @@
                         <table class="table table-bordered table-md">
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Nama</th>
+                                <th width="200">Tipe</th>
                                 <th>Deskripsi</th>
                                 <th width="200">Aksi</th>
                             </tr>
-                            @foreach ($jobs as $job)
+                            @foreach ($bloods as $blood)
                                 <tr>
                                     <td class="text-center">
-                                        {{ ($jobs->currentpage()-1) * $jobs->perpage() + $loop->iteration }}
+                                        {{ ($bloods->currentpage()-1) * $bloods->perpage() + $loop->iteration }}
                                     </td>
                                     <td>
-                                        {{ $job->name }}
+                                        Golongan: {{ ucfirst($blood->name) }} Rh: {{$blood->type}}
                                     </td>
                                     <td>
-                                        {{ $job->description }}
+                                        {{ $blood->description }}
                                     </td>
                                     <td>
                                         <a
                                             href="#"
                                             class="btn btn-warning"
-                                            onclick="showJob({{ $job->id }})"
+                                            onclick="showBlood({{ $blood->id }})"
                                             data-toggle="modal"
-                                            data-target="#editJob"
+                                            data-target="#editBlood"
                                         >
                                             <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
                                             class="btn btn-danger"
-                                            onclick="deleteData({{ $job->id }}, 'jobs')"
+                                            onclick="deleteData({{ $blood->id }}, 'bloods')"
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
@@ -112,7 +83,7 @@
                 <div class="card-footer bg-whitesmoke text-center">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                            {{ $jobs->links() }}
+                            {{ $bloods->links() }}
                         </ul>
                     </nav>
                 </div>
@@ -123,9 +94,9 @@
 @endsection
 
 @section('custom-include')
-@include('admin.general-data-mgmt.jobs.edit')
+@include('admin.general-data-mgmt.bloods.edit')
 @endsection
 
 @section('custom-script')
-@include('admin.general-data-mgmt.jobs.script')
+@include('admin.general-data-mgmt.bloods.script')
 @endsection

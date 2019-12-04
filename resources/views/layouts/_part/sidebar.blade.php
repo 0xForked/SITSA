@@ -160,36 +160,27 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" class="menu-item">
-                            Pekerjaan
-                        </a>
-                        <ul class="menu-content">
-                            <li>
-                                <a href="" class="menu-item">Tipe</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Posisi</a>
-                            </li>
-                        </ul>
+
+                    <li class="{{ Route::is('admin.general.ethnics.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.ethnics.index') }}">Etnis</a>
                     </li>
-                    <li class="">
-                        <a class="nav-link" href="">Jenis Darah</a>
+                    <li class="{{ Route::is('admin.general.bloods.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.bloods.index') }}">Jenis Darah</a>
                     </li>
-                    <li class="">
-                        <a class="nav-link" href="">Jenis Disabilitas</a>
+                    <li class="{{ Route::is('admin.general.disabilities.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.disabilities.index') }}">Jenis Disabilitas</a>
                     </li>
                     <li class="{{ Route::is('admin.general.trainings.*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.general.trainings.index') }}">Jenis Pelatihan</a>
                     </li>
-                    <li class="{{ Route::is('admin.general.maritals.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.maritals.index') }}">Status Menikah</a>
+                    <li class="{{ Route::is('admin.general.jobs.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.jobs.index') }}">Jenis Pekerjaan</a>
                     </li>
                     <li class="{{ Route::is('admin.general.educations.*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.general.educations.index') }}">Jenis Pendidikan</a>
                     </li>
-                     <li class="{{ Route::is('admin.general.ethnics.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.ethnics.index') }}">Etnis</a>
+                    <li class="{{ Route::is('admin.general.maritals.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.maritals.index') }}">Status Menikah</a>
                     </li>
                 </ul>
             </li>
