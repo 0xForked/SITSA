@@ -1,6 +1,6 @@
 @extends('layouts._body.auth')
 
-@section('title', 'Recover Password')
+@section('title', 'Pulihkan Kata Sandi')
 
 @section('content')
 <section class="section">
@@ -17,7 +17,7 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>{{ __('Reset Password') }}</h4>
+                        <h4>{{ __('Pulihkan Kata Sandi') }}</h4>
                     </div>
 
                     <div class="card-body">
@@ -28,13 +28,13 @@
                         @endif
 
                         <p class="text-muted">
-                            {{ __('We will send a link to reset your password') }}
+                            {{ __('Kami akan mengirimkan tautan untuk mereset kata sandi Anda') }}
                         </p>
 
                         <form method="POST" action="{{ route('password.email') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="email">{{ __('E-Mail Address') }}</label>
+                                <label for="email">{{ __('Alamat E-Mail') }}</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Kirim Tautan') }}
                                 </button>
                             </div>
                         </form>

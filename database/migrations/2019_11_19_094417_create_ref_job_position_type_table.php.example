@@ -16,7 +16,7 @@ class CreateRefJobPositionTypeTable extends Migration
         Schema::create('ref_job_position_type', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

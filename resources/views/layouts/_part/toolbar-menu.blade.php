@@ -63,16 +63,16 @@
             nav-link-user"
         >
             <img alt="image" src="{{ asset('assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, {{ lastName(auth()->user()->name) }}</div>
+            <div class="d-sm-none d-lg-inline-block">Hai, {{ lastName(auth()->user()->name) }}</div>
         </a>
 
         <div class="dropdown-menu dropdown-menu-right">
-            <div class="dropdown-title">Logged in  {{ (!is_null(login_activity())) ? lastLoggedin(login_activity()->created_at) : "0 mins ago" }}</div>
+            <div class="dropdown-title">Masuk  {{ (!is_null(login_activity())) ? lastLoggedin(login_activity()->created_at) : "0 min lalu" }}</div>
             <a href="{{ route('account.profile') }}" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
+                <i class="far fa-user"></i> Profil
             </a>
             <a href="{{ route('account.activity') }}" class="dropdown-item has-icon">
-                <i class="fas fa-bolt"></i> Activities
+                <i class="fas fa-bolt"></i> Aktifitas
             </a>
             <div class="dropdown-divider"></div>
             <a
@@ -81,7 +81,7 @@
                 data-toggle="modal"
                 data-target="#logoutModal"
                 >
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt"></i> Keluar
             </a>
         </div>
     </li>

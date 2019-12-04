@@ -21,7 +21,7 @@ class CreateRefBloodTypeTable extends Migration
                 "+",
                 "-"
             ])->default('NONE');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

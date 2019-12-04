@@ -41,7 +41,7 @@ class GeneralTableSeeder extends Seeder
         $this->education();
         $this->ethicType();
         $this->familyTree();
-        $this->memberJobPositionType();
+        // $this->memberJobPositionType();
         $this->memberJobType();
         $this->marital();
         $this->memberMoveType();

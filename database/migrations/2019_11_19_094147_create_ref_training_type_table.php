@@ -16,7 +16,7 @@ class CreateRefTrainingTypeTable extends Migration
         Schema::create('ref_training_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             // $table->bigInteger('')->unsigned()->index()->nullable(); id_kompelka
             // Komisi Pelayanan Kategorial
             // ref : https://www.gmim.or.id/daftar-ketua-kompelka-remaja-wilayah/

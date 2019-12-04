@@ -58,31 +58,17 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown">
-                    <i class="fas fa-layer-group"></i>
-                    <span>Umum</span>
+            <li class="menu-header">Fungsionalitas</li>
+            <li class="{{ (Request::segment(2) == 'verification') ? 'active' : '' }}">
+                <a class="nav-link beep beep-sidebar" href="">
+                    <i class="fas fa-check-square"></i>
+                    <span>Verifikasi</span>
                 </a>
-                <ul class="dropdown-menu">
-                    <li class="">
-                        <a class="nav-link" href="">Tentang Jemaat</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="">Aset</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="">Komisi BIPRA</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="">Komisi Kerja</a>
-                    </li>
-                </ul>
             </li>
-            <li class="menu-header">Pelaporan</li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-print"></i>
-                    <span>Rekap</span>
+                    <span>Pelaporan</span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
@@ -118,17 +104,94 @@
                     <li>
                         <a class="nav-link" href="#">Golongan Darah</a>
                     </li>
-                    <li>
+                    <li >
                         <a class="nav-link" href="#">Etnis</a>
                     </li>
                 </ul>
             </li>
             <li class="menu-header">Situs</li>
-            <li class="{{ (Request::segment(2) == 'verification') ? 'active' : '' }}">
-                <a class="nav-link beep beep-sidebar" href="">
-                    <i class="fas fa-check-square"></i>
-                    <span>Verifikasi</span>
+            <li class="nav-item dropdown {{ (Request::segment(2) == 'general') ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Data Umum</span>
                 </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#" class="menu-item">
+                            Asset
+                        </a>
+                        <ul class="menu-content">
+                            <li>
+                                <a href="" class="menu-item">Kondisi</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Pengelola</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Cara dapat </a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Tipe</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            Wilayah
+                        </a>
+                        <ul class="menu-content">
+                            <li>
+                                <a href="" class="menu-item">Kabupaten/Kota</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Kecamatan</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Kelurahan</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Topografi</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Wilayah</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Kedudukan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-item">
+                            Pekerjaan
+                        </a>
+                        <ul class="menu-content">
+                            <li>
+                                <a href="" class="menu-item">Tipe</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Posisi</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Jenis Darah</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Jenis Disabilitas</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.trainings.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.trainings.index') }}">Jenis Pelatihan</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.maritals.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.maritals.index') }}">Status Menikah</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.educations.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.educations.index') }}">Jenis Pendidikan</a>
+                    </li>
+                     <li class="{{ Route::is('admin.general.ethnics.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.ethnics.index') }}">Etnis</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item dropdown {{
                 (

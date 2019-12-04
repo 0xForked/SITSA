@@ -16,7 +16,7 @@ class CreateRefDisabilityTypeTable extends Migration
         Schema::create('ref_disability_type', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

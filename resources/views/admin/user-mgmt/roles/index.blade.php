@@ -1,17 +1,17 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Role')
+@section('title', 'Peran Pengguna')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">This is Example Page</h2>
-    <p class="section-lead">This page is just an example for you to create your own page.</p>
+    <h2 class="section-title">Peran Pengguna</h2>
+    <p class="section-lead">Daftar peran pengguna yang di terapkan pada modul atau fitur.</p>
     @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Roles List</h4>
+                    <h4>Daftar Peran Pengguna ({{$roles->count() ? $roles->count() : 0}})</h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
@@ -21,7 +21,7 @@
                                 <input
                                     type="search"
                                     class="form-control"
-                                    placeholder="Search"
+                                    placeholder="Cari"
                                     name="search"
                                     value="{{ (app('request')->input('search')) ? app('request')->input('search') : ''}}"
                                 >
@@ -37,16 +37,16 @@
                         class="btn btn-primary ml-2"
                         data-toggle="modal"
                         data-target="#addRole"
-                    ><i class="fas fa-plus"></i> Create</button>
+                    ><i class="fas fa-plus"></i> Tambah baru</button>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-bordered table-md">
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Guard</th>
-                                <th width="400">Action</th>
+                                <th width="400">Aksi</th>
                             </tr>
                             @foreach ($roles as $role)
                                 <tr>
@@ -66,7 +66,7 @@
                                             <i class="fas fa-info"></i> Detail
                                         </a>
                                         <a href="{{ route('admin.roles.edit', $role->id) }}" class="btn btn-warning">
-                                            <i class="fas fa-edit"></i> Edit
+                                            <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
@@ -75,7 +75,7 @@
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
-                                            <i class="fas fa-trash"></i> Delete
+                                            <i class="fas fa-trash"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>

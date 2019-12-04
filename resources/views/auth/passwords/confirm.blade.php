@@ -1,6 +1,6 @@
 @extends('layouts._body.auth')
 
-@section('title', 'Confirm Password')
+@section('title', 'Konfirmasi sandi')
 
 @section('content')
 <section class="section">
@@ -17,7 +17,7 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>{{ __('Confirm Password') }}</h4>
+                        <h4>{{ __('Konfirmasi sandi') }}</h4>
                     </div>
 
                     <div class="card-body">
@@ -46,7 +46,7 @@
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                    {{ __('Confirm Password') }}
+                                    {{ __('Konfirmasi sandi') }}
                                 </button>
                             </div>
                         </form>

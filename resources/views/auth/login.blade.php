@@ -13,18 +13,18 @@
                         class="shadow-light mb-5 mt-2"
                     >
                     <h4 class="text-dark font-weight-normal">
-                        Welcome to
+                        Selamat Datang di
                         <span class="font-weight-bold">{{ config('app.name', 'laravel') }} v{{ config('app.version', '1') }}</span>
                     </h4>
                     <p class="text-muted">
-                        Before you get started, you must login or register if you don't already have an account.
+                        Sebelum Anda mulai, Anda harus masuk atau mendaftar jika Anda belum memiliki akun.
                     </p>
 
                     <form method="POST" class="needs-validation" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
                             <div class="d-block">
-                                <label for="identity" class="control-label">{{ __('E-Mail Address or Username') }}</label>
+                                <label for="identity" class="control-label">{{ __('Alamat E-Mail atau Username') }}</label>
                             </div>
 
                             <input id="identity" type="text" class="form-control @error('identity') is-invalid @enderror" name="identity" value="{{ old('identity') }}" required tabindex="1" autofocus>
@@ -38,7 +38,7 @@
 
                         <div class="form-group">
                             <div class="d-block">
-                                <label for="password" class="control-label">{{ __('Password') }}</label>
+                                <label for="password" class="control-label">{{ __('Kata Sandi') }}</label>
                             </div>
 
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" tabindex="2">
@@ -53,7 +53,7 @@
                         <div class="form-group">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="custom-control-label" for="remember"> {{ __('Remember Me') }}</label>
+                                <label class="custom-control-label" for="remember"> {{ __('Ingat saya') }}</label>
                             </div>
                         </div>
 
@@ -61,17 +61,17 @@
                         <div class="form-group text-right">
                             @if (Route::has('password.request'))
                                 <a  href="{{ route('password.request') }}" class="float-left mt-3">
-                                    Forgot Password?
+                                    Lupa kata sandi?
                                 </a>
                             @endif
 
                             <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
-                                {{ __('Login') }}
+                                {{ __('Masuk') }}
                             </button>
                         </div>
 
                         <div class="mt-5 text-center">
-                            Don't have an account? <a href="{{ route('register') }}">Create new one</a>
+                            Belum punya akun? <a href="{{ route('register') }}">Buat baru</a>
                         </div>
                     </form>
                     @include('auth.items.footer-nav')

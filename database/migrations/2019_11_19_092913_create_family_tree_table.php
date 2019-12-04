@@ -16,7 +16,7 @@ class CreateFamilyTreeTable extends Migration
         Schema::create('ref_family_tree', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

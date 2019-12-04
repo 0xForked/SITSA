@@ -1,17 +1,17 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Permission')
+@section('title', 'Izin Pengguna')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">This is Example Page</h2>
-    <p class="section-lead">This page is just an example for you to create your own page.</p>
+    <h2 class="section-title">Izin pengguna</h2>
+    <p class="section-lead">Daftar izin pengguna yang di terapkan pada fungsi atau modul atau fitur.</p>
     @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Permissions List</h4>
+                    <h4>Daftar izin pengguna ({{$permissions->count() ? $permissions->count() : 0}})</h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
@@ -21,7 +21,7 @@
                                 <input
                                     type="search"
                                     class="form-control"
-                                    placeholder="Search"
+                                    placeholder="Cari"
                                     name="search"
                                     value="{{ (app('request')->input('search')) ? app('request')->input('search') : ''}}"
                                 >
@@ -37,16 +37,16 @@
                         data-toggle="modal"
                         data-target="#addPermission"
                         class="btn btn-primary ml-2"
-                    ><i class="fas fa-plus"></i> Create</a>
+                    ><i class="fas fa-plus"></i> Tambah baru</a>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-bordered table-md">
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Guard</th>
-                                <th width="200">Action</th>
+                                <th width="200">Aksi</th>
                             </tr>
                             @foreach ($permissions as $permission)
                                 <tr>
@@ -63,7 +63,7 @@
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
-                                            <i class="fas fa-trash"></i> Delete
+                                            <i class="fas fa-trash"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>

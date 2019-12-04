@@ -1,6 +1,8 @@
 <script type="text/javascript">
     $('input[type=search]').on('search', function () {
-        window.location='{{ route('admin.users.index') }}'
+        if($(this).val().length < 1){
+            window.location='{{ route('admin.users.index') }}'
+        }
     });
 
     $('#statusModal').on('show.bs.modal', function (event) {

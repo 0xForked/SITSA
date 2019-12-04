@@ -16,7 +16,7 @@ class CreateMaritalTable extends Migration
         Schema::create('ref_marital_status', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

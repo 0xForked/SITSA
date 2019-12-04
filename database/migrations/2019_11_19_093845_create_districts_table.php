@@ -17,7 +17,7 @@ class CreateDistrictsTable extends Migration
             $table->bigIncrements('id');
             $table->string('code')->nullable();
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

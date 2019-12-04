@@ -10,7 +10,7 @@ function deleteData(id, route) {
             href="`+route+`/`+id+`/delete"
             class="btn btn-danger"
         >
-            Delete
+            Hapus
         </a>
     `
     return container.innerHTML = strAvailableData

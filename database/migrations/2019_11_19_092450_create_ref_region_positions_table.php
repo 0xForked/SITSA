@@ -16,7 +16,7 @@ class CreateRefRegionPositionsTable extends Migration
         Schema::create('ref_region_positions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

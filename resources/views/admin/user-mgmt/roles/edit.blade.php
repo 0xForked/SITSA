@@ -1,13 +1,13 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Dashboard')
+@section('title', 'Ubah Peran Pengguna')
 
 @section('content')
 <div class="section-body">
     <h2 class="section-title">
-        Edit Role -(<code>{{$role->name}}</code>)-
+        Ubah Peran -(<code>{{$role->name}}</code>)-
     </h2>
-    <p class="section-lead">This page is just an example for you to create your own page.</p>
+    <p class="section-lead">Halaman ini untuk merubah data peran.</p>
     @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
@@ -17,13 +17,13 @@
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group row mb-4">
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
                             <div class="col-sm-12 col-md-7">
                                 <input type="text" class="form-control" name="name" value="{{ $role->name}}">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Permission</label>
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Daftar Izin</label>
                             <div class="col-sm-12 col-md-7">
                                 <div class="row">
                                     @foreach($permissions as $permission)
@@ -52,7 +52,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                             <div class="col-sm-12 col-md-7">
-                                <button class="btn btn-primary" type="submit">Update</button>
+                                <button class="btn btn-primary" type="submit">Perbaharui</button>
                             </div>
                         </div>
                     </div>

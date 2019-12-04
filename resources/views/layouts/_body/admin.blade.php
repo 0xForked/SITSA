@@ -25,7 +25,6 @@
     </div>
 @endsection
 
-
 @section('custom-script')
     <!-- JS Libraies -->
     <script src="{{ asset('assets/js/modules/jquery-ui.min.js') }}"></script>

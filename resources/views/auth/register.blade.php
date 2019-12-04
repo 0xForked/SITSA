@@ -1,6 +1,6 @@
 @extends('layouts._body.auth')
 
-@section('title', 'Register')
+@section('title', 'Daftar')
 
 @section('content')
 <section class="section">
@@ -13,10 +13,10 @@
                     class="shadow-light mb-5 mt-2"
                 >
                 <h4 class="text-dark font-weight-normal">
-                    {{ __('Register') }}
+                    {{ __('Daftar') }}
                 </h4>
                 <p class="text-muted">
-                    Get started with
+                    Untuk mulai menggunakan
                     <span class="font-weight-bold">{{ config('app.name', 'laravel') }} v{{ config('app.version', '1') }}</span>
                 </p>
 
@@ -24,7 +24,7 @@
                     @csrf
                     <div class="form-group">
                         <div class="d-block">
-                            <label for="name" class="control-label">{{ __('Name') }}</label>
+                            <label for="name" class="control-label">{{ __('Nama') }}</label>
                         </div>
 
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <div class="d-block">
-                            <label for="email" class="control-label">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="control-label">{{ __('Alamat E-Mail') }}</label>
                         </div>
 
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" tabindex="1" autofocus>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group">
                         <div class="d-block">
-                            <label for="password" class="control-label">{{ __('Password') }}</label>
+                            <label for="password" class="control-label">{{ __('Kata Sandi') }}</label>
                         </div>
 
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -75,17 +75,17 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password-confirm" class="control-label">{{ __('Confirm Password') }}</label>
+                        <label for="password-confirm" class="control-label">{{ __('Konfirmasi Kata Sandi') }}</label>
 
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <div class="form-group text-right">
                         <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
-                            {{ __('Register') }}
+                            {{ __('Daftar') }}
                         </button>
                     </div>
                     <div class="mt-5 text-center">
-                        Already have an account? <a href="{{ route('login') }}">Sign in</a>
+                        Sudah punya akun? <a href="{{ route('login') }}">Masuk</a>
                     </div>
                 </form>
                 @include('auth.items.footer-nav')

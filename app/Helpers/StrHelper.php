@@ -37,7 +37,11 @@ if (! function_exists('lastLoggedin')) {
     function lastLoggedin($date)
     {
         $diff = $date->diffForHumans();
-        return str_replace(["hours", "minutes", "seconds"], ["hrs", "mins", "sec"], $diff);
+        return str_replace(
+            ["hours", "minutes", "seconds", "ago"],
+            ["Jam", "Menit", "Detik", "lalu"],
+            $diff
+        );
     }
 }
 
@@ -46,8 +50,9 @@ if (! function_exists('currentGreting')) {
     function currentGreting()
     {
         $hour = Carbon::now()->format('H');
-        if ($hour < 12) return 'Good Morning';
-        if ($hour < 17) return 'Good Afternoon';
-        return 'Good Evening';
+        if ($hour < 11) return 'Selamat Pagi';
+        if ($hour < 13) return 'Selamat Siang';
+        if ($hour < 17) return 'Selamat Sore';
+        return 'Selamat Malam';
     }
 }

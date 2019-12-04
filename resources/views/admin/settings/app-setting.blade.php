@@ -47,7 +47,7 @@
                     <div class="form-group row align-items-center">
                         <label for="site-description" class="form-control-label col-sm-3 text-md-right">Site Description</label>
                         <div class="col-sm-6 col-md-9">
-                            <textarea class="form-control" name="site_description" id="site-description" rows="13"></textarea>
+                            <textarea class="form-control h-auto" name="site_description" id="site-description" rows="13"></textarea>
                         </div>
                     </div>
                     <div class="form-group row align-items-center">

@@ -1,11 +1,11 @@
 @extends('layouts._body.admin')
 
-@section('title', 'User')
+@section('title', 'Pengguna')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">This is Example Page</h2>
-    <p class="section-lead">This page is just an example for you to create your own page.</p>
+    <h2 class="section-title">Pengguna</h2>
+    <p class="section-lead">Ubah data umum dari pengguna yang di pilih.</p>
     @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Phone</label>
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomor Ponsel</label>
                             <div class="col-sm-12 col-md-7">
                                 <input
                                     type="text"
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="form-group row mb-4">
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
                             <div class="col-sm-12 col-md-7">
                                 <input
                                     type="text"
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group row mb-4">
 
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Roles</label>
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Peran</label>
                             <div class="col-sm-12 col-md-7">
                                 @foreach ($roles as $role)
                                     <div class="custom-control custom-radio">
@@ -86,7 +86,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                             <div class="col-sm-12 col-md-7">
-                                <button class="btn btn-primary" type="submit">Update</button>
+                                <button class="btn btn-primary" type="submit">Perbaharui</button>
                             </div>
                         </div>
                     </div>

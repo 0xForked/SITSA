@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class MovingOutController extends Controller
 {
+
     public function __construct()
     {
         //

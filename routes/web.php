@@ -14,29 +14,29 @@ use Illuminate\Support\Facades\Response;
 |
 */
 
-Route::get('/dump', function() {
-    $headers = array(
-        "Content-type" => "text/csv",
-        "Content-Disposition" => "attachment; filename=wilayah.csv",
-        "Pragma" => "no-cache",
-        "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
-        "Expires" => "0"
-    );
+// Route::get('/dump', function() {
+//     $headers = array(
+//         "Content-type" => "text/csv",
+//         "Content-Disposition" => "attachment; filename=wilayah.csv",
+//         "Pragma" => "no-cache",
+//         "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+//         "Expires" => "0"
+//     );
 
-    $dump_data = Dump::all();
+//     $dump_data = Dump::all();
 
-    $callback = function() use ($dump_data)
-    {
-        $file = fopen('php://output', 'w');
-        // fputcsv($file, $columns);
+//     $callback = function() use ($dump_data)
+//     {
+//         $file = fopen('php://output', 'w');
+//         // fputcsv($file, $columns);
 
-        foreach($dump_data as $data) {
-            fputcsv($file, array($data->wilayah));
-        }
-        fclose($file);
-    };
-    return Response::stream($callback, 200, $headers);
-});
+//         foreach($dump_data as $data) {
+//             fputcsv($file, array($data->wilayah));
+//         }
+//         fclose($file);
+//     };
+//     return Response::stream($callback, 200, $headers);
+// });
 
 
 Route::get('/', function () { return view('landing'); })->name('landing');
@@ -108,6 +108,62 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/permissions/{id}/delete', 'PermissionController@destroy');
 
         Route::get('/settings', 'SettingController@index')->name('app.setting');
+
+
+        Route::group([
+            'prefix'=>'general',
+            'as' => 'general.',
+            'namespace' => 'Data\General'
+        ], function () {
+            Route::get('/', function () { return redirect('admin/home'); });
+
+            // Route::group([
+            //     'prefix'=>'assets',
+            //     'as' => 'asset.',
+            //     'namespace' => 'Asset'
+            // ], function () {
+            //     Route::get('/', 'AssetOverviewController@index')->name('overview');
+            // });
+
+            // Route::group([
+            //     'prefix'=>'jobs',
+            //     'as' => 'job.',
+            //     'namespace' => 'Job'
+            // ], function () {
+            //     Route::get('/', 'JobOverviewController@index')->name('overview');
+            // });
+
+            // Route::group([
+            //     'prefix'=>'zone',
+            //     'as' => 'zone.',
+            //     'namespace' => 'Zone'
+            // ], function () {
+            //     Route::get('/', 'ZoneOverviewController@index')->name('overview');
+            // });
+
+            Route::resource('trainings', 'TrainingTypeController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/trainings', 'TrainingTypeController@update')->name('trainings.update');
+            Route::get('/trainings/{id}/delete', 'TrainingTypeController@destroy');
+
+            Route::resource('maritals', 'MaritalStatusController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/maritals', 'MaritalStatusController@update')->name('maritals.update');
+            Route::get('/maritals/{id}/delete', 'MaritalStatusController@destroy');
+
+            Route::resource('educations', 'EducationController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/educations', 'EducationController@update')->name('educations.update');
+            Route::get('/educations/{id}/delete', 'EducationController@destroy');
+
+            Route::resource('ethnics', 'EthnicController')
+                ->only(['index', 'show', 'store']);
+            Route::put('/ethnics', 'EthnicController@update')->name('ethnics.update');
+            Route::get('/ethnics/{id}/delete', 'EthnicController@destroy');
+
+        });
+
+
     });
 
     Route::group([

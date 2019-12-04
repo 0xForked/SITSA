@@ -11,7 +11,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">
-                    Are you sure?
+                    Apa anda yakin?
                 </h5>
             </div>
             <div class="modal-footer">
@@ -20,7 +20,7 @@
                     class="btn btn-secondary"
                     data-dismiss="modal"
                 >
-                    Close
+                    Tutup
                 </button>
 
                 <div id="statusButtonContainer"></div>

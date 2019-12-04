@@ -2,13 +2,15 @@
     <h1>@yield('title')</h1>
     <div class="section-header-breadcrumb">
         @foreach (Request::segments() as $segment)
-            <div class="breadcrumb-item">
-                @if ($loop->last == count(Request::segments()))
-                    {{ ucfirst($segment) }}
-                @else
-                    <a href="{{ URL::to("/$segment") }}">{{ ucfirst($segment) }}</a>
-                @endif
-            </div>
+            @if (!is_numeric($segment))
+                <div class="breadcrumb-item">
+                    @if ($loop->first)
+                        <a href="{{ URL::to("/$segment") }}">{{ ucfirst($segment) }}</a>
+                    @else
+                        {{ ucfirst($segment) }}
+                    @endif
+                </div>
+            @endif
         @endforeach
     </div>
 </div>

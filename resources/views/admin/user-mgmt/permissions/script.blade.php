@@ -1,5 +1,7 @@
 <script type="text/javascript">
     $('input[type=search]').on('search', function () {
-        window.location='{{ route('admin.permissions.index') }}'
+        if($(this).val().length < 1) {
+            window.location='{{ route('admin.permissions.index') }}'
+        }
     });
 </script>

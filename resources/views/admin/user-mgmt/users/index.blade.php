@@ -1,17 +1,17 @@
 @extends('layouts._body.admin')
 
-@section('title', 'User')
+@section('title', 'Pengguna')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">This is Example Page</h2>
-    <p class="section-lead">This page is just an example for you to create your own page.</p>
+    <h2 class="section-title">Pengguna</h2>
+    <p class="section-lead">Daftar pengguna untuk mengakses sistem.</p>
     @include('layouts._part.flash')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>User List</h4>
+                    <h4>Daftar Pengguna ({{$users->count() ? $users->count() : 0}})</h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
@@ -21,7 +21,7 @@
                                 <input
                                     type="search"
                                     class="form-control"
-                                    placeholder="Search"
+                                    placeholder="Cari"
                                     name="search"
                                     value="{{ (app('request')->input('search')) ? app('request')->input('search') : ''}}"
                                 >
@@ -33,7 +33,7 @@
                             </div>
                         </form>
                     </div>
-                    <button class="btn btn-primary ml-2" onClick="window.location='{{ route('admin.users.create') }}'"><i class="fas fa-plus"></i> Create</button>
+                    <button class="btn btn-primary ml-2" onClick="window.location='{{ route('admin.users.create') }}'"><i class="fas fa-plus"></i> Tambah baru</button>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -41,12 +41,12 @@
                             <tr>
                                 <th class="text-center">#</th>
                                 <th>Username</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Role</th>
+                                <th>Nomor Ponsel</th>
+                                <th>Peran</th>
                                 <th>Status</th>
-                                <th width="300">Action</th>
+                                <th width="300">Aksi</th>
                             </tr>
                             @foreach ($users as $user)
                                 <tr>
@@ -78,7 +78,7 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning">
-                                            <i class="fas fa-edit"></i> Edit
+                                            <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
@@ -87,7 +87,7 @@
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
-                                            <i class="fas fa-trash"></i> Delete
+                                            <i class="fas fa-trash"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>

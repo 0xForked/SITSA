@@ -1,6 +1,6 @@
 @extends('layouts._body.auth')
 
-@section('title', 'Reset Password')
+@section('title', 'Setel Ulang Kata Sandi')
 
 @section('content')
 <section class="section">
@@ -16,17 +16,17 @@
                 </div>
 
                 <div class="card card-primary">
-                    <div class="card-header"><h4>{{ __('Reset Password') }}</h4></div>
+                    <div class="card-header"><h4>{{ __('Setel Ulang Kata Sandi') }}</h4></div>
 
                     <div class="card-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <p class="text-muted">Silahkan masukkan kata sandi baru.</p>
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group">
-                            <label for="email">{{ __('E-Mail Address') }}</label>
+                            <label for="email">{{ __('Alamat E-Mail') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password">{{ __('Password') }}</label>
+                            <label for="password">{{ __('Kata Sandi') }}</label>
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror pwstrength" data-indicator="pwindicator" name="password" required autocomplete="new-password">
 
                             @error('password')
@@ -52,13 +52,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm">{{ __('Konfirmasi Kata Sandi') }}</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                {{ __('Reset Password') }}
+                                {{ __('Setel Ulang') }}
                             </button>
                         </div>
                     </form>

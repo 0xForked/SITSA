@@ -16,7 +16,7 @@ class CreateServicePeriodTable extends Migration
         Schema::create('service_period', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
