@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h4>Kondisi</h4>
                     <p>Referensi untuk kodisi aset.</p>
-                    <a href="features-setting-detail.html" class="card-cta">
+                    <a href="{{ route('admin.general.assets.conditions.index') }}" class="card-cta">
                         Selengkapnya
                        <i class="fas fa-chevron-right"></i>
                     </a>
@@ -32,7 +32,7 @@
                 <div class="card-body">
                     <h4>Pengelola</h4>
                     <p>Referensi untuk pengelola aset.</p>
-                    <a href="features-setting-detail.html" class="card-cta">
+                    <a href="{{ route('admin.general.assets.managers.index') }}" class="card-cta">
                         Selengkapnya
                        <i class="fas fa-chevron-right"></i>
                     </a>
@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <h4>Cara dapat</h4>
                     <p>Referensi untuk cara dapat aset.</p>
-                    <a href="features-setting-detail.html" class="card-cta">
+                    <a href="{{ route('admin.general.assets.obtains.index') }}" class="card-cta">
                       Selengkapnya
                        <i class="fas fa-chevron-right"></i>
                     </a>
@@ -62,7 +62,7 @@
                 <div class="card-body">
                     <h4>Tipe</h4>
                     <p>Referensi untuk tipe aset.</p>
-                    <a href="features-setting-detail.html" class="card-cta">
+                    <a href="{{ route('admin.general.assets.types.index') }}" class="card-cta">
                       Selengkapnya
                        <i class="fas fa-chevron-right"></i>
                     </a>

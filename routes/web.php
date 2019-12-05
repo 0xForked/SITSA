@@ -65,9 +65,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'middleware' => ['role:admin', 'access.log']
     ], function () {
         Route::get('/', function () { return redirect('admin/home'); });
+
         Route::get('/home', 'HomeController@index')->name('home');
-
-
 
         Route::get('/settings', 'Site\SettingController@index')->name('app.setting');
 
@@ -94,18 +93,38 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ], function () {
             Route::get('/', function () { return redirect('admin/home'); });
 
-            // Route::group([
-            //     'prefix'=>'assets',
-            //     'as' => 'asset.',
-            //     'namespace' => 'Asset'
-            // ], function () {
-            //     Route::get('/', 'AssetOverviewController@index')->name('overview');
-            // });
+            Route::group([
+                'prefix'=>'assets',
+                'as' => 'assets.',
+                'namespace' => 'Asset'
+            ], function () {
+                Route::get('/', 'AssetOverviewController@index')->name('overview');
 
-            Route::resource('jobs', 'JobTypeController')
+                Route::resource('conditions', 'AssetConditionController')
+                ->only(['index', 'show', 'store']);
+                Route::put('/conditions', 'AssetConditionController@update')->name('conditions.update');
+                Route::get('/conditions/{id}/delete', 'AssetConditionController@destroy');
+
+                Route::resource('managers', 'AssetManagerController')
+                ->only(['index', 'show', 'store']);
+                Route::put('/managers', 'AssetManagerController@update')->name('managers.update');
+                Route::get('/managers/{id}/delete', 'AssetManagerController@destroy');
+
+                Route::resource('obtains', 'AssetObtainController')
+                ->only(['index', 'show', 'store']);
+                Route::put('/obtains', 'AssetObtainController@update')->name('obtains.update');
+                Route::get('/obtains/{id}/delete', 'AssetObtainController@destroy');
+
+                Route::resource('types', 'AssetTypeController')
+                ->only(['index', 'show', 'store']);
+                Route::put('/types', 'AssetTypeController@update')->name('types.update');
+                Route::get('/types/{id}/delete', 'AssetTypeController@destroy');
+            });
+
+            Route::resource('ethnics', 'EthnicController')
             ->only(['index', 'show', 'store']);
-            Route::put('/jobs', 'JobTypeController@update')->name('jobs.update');
-            Route::get('/jobs/{id}/delete', 'JobTypeController@destroy');
+            Route::put('/ethnics', 'EthnicController@update')->name('ethnics.update');
+            Route::get('/ethnics/{id}/delete', 'EthnicController@destroy');
 
             Route::resource('bloods', 'BloodTypeController')
             ->only(['index', 'show']);
@@ -122,20 +141,30 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::put('/trainings', 'TrainingTypeController@update')->name('trainings.update');
             Route::get('/trainings/{id}/delete', 'TrainingTypeController@destroy');
 
-            Route::resource('maritals', 'MaritalStatusController')
+            Route::resource('jobs', 'JobTypeController')
             ->only(['index', 'show', 'store']);
-            Route::put('/maritals', 'MaritalStatusController@update')->name('maritals.update');
-            Route::get('/maritals/{id}/delete', 'MaritalStatusController@destroy');
+            Route::put('/jobs', 'JobTypeController@update')->name('jobs.update');
+            Route::get('/jobs/{id}/delete', 'JobTypeController@destroy');
 
             Route::resource('educations', 'EducationController')
             ->only(['index', 'show', 'store']);
             Route::put('/educations', 'EducationController@update')->name('educations.update');
             Route::get('/educations/{id}/delete', 'EducationController@destroy');
 
-            Route::resource('ethnics', 'EthnicController')
-                ->only(['index', 'show', 'store']);
-            Route::put('/ethnics', 'EthnicController@update')->name('ethnics.update');
-            Route::get('/ethnics/{id}/delete', 'EthnicController@destroy');
+            Route::resource('member-moves', 'MemberMoveTypeController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/member-moves', 'MemberMoveTypeController@update')->name('member-moves.update');
+            Route::get('/member-moves/{id}/delete', 'MemberMoveTypeController@destroy');
+
+            Route::resource('family-trees', 'FamilyTreeController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/family-trees', 'FamilyTreeController@update')->name('family-trees.update');
+            Route::get('/family-trees/{id}/delete', 'FamilyTreeController@destroy');
+
+            Route::resource('maritals', 'MaritalStatusController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/maritals', 'MaritalStatusController@update')->name('maritals.update');
+            Route::get('/maritals/{id}/delete', 'MaritalStatusController@destroy');
 
         });
 

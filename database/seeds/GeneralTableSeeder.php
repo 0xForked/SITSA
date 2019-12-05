@@ -6,7 +6,7 @@ use App\Models\General\AssetObtain;
 use App\Models\General\AssetType;
 use App\Models\General\BloodType;
 use App\Models\General\DisabilityType;
-use App\Models\General\District;
+use App\Models\Region\District;
 use App\Models\General\Education;
 use App\Models\General\Ethnic;
 use App\Models\General\FamilyTree;
@@ -14,12 +14,12 @@ use App\Models\General\FamilyTree;
 use App\Models\General\JobType;
 use App\Models\General\Marital;
 use App\Models\General\MemberMoveType;
-use App\Models\General\Region;
-use App\Models\General\RegionPosition;
-use App\Models\General\Subdistrict;
-use App\Models\General\Topography;
+use App\Models\Region\Region;
+use App\Models\Region\RegionPosition;
+use App\Models\Region\Subdistrict;
+use App\Models\Region\Topography;
 use App\Models\General\TrainingType;
-use App\Models\General\UrbanVillage;
+use App\Models\Region\UrbanVillage;
 use Illuminate\Database\Seeder;
 
 class GeneralTableSeeder extends Seeder

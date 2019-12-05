@@ -11,7 +11,7 @@ class AssetType extends Model
      *
      * @var string
      */
-    protected $table = 'ref_asset_obtain';
+    protected $table = 'ref_asset_type';
 
     /**
      * The attributes that are mass assignable.

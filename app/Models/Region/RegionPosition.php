@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\General;
+namespace App\Models\Region;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Topography extends Model
+class RegionPosition extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'ref_topographies';
+    protected $table = 'ref_region_positions';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +19,7 @@ class Topography extends Model
      * @var array
      */
     protected $fillable = [
-        'code', 'name'
+        'name', 'description'
     ];
 
     /**

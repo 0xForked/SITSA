@@ -52,29 +52,6 @@ class BloodTypeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'name' => 'required',
-    //         'type' => 'required',
-    //         'description' => 'required',
-    //     ]);
-    //     $blood = $request->only('name', 'type', 'description');
-    //     $action = BloodType::create($blood);
-    //     if (!$action) {
-    //         return redirect()->route('admin.general.bloods.index')
-    //             ->with('error','Failed add new Blood type');
-    //     }
-    //     return redirect()->route('admin.general.bloods.index')
-    //                     ->with('success','Blood type created successfully');
-    // }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

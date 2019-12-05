@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\General;
+namespace App\Models\Region;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RegionPosition extends Model
+class Subdistrict extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'ref_region_positions';
+    protected $table = 'ref_subdistricts';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +19,7 @@ class RegionPosition extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description'
+        'code', 'name', 'description', 'district_id'
     ];
 
     /**

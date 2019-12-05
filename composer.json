@@ -1,10 +1,13 @@
 {
-    "name": "laravel/laravel",
+    "name": "aasumitro/SITSA",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "SITSA with The Laravel Framework.",
     "keywords": [
-        "framework",
-        "laravel"
+        "SITSA",
+        "SISTEM INFORMASI",
+        "SISTEM INFORMASI TERPADU",
+        "SENSUS ANGGOTA",
+        "SISTEM INFORMASI TERPADU SENSUS ANGGOTA"
     ],
     "license": "MIT",
     "require": {

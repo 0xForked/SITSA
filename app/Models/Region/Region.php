@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\General;
+namespace App\Models\Region;
 
 use Illuminate\Database\Eloquent\Model;
 
-class District extends Model
+class Region extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'ref_districts';
+    protected $table = 'ref_regions';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +19,7 @@ class District extends Model
      * @var array
      */
     protected $fillable = [
-        'code', 'name', 'description'
+        'code', 'name'
     ];
 
     /**
