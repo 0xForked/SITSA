@@ -1,11 +1,11 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Data Umum - Jenis Pekerjaan')
+@section('title', 'Data Wilayah - Topografi')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">Jenis Pekerjaan</h2>
-    <p class="section-lead">Daftar Jenis Pekerjaan.</p>
+    <h2 class="section-title">Topografi</h2>
+    <p class="section-lead">Daftar referensi topografi dari wilayah yang terdaftar</p>
     @include('layouts._part.flash')
 
     <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <form
                         method="post"
-                        action="{{ route('admin.general.jobs.store') }}"
+                        action="{{ route('admin.region.topographies.store') }}"
                     >
                         @csrf
                         <div class="form-group">
@@ -25,8 +25,8 @@
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Deskripsi</label>
-                            <textarea class="form-control h-auto" name="description"></textarea>
+                            <label>Kode</label>
+                            <input type="number" name="code" class="form-control">
                         </div>.
                         <button
                             type="submit"
@@ -41,11 +41,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar Jenis Pekerjaan </h4>
+                    <h4>Daftar topografi </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
-                            action="{{ route('admin.general.jobs.index') }}"
+                            action="{{ route('admin.region.topographies.index') }}"
                         >
                             <div class="input-group">
                                 <input
@@ -70,34 +70,34 @@
                             <tr>
                                 <th class="text-center">#</th>
                                 <th>Nama</th>
-                                <th>Deskripsi</th>
+                                <th>Kode</th>
                                 <th width="200">Aksi</th>
                             </tr>
-                            @foreach ($jobs as $job)
+                            @foreach ($topographies as $topography)
                                 <tr>
                                     <td class="text-center">
-                                        {{ ($jobs->currentpage()-1) * $jobs->perpage() + $loop->iteration }}
+                                        {{ ($topographies->currentpage()-1) * $topographies->perpage() + $loop->iteration }}
                                     </td>
                                     <td>
-                                        {{ $job->name }}
+                                        {{ $topography->name }}
                                     </td>
                                     <td>
-                                        {{ $job->description }}
+                                        {{ $topography->code }}
                                     </td>
                                     <td>
                                         <a
                                             href="#"
                                             class="btn btn-warning"
-                                            onclick="showJob({{ $job->id }})"
+                                            onclick="showTopography({{ $topography->id }})"
                                             data-toggle="modal"
-                                            data-target="#editJob"
+                                            data-target="#editTopography"
                                         >
                                             <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
                                             class="btn btn-danger"
-                                            onclick="deleteData({{ $job->id }}, 'jobs')"
+                                            onclick="deleteData({{ $topography->id }}, 'topographies')"
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
@@ -112,7 +112,7 @@
                 <div class="card-footer bg-whitesmoke text-center">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                            {{ $jobs->links() }}
+                            {{ $topographies->links() }}
                         </ul>
                     </nav>
                 </div>
@@ -123,9 +123,9 @@
 @endsection
 
 @section('custom-include')
-@include('admin.general-data-mgmt.jobs.edit')
+@include('admin.region-data-mgmt.topographies.edit')
 @endsection
 
 @section('custom-script')
-@include('admin.general-data-mgmt.jobs.script')
+@include('admin.region-data-mgmt.topographies.script')
 @endsection

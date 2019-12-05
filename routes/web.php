@@ -86,6 +86,30 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/permissions/{id}/delete', 'PermissionController@destroy');
         });
 
+
+        Route::group([
+            'prefix'=>'region',
+            'as' => 'region.',
+            'namespace' => 'Data\Region'
+        ], function () {
+
+            Route::resource('topographies', 'TopographyController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/topographies', 'TopographyController@update')->name('topographies.update');
+            Route::get('/topographies/{id}/delete', 'TopographyController@destroy');
+
+            Route::resource('regions', 'RegionController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/regions', 'RegionController@update')->name('regions.update');
+            Route::get('/regions/{id}/delete', 'RegionController@destroy');
+
+            Route::resource('positions', 'RegionPositionController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/positions', 'RegionPositionController@update')->name('positions.update');
+            Route::get('/positions/{id}/delete', 'RegionPositionController@destroy');
+
+        });
+
         Route::group([
             'prefix'=>'general',
             'as' => 'general.',

@@ -41,7 +41,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar Status Menikah ({{ $maritals->count() }}) </h4>
+                    <h4>Daftar Status Menikah  </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"

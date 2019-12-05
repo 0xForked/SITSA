@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar Peran Pengguna ({{$roles->count() ? $roles->count() : 0}})</h4>
+                    <h4>Daftar Peran Pengguna </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"

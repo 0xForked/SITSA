@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin\Data\Region;
 
 use App\Http\Controllers\Controller;
-use App\Models\Region\Topography;
+use App\Models\Region\RegionPosition;
 use Illuminate\Http\Request;
 
-class TopographyController extends Controller
+class RegionPositionController extends Controller
 {
 
     /**
@@ -26,17 +26,17 @@ class TopographyController extends Controller
      */
     public function index(Request $request)
     {
-        $topographies = Topography::paginate(5);
+        $positions = RegionPosition::paginate(5);
 
         if ($request->search) {
-            $topographies = Topography::where(
+            $positions = RegionPosition::where(
                 'name',
                 'LIKE',
                 "%$request->search%"
             )->paginate(5);
         }
 
-        return view('admin.region-data-mgmt.topographies.index', compact('topographies'));
+        return view('admin.region-data-mgmt.positions.index', compact('positions'));
     }
 
     /**
@@ -47,8 +47,8 @@ class TopographyController extends Controller
      */
     public function show($id)
     {
-        $topography = Topography::findOrFail($id);
-        return response()->json($topography);
+        $position = RegionPosition::findOrFail($id);
+        return response()->json($position);
     }
 
     /**
@@ -61,18 +61,19 @@ class TopographyController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'description' => 'required',
         ]);
 
-        $topography = $request->only('name', 'code');
-        $action = Topography::create($topography);
+        $position = $request->only('name', 'description');
+        $action = RegionPosition::create($position);
 
         if (!$action) {
-            return redirect()->route('admin.region.topographies.index')
-                ->with('error','Failed add new Topography');
+            return redirect()->route('admin.region.positions.index')
+                ->with('error','Failed add new Region Position');
         }
 
-        return redirect()->route('admin.region.topographies.index')
-                        ->with('success','Topography created successfully');
+        return redirect()->route('admin.region.positions.index')
+                        ->with('success','Region Position created successfully');
 
     }
 
@@ -89,13 +90,13 @@ class TopographyController extends Controller
             'name' => 'required',
         ]);
 
-        $topography = Topography::findOrFail($request->id);
-        $topography->name = $request->name;
-        $topography->code = $request->code;
-        $topography->save();
+        $positions = RegionPosition::findOrFail($request->id);
+        $positions->name = $request->name;
+        $positions->description = $request->description;
+        $positions->save();
 
-        return redirect()->route('admin.region.topographies.index')
-                        ->with('success','Topography updated successfully');
+        return redirect()->route('admin.region.positions.index')
+                        ->with('success','Region Position updated successfully');
 
     }
 
@@ -107,9 +108,9 @@ class TopographyController extends Controller
      */
     public function destroy($id)
     {
-        Topography::findOrFail($id)->delete();
+        RegionPosition::findOrFail($id)->delete();
         return redirect()
-                ->route('admin.region.topographies.index')
-                ->with('success', 'Topography delete successfully');
+                ->route('admin.region.positions.index')
+                ->with('success', 'Region Position delete successfully');
     }
 }

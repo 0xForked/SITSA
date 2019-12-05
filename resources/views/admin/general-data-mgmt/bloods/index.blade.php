@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar Tipe Darah ({{ $bloods->count() }}) </h4>
+                    <h4>Daftar Tipe Darah  </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"

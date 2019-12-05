@@ -38,26 +38,6 @@
                     <span>Pelatihan</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown">
-                    <i class="fas fa-church"></i>
-                    <span>Jemaat</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="">
-                        <a class="nav-link" href="">Tentang Jemaat</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="">Aset</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="">Komisi BIPRA</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="">Komisi Kerja</a>
-                    </li>
-                </ul>
-            </li>
             <li class="menu-header">Fungsionalitas</li>
             <li class="{{ (Request::segment(2) == 'verification') ? 'active' : '' }}">
                 <a class="nav-link beep beep-sidebar" href="">
@@ -110,6 +90,26 @@
                 </ul>
             </li>
             <li class="menu-header">DATA</li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-church"></i>
+                    <span>Jemaat</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a class="nav-link" href="">Tentang Jemaat</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Aset</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Komisi BIPRA</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="">Komisi Kerja</a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item dropdown {{
                 (
                     Route::is('admin.users.*')
@@ -188,7 +188,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {{ (Request::segment(2) == 'region') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-map"></i>
                     <span>Wilayah</span>
@@ -203,14 +203,14 @@
                     <li>
                         <a href="" class="menu-item">Kelurahan</a>
                     </li>
-                    <li>
-                        <a href="" class="menu-item">Topografi</a>
+                    <li class="{{ Route::is('admin.region.topographies.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.region.topographies.index') }}" class="menu-item">Topografi</a>
                     </li>
-                    <li>
-                        <a href="" class="menu-item">Wilayah</a>
+                    <li class="{{ Route::is('admin.region.regions.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.region.regions.index') }}" class="menu-item">Wilayah</a>
                     </li>
-                    <li>
-                        <a href="" class="menu-item">Kedudukan</a>
+                    <li class="{{ Route::is('admin.region.positions.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.region.positions.index') }}" class="menu-item">Kedudukan</a>
                     </li>
                 </ul>
             </li>
