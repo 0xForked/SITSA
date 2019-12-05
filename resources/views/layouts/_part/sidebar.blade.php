@@ -13,7 +13,7 @@
                     <span>Beranda</span>
                 </a>
             </li>
-            <li class="menu-header">Data</li>
+            <li class="menu-header">FITUR</li>
             <li>
                 <a class="nav-link" href="blank.html">
                     <i class="fas fa-clipboard-list"></i>
@@ -109,81 +109,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="menu-header">Situs</li>
-            <li class="nav-item dropdown {{ (Request::segment(2) == 'general') ? 'active' : '' }}">
-                <a href="#" class="nav-link has-dropdown">
-                    <i class="fas fa-layer-group"></i>
-                    <span>Data Umum</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#" class="menu-item">
-                            Asset
-                        </a>
-                        <ul class="menu-content">
-                            <li>
-                                <a href="" class="menu-item">Kondisi</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Pengelola</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Cara dapat </a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Tipe</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-item">
-                            Wilayah
-                        </a>
-                        <ul class="menu-content">
-                            <li>
-                                <a href="" class="menu-item">Kabupaten/Kota</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Kecamatan</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Kelurahan</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Topografi</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Wilayah</a>
-                            </li>
-                            <li>
-                                <a href="" class="menu-item">Kedudukan</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="{{ Route::is('admin.general.ethnics.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.ethnics.index') }}">Etnis</a>
-                    </li>
-                    <li class="{{ Route::is('admin.general.bloods.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.bloods.index') }}">Jenis Darah</a>
-                    </li>
-                    <li class="{{ Route::is('admin.general.disabilities.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.disabilities.index') }}">Jenis Disabilitas</a>
-                    </li>
-                    <li class="{{ Route::is('admin.general.trainings.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.trainings.index') }}">Jenis Pelatihan</a>
-                    </li>
-                    <li class="{{ Route::is('admin.general.jobs.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.jobs.index') }}">Jenis Pekerjaan</a>
-                    </li>
-                    <li class="{{ Route::is('admin.general.educations.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.educations.index') }}">Jenis Pendidikan</a>
-                    </li>
-                    <li class="{{ Route::is('admin.general.maritals.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.general.maritals.index') }}">Status Menikah</a>
-                    </li>
-                </ul>
-            </li>
+            <li class="menu-header">DATA</li>
             <li class="nav-item dropdown {{
                 (
                     Route::is('admin.users.*')
@@ -208,6 +134,82 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item dropdown {{ (Request::segment(2) == 'general') ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Umum</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#" class="menu-item">
+                            Asset
+                        </a>
+                        <ul class="menu-content">
+                            <li>
+                                <a href="" class="menu-item">Kondisi</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Pengelola</a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Cara dapat </a>
+                            </li>
+                            <li>
+                                <a href="" class="menu-item">Tipe</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="{{ Route::is('admin.general.ethnics.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.ethnics.index') }}">Jenis Etnis</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.bloods.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.bloods.index') }}">Jenis Darah</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.disabilities.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.disabilities.index') }}">Jenis Disabilitas</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.trainings.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.trainings.index') }}">Jenis Pelatihan</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.jobs.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.jobs.index') }}">Jenis Pekerjaan</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.educations.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.educations.index') }}">Jenis Pendidikan</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.maritals.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.general.maritals.index') }}">Status Menikah</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-map"></i>
+                    <span>Wilayah</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="" class="menu-item">Kabupaten/Kota</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu-item">Kecamatan</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu-item">Kelurahan</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu-item">Topografi</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu-item">Wilayah</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu-item">Kedudukan</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-header">SITUS</li>
             <li class="{{ (Request::segment(2) == 'settings') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('admin.app.setting') }}">
                     <i class="fas fa-cogs"></i>

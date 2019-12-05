@@ -46,8 +46,8 @@ if (! function_exists('lastLoggedin')) {
 }
 
 
-if (! function_exists('currentGreting')) {
-    function currentGreting()
+if (! function_exists('currentGreeting')) {
+    function currentGreeting()
     {
         $hour = Carbon::now()->format('H');
         if ($hour < 11) return 'Selamat Pagi';

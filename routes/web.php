@@ -1,8 +1,5 @@
 <?php
 
-use App\Models\Dump;
-use Illuminate\Support\Facades\Response;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,34 +10,6 @@ use Illuminate\Support\Facades\Response;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/dump', function() {
-    // $day = cal_days_in_month(CAL_GREGORIAN, 12, 2019);
-    // dd($day);
-
-    // $headers = array(
-    //     "Content-type" => "text/csv",
-    //     "Content-Disposition" => "attachment; filename=wilayah.csv",
-    //     "Pragma" => "no-cache",
-    //     "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
-    //     "Expires" => "0"
-    // );
-
-    // $dump_data = Dump::all();
-
-    // $callback = function() use ($dump_data)
-    // {
-    //     $file = fopen('php://output', 'w');
-    //     // fputcsv($file, $columns);
-
-    //     foreach($dump_data as $data) {
-    //         fputcsv($file, array($data->wilayah));
-    //     }
-    //     fclose($file);
-    // };
-    // return Response::stream($callback, 200, $headers);
-});
-
 
 Route::get('/', function () { return view('landing'); })->name('landing');
 
@@ -98,20 +67,25 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/', function () { return redirect('admin/home'); });
         Route::get('/home', 'HomeController@index')->name('home');
 
-        Route::resource('users', 'UserController')
-        ->only(['index', 'create', 'store', 'show', 'edit', 'update']);;
-        Route::get('users/{id}/delete', 'UserController@destroy');
 
-        Route::resource('roles', 'RoleController')
-        ->only(['index', 'create', 'store', 'show', 'edit', 'update']);
-        Route::get('/roles/{id}/delete', 'RoleController@destroy');
 
-        Route::resource('permissions', 'PermissionController')
-        ->only(['index', 'store']);
-        Route::get('/permissions/{id}/delete', 'PermissionController@destroy');
+        Route::get('/settings', 'Site\SettingController@index')->name('app.setting');
 
-        Route::get('/settings', 'SettingController@index')->name('app.setting');
+        Route::group([
+            'namespace' => 'Data\User'
+        ], function () {
+            Route::resource('users', 'UserController')
+            ->only(['index', 'create', 'store', 'show', 'edit', 'update']);;
+            Route::get('users/{id}/delete', 'UserController@destroy');
 
+            Route::resource('roles', 'RoleController')
+            ->only(['index', 'create', 'store', 'show', 'edit', 'update']);
+            Route::get('/roles/{id}/delete', 'RoleController@destroy');
+
+            Route::resource('permissions', 'PermissionController')
+            ->only(['index', 'store']);
+            Route::get('/permissions/{id}/delete', 'PermissionController@destroy');
+        });
 
         Route::group([
             'prefix'=>'general',
@@ -126,14 +100,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             //     'namespace' => 'Asset'
             // ], function () {
             //     Route::get('/', 'AssetOverviewController@index')->name('overview');
-            // });
-
-            // Route::group([
-            //     'prefix'=>'zone',
-            //     'as' => 'zone.',
-            //     'namespace' => 'Zone'
-            // ], function () {
-            //     Route::get('/', 'ZoneOverviewController@index')->name('overview');
             // });
 
             Route::resource('jobs', 'JobTypeController')

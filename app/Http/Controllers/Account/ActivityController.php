@@ -10,7 +10,7 @@ use App\Traits\UserAgentDetails;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Activity\Access as AccessLogActvitiy;
+use App\Models\Activity\Access as AccessLogActivity;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ActivityController extends Controller
@@ -37,7 +37,7 @@ class ActivityController extends Controller
      */
     public function index(Request $request)
     {
-        $activities = AccessLogActvitiy::where('userId', Auth::user()->id)
+        $activities = AccessLogActivity::where('userId', Auth::user()->id)
                                     ->orderBy('created_at', 'desc');
 
         if (config('app.accessLogEnableSearch')) {
@@ -70,7 +70,7 @@ class ActivityController extends Controller
      */
     public function show($id)
     {
-        $activity = AccessLogActvitiy::where('userId', Auth::user()->id)->findOrFail($id);
+        $activity = AccessLogActivity::where('userId', Auth::user()->id)->findOrFail($id);
         $userDetails = User::find($activity->userId);
         $userAgentDetails = UserAgentDetails::details($activity->useragent);
         $ipAddressDetails = IpAddressDetails::checkIP($activity->ipAddress);
@@ -78,7 +78,7 @@ class ActivityController extends Controller
         $eventTime = Carbon::parse($activity->created_at);
         $timePassed = $eventTime->diffForHumans();
 
-        $userActivities = AccessLogActvitiy::where('userId', $activity->userId)
+        $userActivities = AccessLogActivity::where('userId', $activity->userId)
             ->orderBy('created_at', 'desc')
             ->paginate(config('app.accessLogPaginationPerPage'));
         $totalUserActivities = $userActivities->total();
@@ -109,7 +109,7 @@ class ActivityController extends Controller
      */
     public function clearActivityLog()
     {
-        $activities = AccessLogActvitiy::where('userId', Auth::user()->id)->get();
+        $activities = AccessLogActivity::where('userId', Auth::user()->id)->get();
         foreach ($activities as $activity) {
             $activity->delete();
         }
@@ -117,13 +117,13 @@ class ActivityController extends Controller
     }
 
     /**
-     * Show the cleared activity log - softdeleted records.
+     * Show the cleared activity log - soft deleted records.
      *
      * @return \Illuminate\Http\Response
      */
     public function showClearedActivityLog()
     {
-        $activities = AccessLogActvitiy::where('userId', Auth::user()->id)->onlyTrashed()
+        $activities = AccessLogActivity::where('userId', Auth::user()->id)->onlyTrashed()
             ->orderBy('created_at', 'desc')
             ->paginate(config('app.accessLogPaginationPerPage'));
         $totalActivities = $activities->total();
@@ -147,7 +147,7 @@ class ActivityController extends Controller
      */
     public function showClearedAccessLogEntry(Request $request, $id)
     {
-        $activity = $this->repository->getClearedActvity($id);
+        $activity = $this->repository->getClearedActivity($id);
         $userDetails = User::find($activity->userId);
         $userAgentDetails = UserAgentDetails::details($activity->useragent);
         $ipAddressDetails = IpAddressDetails::checkIP($activity->ipAddress);
@@ -172,7 +172,7 @@ class ActivityController extends Controller
      */
     public function destroyAccessActivityLog()
     {
-        $activities = AccessLogActvitiy::where('userId', Auth::user()->id)->onlyTrashed()->get();
+        $activities = AccessLogActivity::where('userId', Auth::user()->id)->onlyTrashed()->get();
         foreach ($activities as $activity) {
             $activity->forceDelete();
         }
@@ -185,7 +185,7 @@ class ActivityController extends Controller
      */
     public function restoreClearedAccessActivityLog()
     {
-        $activities = AccessLogActvitiy::where('userId', Auth::user()->id)->onlyTrashed()->get();
+        $activities = AccessLogActivity::where('userId', Auth::user()->id)->onlyTrashed()->get();
         foreach ($activities as $activity) {
             $activity->restore();
         }

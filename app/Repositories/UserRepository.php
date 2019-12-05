@@ -40,7 +40,7 @@ class UserRepository
      * @param int $id
      *
      */
-    public function getClearedActvity($id)
+    public function getClearedActivity($id)
     {
         $activity = $this->AccessActivity->onlyTrashed()->where('id', $id)->get();
         if (count($activity) != 1) {
@@ -57,22 +57,22 @@ class UserRepository
      *
      * @return filtered query
      */
-    public function searchAccessActivityLog($query, $requeset)
+    public function searchAccessActivityLog($query, $request)
     {
-        if (in_array('description', explode(',', config('app.accessLogSearchFields'))) && $requeset->get('description')) {
-            $query->where('description', 'like', '%'.$requeset->get('description').'%');
+        if (in_array('description', explode(',', config('app.accessLogSearchFields'))) && $request->get('description')) {
+            $query->where('description', 'like', '%'.$request->get('description').'%');
         }
-        if (in_array('user', explode(',', config('app.accessLogSearchFields'))) && $requeset->get('user')) {
-            $query->where('userId', '=', $requeset->get('user'));
+        if (in_array('user', explode(',', config('app.accessLogSearchFields'))) && $request->get('user')) {
+            $query->where('userId', '=', $request->get('user'));
         }
-        if (in_array('method', explode(',', config('app.accessLogSearchFields'))) && $requeset->get('method')) {
-            $query->where('methodType', '=', $requeset->get('method'));
+        if (in_array('method', explode(',', config('app.accessLogSearchFields'))) && $request->get('method')) {
+            $query->where('methodType', '=', $request->get('method'));
         }
-        if (in_array('route', explode(',', config('app.accessLogSearchFields'))) && $requeset->get('route')) {
-            $query->where('route', 'like', '%'.$requeset->get('route').'%');
+        if (in_array('route', explode(',', config('app.accessLogSearchFields'))) && $request->get('route')) {
+            $query->where('route', 'like', '%'.$request->get('route').'%');
         }
-        if (in_array('ip', explode(',', config('app.accessLogSearchFields'))) && $requeset->get('ip_address')) {
-            $query->where('ipAddress', 'like', '%'.$requeset->get('ip_address').'%');
+        if (in_array('ip', explode(',', config('app.accessLogSearchFields'))) && $request->get('ip_address')) {
+            $query->where('ipAddress', 'like', '%'.$request->get('ip_address').'%');
         }
         return $query;
     }

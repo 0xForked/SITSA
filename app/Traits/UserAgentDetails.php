@@ -18,9 +18,9 @@ trait UserAgentDetails
         // Enumerate all common platforms, this is usually placed in braces (order is important! First come first serve..)
         $platforms = 'Windows|iPad|iPhone|Macintosh|Android|BlackBerry|Unix|Linux';
         // All browsers except MSIE/Trident and..
-        // NOT for browsers that use this syntax: Version/0.xx Browsername
+        // NOT for browsers that use this syntax: Version/0.xx Browser name
         $browsers = 'Firefox|Chrome|Opera';
-        // Specifically for browsers that use this syntax: Version/0.xx Browername
+        // Specifically for browsers that use this syntax: Version/0.xx Browser name
         $browsers_v = 'Safari|Mobile'; // Mobile is mentioned in Android and BlackBerry UA's
         // Fill in your most common engines..
         $engines = 'Gecko|Trident|Webkit|Presto';
@@ -48,7 +48,7 @@ trait UserAgentDetails
         } else {
             return false;
         }
-        // Replace some browsernames e.g. MSIE -> Internet Explorer
+        // Replace some browser names e.g. MSIE -> Internet Explorer
         switch (strtolower($return['browser'])) {
             case 'msie':
             case 'trident':

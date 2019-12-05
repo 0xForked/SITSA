@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Data\User;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Permission;
 
-class RoleController extends Controller
+class PermissionController extends Controller
 {
 
     /**
@@ -21,25 +20,25 @@ class RoleController extends Controller
         //
     }
 
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $roles = Role::paginate(10);
-        $permissions = Permission::all();
+        $permissions = Permission::paginate(10);
+        $roles = Role::all();
 
         if ($request->search) {
-            $roles = Role::where(
+            $permissions = Permission::where(
                 'name',
                 'LIKE',
                 "%$request->search%"
             )->paginate(10);
         }
 
-        return view('admin.user-mgmt.roles.index', compact('roles','permissions'));
+        return view('admin.user-mgmt.permissions.index', compact('permissions', 'roles'));
     }
 
     /**
@@ -61,16 +60,25 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:roles,name',
-            'permissions' => 'required',
+            'name' => 'required|unique:permissions,name',
         ]);
 
-        $role = Role::create(['name' => $request->input('name')]);
+        $name = $request['name'];
+        $roles = $request['roles'];
 
-        $role->syncPermissions($request->input('permissions'));
+        $permission = Permission::create(['name' => $name]);
 
-        return redirect()->route('admin.roles.index')
-                        ->with('success','Role created successfully');
+        if (!empty($request['roles'])) {
+            foreach ($roles as $role) {
+                $r = Role::where('id', '=', $role)->firstOrFail();
+                $permission = Permission::where('name', '=', $name)->first();
+                $r->givePermissionTo($permission);
+            }
+        }
+
+        return redirect()
+                ->route('admin.permissions.index')
+                ->with('success','Permission created successfully');
 
     }
 
@@ -93,16 +101,7 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $role = Role::find($id);
-        $permissions = Permission::all();
-        $rolePermissions = DB::table("role_has_permissions")
-                            ->where("role_has_permissions.role_id", $id)
-                            ->pluck(
-                                'role_has_permissions.permission_id',
-                                'role_has_permissions.permission_id'
-                            )->all();
-
-        return view('admin.user-mgmt.roles.edit', compact('role','permissions','rolePermissions'));
+        return abort('404');
     }
 
     /**
@@ -114,19 +113,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-        ]);
-
-        $role = Role::findOrFail($id);
-        $role->name = $request->input('name');
-        $role->save();
-
-        $role->syncPermissions($request->input('permissions'));
-
-        return redirect()->route('admin.roles.index')
-                        ->with('success','Role updated successfully');
-
+        return abort('404');
     }
 
     /**
@@ -137,8 +124,9 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        Role::find($id)->delete();
-        return redirect()->route('admin.roles.index')
-                        ->with('success','Role deleted successfully');
+        Permission::findOrFail($id)->delete();
+        return redirect()
+                ->route('admin.permissions.index')
+                ->with('success','Permission delete successfully');
     }
 }
