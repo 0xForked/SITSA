@@ -1,11 +1,11 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Data Umum - Etnis')
+@section('title', 'Data Wilayah - Kelurahan')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">Etnis</h2>
-    <p class="section-lead">Daftar etnis atau suku di Indonesia</p>
+    <h2 class="section-title">Kelurahan</h2>
+    <p class="section-lead">Daftar referensi Kelurahan yang terdaftar</p>
     @include('layouts._part.flash')
 
     <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <form
                         method="post"
-                        action="{{ route('admin.general.ethnics.store') }}"
+                        action="{{ route('admin.region.urbanvillages.store') }}"
                     >
                         @csrf
                         <div class="form-group">
@@ -25,8 +25,20 @@
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label>Kode</label>
+                            <input type="number" name="code" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea class="form-control h-auto" name="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Kecamatan</label>
+                            <select class="form-control" name="subdistrict_id">
+                                @foreach ($subdistricts as $subdistrict)
+                                    <option value="{{$subdistrict->id}}">{{$subdistrict->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <button
                             type="submit"
@@ -41,11 +53,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar etnis  </h4>
+                    <h4>Daftar Kelurahan </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
-                            action="{{ route('admin.general.ethnics.index') }}"
+                            action="{{ route('admin.region.urbanvillages.index') }}"
                         >
                             <div class="input-group">
                                 <input
@@ -69,35 +81,53 @@
                         <table class="table table-bordered table-md">
                             <tr>
                                 <th class="text-center">#</th>
+                                <th>Kode</th>
                                 <th>Nama</th>
-                                <th>Deskripsi</th>
+                                <th>Kecamatan</th>
+                                <th>Kabupaten/Kota</th>
                                 <th width="200">Aksi</th>
                             </tr>
-                            @foreach ($ethnics as $ethnic)
+                            @foreach ($urban_villages as $urban_village)
                                 <tr>
                                     <td class="text-center">
-                                        {{ ($ethnics->currentpage()-1) * $ethnics->perpage() + $loop->iteration }}
+                                        {{ ($urban_villages->currentpage()-1) * $urban_villages->perpage() + $loop->iteration }}
                                     </td>
                                     <td>
-                                        {{ $ethnic->name }}
+                                        {{ $urban_village->code }}
                                     </td>
                                     <td>
-                                        {{ $ethnic->description }}
+                                        {{ $urban_village->name }}
+                                    </td>
+                                    <td>
+                                        @if ($urban_village->subdistrict)
+                                            <a href="{{ route('admin.region.subdistricts.index') }}?search={{ $urban_village->subdistrict->name }}">
+                                                {{ $urban_village->subdistrict->name }}
+                                            </a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($urban_village->subdistrict)
+                                            @if ($urban_village->subdistrict->district)
+                                                <a href="{{ route('admin.region.districts.index') }}?search={{ $urban_village->subdistrict->district->name }}">
+                                                    {{ $urban_village->subdistrict->district->name }}
+                                                </a>
+                                            @endif
+                                        @endif
                                     </td>
                                     <td>
                                         <a
                                             href="#"
                                             class="btn btn-warning"
-                                            onclick="showEthnic({{ $ethnic->id }})"
+                                            onclick="showUrbanVillage({{ $urban_village->id }})"
                                             data-toggle="modal"
-                                            data-target="#editEthnic"
+                                            data-target="#editUrbanVillage"
                                         >
                                             <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
                                             class="btn btn-danger"
-                                            onclick="deleteData({{ $ethnic->id }}, 'ethnics')"
+                                            onclick="deleteData({{ $urban_village->id }}, 'urbanvillages')"
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
@@ -112,7 +142,7 @@
                 <div class="card-footer bg-whitesmoke text-center">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                            {{ $ethnics->links() }}
+                            {{ $urban_villages->links() }}
                         </ul>
                     </nav>
                 </div>
@@ -123,9 +153,9 @@
 @endsection
 
 @section('custom-include')
-@include('admin.general-data-mgmt.ethnic.edit')
+@include('admin.region-data-mgmt.urbanvillages.edit')
 @endsection
 
 @section('custom-script')
-@include('admin.general-data-mgmt.ethnic.script')
+@include('admin.region-data-mgmt.urbanvillages.script')
 @endsection

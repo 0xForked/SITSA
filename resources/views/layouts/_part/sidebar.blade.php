@@ -194,14 +194,14 @@
                     <span>Wilayah</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="" class="menu-item">Kabupaten/Kota</a>
+                    <li class="{{ Route::is('admin.region.districts.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.region.districts.index') }}" class="menu-item">Kabupaten/Kota</a>
                     </li>
-                    <li>
-                        <a href="" class="menu-item">Kecamatan</a>
+                    <li class="{{ Route::is('admin.region.subdistricts.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.region.subdistricts.index') }}" class="menu-item">Kecamatan</a>
                     </li>
-                    <li>
-                        <a href="" class="menu-item">Kelurahan</a>
+                    <li class="{{ Route::is('admin.region.urbanvillages.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.region.urbanvillages.index') }}" class="menu-item">Kelurahan/Desa</a>
                     </li>
                     <li class="{{ Route::is('admin.region.topographies.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.region.topographies.index') }}" class="menu-item">Topografi</a>

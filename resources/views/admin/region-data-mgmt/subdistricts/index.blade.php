@@ -1,11 +1,11 @@
 @extends('layouts._body.admin')
 
-@section('title', 'Data Umum - Etnis')
+@section('title', 'Data Wilayah - Kecamatan')
 
 @section('content')
 <div class="section-body">
-    <h2 class="section-title">Etnis</h2>
-    <p class="section-lead">Daftar etnis atau suku di Indonesia</p>
+    <h2 class="section-title">Kecamatan</h2>
+    <p class="section-lead">Daftar referensi Kecamatan yang terdaftar</p>
     @include('layouts._part.flash')
 
     <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <form
                         method="post"
-                        action="{{ route('admin.general.ethnics.store') }}"
+                        action="{{ route('admin.region.subdistricts.store') }}"
                     >
                         @csrf
                         <div class="form-group">
@@ -25,8 +25,20 @@
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label>Kode</label>
+                            <input type="number" name="code" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea class="form-control h-auto" name="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Kabupaten/Kota</label>
+                            <select class="form-control" name="district_id">
+                                @foreach ($districts as $district)
+                                    <option value="{{$district->id}}">{{$district->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <button
                             type="submit"
@@ -41,11 +53,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Daftar etnis  </h4>
+                    <h4>Daftar Kecamatan </h4>
                     <div class="card-header-form">
                         <form
                             method="GET"
-                            action="{{ route('admin.general.ethnics.index') }}"
+                            action="{{ route('admin.region.subdistricts.index') }}"
                         >
                             <div class="input-group">
                                 <input
@@ -69,35 +81,47 @@
                         <table class="table table-bordered table-md">
                             <tr>
                                 <th class="text-center">#</th>
+                                <th>Kode</th>
                                 <th>Nama</th>
-                                <th>Deskripsi</th>
+                                <th>Kab/Kota</th>
+                                <th>Total Desa/Kel.</th>
                                 <th width="200">Aksi</th>
                             </tr>
-                            @foreach ($ethnics as $ethnic)
+                            @foreach ($subdistricts as $subdistrict)
                                 <tr>
                                     <td class="text-center">
-                                        {{ ($ethnics->currentpage()-1) * $ethnics->perpage() + $loop->iteration }}
+                                        {{ ($subdistricts->currentpage()-1) * $subdistricts->perpage() + $loop->iteration }}
                                     </td>
                                     <td>
-                                        {{ $ethnic->name }}
+                                        {{ $subdistrict->code }}
                                     </td>
                                     <td>
-                                        {{ $ethnic->description }}
+                                        {{ $subdistrict->name }}
+                                    </td>
+                                    <td>
+                                        @if ($subdistrict->district)
+                                            <a href="{{ route('admin.region.districts.index') }}?search={{ $subdistrict->district->name }}">
+                                                {{ $subdistrict->district->name }}
+                                            </a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        {{ $subdistrict->urban_village_count }}
                                     </td>
                                     <td>
                                         <a
                                             href="#"
                                             class="btn btn-warning"
-                                            onclick="showEthnic({{ $ethnic->id }})"
+                                            onclick="showSubdistrict({{ $subdistrict->id }})"
                                             data-toggle="modal"
-                                            data-target="#editEthnic"
+                                            data-target="#editSubdistrict"
                                         >
                                             <i class="fas fa-edit"></i> Ubah
                                         </a>
                                         <a
                                             href="#"
                                             class="btn btn-danger"
-                                            onclick="deleteData({{ $ethnic->id }}, 'ethnics')"
+                                            onclick="deleteData({{ $subdistrict->id }}, 'subdistricts')"
                                             data-toggle="modal"
                                             data-target="#deleteModal"
                                         >
@@ -112,7 +136,7 @@
                 <div class="card-footer bg-whitesmoke text-center">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                            {{ $ethnics->links() }}
+                            {{ $subdistricts->links() }}
                         </ul>
                     </nav>
                 </div>
@@ -123,9 +147,9 @@
 @endsection
 
 @section('custom-include')
-@include('admin.general-data-mgmt.ethnic.edit')
+@include('admin.region-data-mgmt.subdistricts.edit')
 @endsection
 
 @section('custom-script')
-@include('admin.general-data-mgmt.ethnic.script')
+@include('admin.region-data-mgmt.subdistricts.script')
 @endsection

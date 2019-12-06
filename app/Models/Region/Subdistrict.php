@@ -31,4 +31,15 @@ class Subdistrict extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function district()
+    {
+        return $this->belongsTo('App\Models\Region\District');
+    }
+
+    public function urbanVillage()
+    {
+        return $this->hasMany('App\Models\Region\UrbanVillage');
+    }
+
 }

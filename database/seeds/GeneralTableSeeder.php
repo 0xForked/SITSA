@@ -1221,43 +1221,43 @@ class GeneralTableSeeder extends Seeder
             ],
             [
                 'name' => 'AIRMADIDI',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'DIMEMBE',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'KALAWAT',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'KAUDITAN',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'KEMA',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'LIKUPANG BARAT',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'LIKUPANG SELATAN',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'LIKUPANG TIMUR',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'TALAWAAN',
-                'district_id' => 12
+                'district_id' => 15
             ],
             [
                 'name' => 'WORI',
-                'district_id' => 12
+                'district_id' => 15
             ],
         ];
 
@@ -1873,14 +1873,14 @@ class GeneralTableSeeder extends Seeder
                 "name" => "SINSINGON TIMUR",
                 "subdistrict_id" => 13
             ],
-            [
-                "name" => "",
-                "subdistrict_id" => 0
-            ],
-            [
-                "name" => "",
-                "subdistrict_id" => 0
-            ],
+            // [
+            //     "name" => "",
+            //     "subdistrict_id" => 0
+            // ],
+            // [
+            //     "name" => "",
+            //     "subdistrict_id" => 0
+            // ],
 
 
 

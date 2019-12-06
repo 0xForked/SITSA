@@ -31,4 +31,10 @@ class District extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function subdistricts()
+    {
+        return $this->hasMany('App\Models\Region\Subdistrict');
+    }
+
 }

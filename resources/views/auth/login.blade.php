@@ -14,7 +14,7 @@
                     >
                     <h4 class="text-dark font-weight-normal">
                         Selamat Datang di
-                        <span class="font-weight-bold">{{ config('app.name', 'laravel') }} v{{ config('app.version', '1') }}</span>
+                        <span class="font-weight-bold">{{ config('app.name', 'laravel') }} </span>
                     </h4>
                     <p class="text-muted">
                         Sebelum Anda mulai, Anda harus masuk atau mendaftar jika Anda belum memiliki akun.

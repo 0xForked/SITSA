@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea class="form-control h-auto" name="description"></textarea>
-                        </div>.
+                        </div>
                         <button
                             type="submit"
                             class="btn btn-primary float-right"

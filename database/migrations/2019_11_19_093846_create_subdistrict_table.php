@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUrbanVillagesTable extends Migration
+class CreateSubdistrictTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateUrbanVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ref_urban_villages', function (Blueprint $table) {
+        Schema::create('ref_subdistricts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code')->nullable();
             $table->string('name');
             $table->longText('description')->nullable();
-            $table->bigInteger('subdistrict_id')->unsigned()->index()->nullable();
+            $table->bigInteger('district_id')->unsigned()->index()->nullable();
             $table->timestamps();
+
+            $table->foreign('district_id')->references('id')->on('ref_districts');
         });
     }
 
@@ -30,6 +32,6 @@ class CreateUrbanVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_urban_villages');
+        Schema::dropIfExists('ref_subdistricts');
     }
 }

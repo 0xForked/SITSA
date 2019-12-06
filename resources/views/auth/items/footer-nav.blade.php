@@ -7,4 +7,5 @@
         <div class="bullet"></div>
         <a href="{{ route('helps') }}" target="_blank">Pusat Bantuan</a>
     </div>
+    <span class="badge badge-pill badge-light mt-3">v{{ config('app.version', '1') }}</span>
 </div>

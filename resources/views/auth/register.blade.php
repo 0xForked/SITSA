@@ -17,7 +17,7 @@
                 </h4>
                 <p class="text-muted">
                     Untuk mulai menggunakan
-                    <span class="font-weight-bold">{{ config('app.name', 'laravel') }} v{{ config('app.version', '1') }}</span>
+                    <span class="font-weight-bold">{{ config('app.name', 'laravel') }}</span>
                 </p>
 
                 <form method="POST" action="{{ route('register') }}">

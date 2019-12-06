@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label>Kode</label>
                             <input type="number" name="code" class="form-control">
-                        </div>.
+                        </div>
                         <button
                             type="submit"
                             class="btn btn-primary float-right"

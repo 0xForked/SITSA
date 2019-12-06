@@ -46,6 +46,11 @@
 
             .title {
                 font-size: 84px;
+                font-weight: bold;
+            }
+
+            .subtitle {
+                font-size: 28px;
             }
 
             .links > a {
@@ -55,12 +60,14 @@
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
-                text-transform: uppercase;
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 10px;
             }
+
+
+
         </style>
     </head>
     <body>
@@ -68,7 +75,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/route-verify') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -80,19 +87,15 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title">
+                    SITSA
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="subtitle m-b-md">
+                    SISTEM INFORMASI TERPADU SENSUS ANGGOTA
+                </div>
+                <div class="link">
+                    This App under Development by <a href="https://aasumitro.id">@aasumitro</a>,
+                    need more information? <a href="mailto:hello@aasumitro.id">Let's get in touch!</a>
                 </div>
             </div>
         </div>

@@ -93,6 +93,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
             'namespace' => 'Data\Region'
         ], function () {
 
+            Route::resource('districts', 'DistrictController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/districts', 'DistrictController@update')->name('districts.update');
+            Route::get('/districts/{id}/delete', 'DistrictController@destroy');
+
+            Route::resource('subdistricts', 'SubdistrictController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/subdistricts', 'SubdistrictController@update')->name('subdistricts.update');
+            Route::get('/subdistricts/{id}/delete', 'SubdistrictController@destroy');
+
+            Route::resource('urbanvillages', 'UrbanVillageController')
+            ->only(['index', 'show', 'store']);
+            Route::put('/urbanvillages', 'UrbanVillageController@update')->name('urbanvillages.update');
+            Route::get('/urbanvillages/{id}/delete', 'UrbanVillageController@destroy');
+
             Route::resource('topographies', 'TopographyController')
             ->only(['index', 'show', 'store']);
             Route::put('/topographies', 'TopographyController@update')->name('topographies.update');
