@@ -68,12 +68,10 @@ class AssetConditionController extends Controller
         $action = AssetCondition::create($condition);
 
         if (!$action) {
-            return redirect()->route('admin.general.assets.conditions.index')
-                ->with('error','Failed add new Asset condition');
+            return redirect()->back()->with('error','Failed add new Asset condition');
         }
 
-        return redirect()->route('admin.general.assets.conditions.index')
-                        ->with('success','Asset condition created successfully');
+        return redirect()->back()->with('success','Asset condition created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class AssetConditionController extends Controller
         $condition->description = $request->description;
         $condition->save();
 
-        return redirect()->route('admin.general.assets.conditions.index')
-                        ->with('success','Asset condition updated successfully');
+        return redirect()->back()->with('success','Asset condition updated successfully');
     }
 
     /**

@@ -68,12 +68,10 @@ class MaritalStatusController extends Controller
         $action = Marital::create($marital);
 
         if (!$action) {
-            return redirect()->route('admin.general.maritals.index')
-                ->with('error','Failed add new Marital Status');
+            return redirect()->back()->with('error','Failed add new Marital Status');
         }
 
-        return redirect()->route('admin.general.maritals.index')
-                        ->with('success','Marital status created successfully');
+        return redirect()->back()->with('success','Marital status created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class MaritalStatusController extends Controller
         $marital->description = $request->description;
         $marital->save();
 
-        return redirect()->route('admin.general.maritals.index')
-                        ->with('success','Marital status updated successfully');
+        return redirect()->back()->with('success','Marital status updated successfully');
     }
 
     /**

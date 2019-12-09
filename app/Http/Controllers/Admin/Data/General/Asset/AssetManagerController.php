@@ -68,12 +68,10 @@ class AssetManagerController extends Controller
         $action = AssetManager::create($manager);
 
         if (!$action) {
-            return redirect()->route('admin.general.assets.managers.index')
-                ->with('error','Failed add new Asset manager');
+            return redirect()->back()->with('error','Failed add new Asset manager');
         }
 
-        return redirect()->route('admin.general.assets.managers.index')
-                        ->with('success','Asset manager created successfully');
+        return redirect()->back()->with('success','Asset manager created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class AssetManagerController extends Controller
         $manager->description = $request->description;
         $manager->save();
 
-        return redirect()->route('admin.general.assets.managers.index')
-                        ->with('success','Asset manager updated successfully');
+        return redirect()->back()->with('success','Asset manager updated successfully');
     }
 
     /**

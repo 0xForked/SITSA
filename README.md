@@ -9,8 +9,5 @@ OR
 
 todo next
 
-create next region crud (district, subdistrict, urban village)
-
-add an relation between region data
-
 fixing app database migration schema and app sedder
+

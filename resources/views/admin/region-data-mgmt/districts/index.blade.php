@@ -33,6 +33,7 @@
                             <textarea class="form-control h-auto" name="description"></textarea>
                         </div>
                         <button
+                            onclick="showLoading()"
                             type="submit"
                             class="btn btn-primary float-right"
                         >

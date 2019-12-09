@@ -67,12 +67,10 @@ class RegionController extends Controller
         $action = Region::create($region);
 
         if (!$action) {
-            return redirect()->route('admin.region.regions.index')
-                ->with('error','Failed add new Region');
+            return redirect()->back()->with('error','Failed add new Region');
         }
 
-        return redirect()->route('admin.region.regions.index')
-                        ->with('success','Region created successfully');
+        return redirect()->back()->with('success','Region created successfully');
 
     }
 
@@ -94,8 +92,7 @@ class RegionController extends Controller
         $region->code = $request->code;
         $region->save();
 
-        return redirect()->route('admin.region.regions.index')
-                        ->with('success','Region updated successfully');
+        return redirect()->back()->with('success','Region updated successfully');
 
     }
 

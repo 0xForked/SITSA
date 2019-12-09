@@ -68,12 +68,10 @@ class FamilyTreeController extends Controller
         $action = FamilyTree::create($family_tree);
 
         if (!$action) {
-            return redirect()->route('admin.general.family-trees.index')
-                ->with('error','Failed add new Move type');
+            return redirect()->back()->with('error','Failed add new Move type');
         }
 
-        return redirect()->route('admin.general.family-trees.index')
-                        ->with('success','Move type created successfully');
+        return redirect()->back()->with('success','Move type created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class FamilyTreeController extends Controller
         $family_tree->description = $request->description;
         $family_tree->save();
 
-        return redirect()->route('admin.general.family-trees.index')
-                        ->with('success','Move type updated successfully');
+        return redirect()->back()->with('success','Move type updated successfully');
     }
 
     /**

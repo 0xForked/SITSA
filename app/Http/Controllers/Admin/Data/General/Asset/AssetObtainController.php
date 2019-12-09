@@ -68,12 +68,10 @@ class AssetObtainController extends Controller
         $action = AssetObtain::create($obtain);
 
         if (!$action) {
-            return redirect()->route('admin.general.assets.obtains.index')
-                ->with('error','Failed add new Asset obtain');
+            return redirect()->back()->with('error','Failed add new Asset obtain');
         }
 
-        return redirect()->route('admin.general.assets.obtains.index')
-                        ->with('success','Asset obtain created successfully');
+        return redirect()->back()->with('success','Asset obtain created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class AssetObtainController extends Controller
         $obtain->description = $request->description;
         $obtain->save();
 
-        return redirect()->route('admin.general.assets.obtains.index')
-                        ->with('success','Asset obtain updated successfully');
+        return redirect()->back()->with('success','Asset obtain updated successfully');
     }
 
     /**

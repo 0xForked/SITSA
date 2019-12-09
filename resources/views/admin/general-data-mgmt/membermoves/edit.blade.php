@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editMemberMoveType')"
                         type="submit"
                         class="btn btn-primary"
                     >

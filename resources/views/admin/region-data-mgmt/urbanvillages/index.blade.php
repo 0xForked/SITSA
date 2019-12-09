@@ -41,6 +41,7 @@
                             </select>
                         </div>
                         <button
+                            onclick="showLoading()"
                             type="submit"
                             class="btn btn-primary float-right"
                         >

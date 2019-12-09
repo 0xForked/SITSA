@@ -52,6 +52,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editBlood')"
                         type="submit"
                         class="btn btn-primary"
                     >

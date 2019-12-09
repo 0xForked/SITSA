@@ -68,12 +68,10 @@ class TrainingTypeController extends Controller
         $action = TrainingType::create($training);
 
         if (!$action) {
-            return redirect()->route('admin.general.trainings.index')
-                ->with('error','Failed add new Training type');
+            return redirect()->back()->with('error','Failed add new Training type');
         }
 
-        return redirect()->route('admin.general.trainings.index')
-                        ->with('success','Training type created successfully');
+        return redirect()->back()->with('success','Training type created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class TrainingTypeController extends Controller
         $training->description = $request->description;
         $training->save();
 
-        return redirect()->route('admin.general.trainings.index')
-                        ->with('success','Training type updated successfully');
+        return redirect()->back()->with('success','Training type updated successfully');
     }
 
     /**

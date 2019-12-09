@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editDisability')"
                         type="submit"
                         class="btn btn-primary"
                     >

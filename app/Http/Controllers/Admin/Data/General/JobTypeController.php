@@ -68,12 +68,10 @@ class JobTypeController extends Controller
         $action = JobType::create($job);
 
         if (!$action) {
-            return redirect()->route('admin.general.jobs.index')
-                ->with('error','Failed add new Job');
+            return redirect()->back()->with('error','Failed add new Job');
         }
 
-        return redirect()->route('admin.general.jobs.index')
-                        ->with('success','Job created successfully');
+        return redirect()->back()->with('success','Job created successfully');
 
     }
 
@@ -95,8 +93,7 @@ class JobTypeController extends Controller
         $job->description = $request->description;
         $job->save();
 
-        return redirect()->route('admin.general.jobs.index')
-                        ->with('success','Job updated successfully');
+        return redirect()->back()->with('success','Job updated successfully');
 
     }
 

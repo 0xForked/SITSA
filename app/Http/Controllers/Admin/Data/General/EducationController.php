@@ -68,12 +68,10 @@ class EducationController extends Controller
         $action = Education::create($education);
 
         if (!$action) {
-            return redirect()->route('admin.general.educations.index')
-                ->with('error','Failed add new Education');
+            return redirect()->back()->with('error','Failed add new Education');
         }
 
-        return redirect()->route('admin.general.educations.index')
-                        ->with('success','Education created successfully');
+        return redirect()->back()->with('success','Education created successfully');
 
     }
 
@@ -95,8 +93,7 @@ class EducationController extends Controller
         $education->description = $request->description;
         $education->save();
 
-        return redirect()->route('admin.general.educations.index')
-                        ->with('success','Education updated successfully');
+        return redirect()->back()->with('success','Education updated successfully');
 
     }
 

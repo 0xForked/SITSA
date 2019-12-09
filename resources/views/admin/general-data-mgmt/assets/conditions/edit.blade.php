@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editAssetCondition')"
                         type="submit"
                         class="btn btn-primary"
                     >

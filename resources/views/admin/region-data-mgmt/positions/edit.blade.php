@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editRegionPosition')"
                         type="submit"
                         class="btn btn-primary"
                     >

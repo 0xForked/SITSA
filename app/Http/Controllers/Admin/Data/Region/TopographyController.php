@@ -67,12 +67,10 @@ class TopographyController extends Controller
         $action = Topography::create($topography);
 
         if (!$action) {
-            return redirect()->route('admin.region.topographies.index')
-                ->with('error','Failed add new Topography');
+            return redirect()->back()->with('error','Failed add new Topography');
         }
 
-        return redirect()->route('admin.region.topographies.index')
-                        ->with('success','Topography created successfully');
+        return redirect()->back()->with('success','Topography created successfully');
 
     }
 
@@ -94,8 +92,7 @@ class TopographyController extends Controller
         $topography->code = $request->code;
         $topography->save();
 
-        return redirect()->route('admin.region.topographies.index')
-                        ->with('success','Topography updated successfully');
+        return redirect()->back()->with('success','Topography updated successfully');
 
     }
 

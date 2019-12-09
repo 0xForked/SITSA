@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editFamilyTree')"
                         type="submit"
                         class="btn btn-primary"
                     >

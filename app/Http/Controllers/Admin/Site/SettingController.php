@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
@@ -25,48 +28,33 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('admin.settings.app-setting');
+        $settings = to_assoc_array(Setting::all());
+        $disk = Storage::disk(config('backup.backup.destination.disks')[0]);
+        $files = $disk->files(config('backup.backup.name'));
+        $backups = [];
+        foreach ($files as $k => $f) {
+            if (substr($f, -4) == '.zip' && $disk->exists($f)) {
+                $backups[] = [
+                    'file_path' => $f,
+                    'file_name' => str_replace(config('backup.backup.name') . '/', '', $f),
+                    'file_size' => $disk->size($f),
+                    'last_modified' => $disk->lastModified($f),
+                ];
+            }
+        }
+        $backups = array_reverse($backups);
+
+        return view('admin.settings.app-setting', compact('settings', 'backups'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function updateGeneralData(Request $request)
     {
         //
     }
@@ -78,19 +66,9 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateContactData(Request $request)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -68,12 +68,10 @@ class RegionPositionController extends Controller
         $action = RegionPosition::create($position);
 
         if (!$action) {
-            return redirect()->route('admin.region.positions.index')
-                ->with('error','Failed add new Region Position');
+            return redirect()->back()->with('error','Failed add new Region Position');
         }
 
-        return redirect()->route('admin.region.positions.index')
-                        ->with('success','Region Position created successfully');
+        return redirect()->back()->with('success','Region Position created successfully');
 
     }
 
@@ -95,8 +93,7 @@ class RegionPositionController extends Controller
         $positions->description = $request->description;
         $positions->save();
 
-        return redirect()->route('admin.region.positions.index')
-                        ->with('success','Region Position updated successfully');
+        return redirect()->back()->with('success','Region Position updated successfully');
 
     }
 

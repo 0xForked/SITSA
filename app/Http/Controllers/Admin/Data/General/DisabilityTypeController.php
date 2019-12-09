@@ -68,12 +68,10 @@ class DisabilityTypeController extends Controller
         $action = DisabilityType::create($disability);
 
         if (!$action) {
-            return redirect()->route('admin.general.disabilities.index')
-                ->with('error','Failed add new Disability type');
+            return redirect()->back()->with('error','Failed add new Disability type');
         }
 
-        return redirect()->route('admin.general.disabilities.index')
-                        ->with('success','Disability type created successfully');
+        return redirect()->back()->with('success','Disability type created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class DisabilityTypeController extends Controller
         $disability->description = $request->description;
         $disability->save();
 
-        return redirect()->route('admin.general.disabilities.index')
-                        ->with('success','Disability type updated successfully');
+        return redirect()->back()->with('success','Disability type updated successfully');
     }
 
     /**

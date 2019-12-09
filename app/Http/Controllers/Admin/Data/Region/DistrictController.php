@@ -71,12 +71,10 @@ class DistrictController extends Controller
         $action = District::create($district);
 
         if (!$action) {
-            return redirect()->route('admin.region.districts.index')
-                ->with('error','Failed add new District');
+            return redirect()->back()->with('error','Failed add new District');
         }
 
-        return redirect()->route('admin.region.districts.index')
-                        ->with('success','District created successfully');
+        return redirect()->back()->with('success','District created successfully');
 
     }
 
@@ -99,8 +97,7 @@ class DistrictController extends Controller
         $district->description = $request->description;
         $district->save();
 
-        return redirect()->route('admin.region.districts.index')
-                        ->with('success','District updated successfully');
+        return redirect()->back()->with('success','District updated successfully');
 
     }
 

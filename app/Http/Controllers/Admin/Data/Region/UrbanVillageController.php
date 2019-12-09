@@ -73,12 +73,10 @@ class UrbanVillageController extends Controller
         $action = UrbanVillage::create($urban_village);
 
         if (!$action) {
-            return redirect()->route('admin.region.urbanvillages.index')
-                ->with('error','Failed add new Urban Village');
+            return redirect()->back()->with('error','Failed add new Urban Village');
         }
 
-        return redirect()->route('admin.region.urbanvillages.index')
-                        ->with('success','Urban Village created successfully');
+        return redirect()->back()->with('success','Urban Village created successfully');
 
     }
 
@@ -102,8 +100,7 @@ class UrbanVillageController extends Controller
         $urban_village->subdistrict_id = $request->subdistrict_id;
         $urban_village->save();
 
-        return redirect()->route('admin.region.urbanvillages.index')
-                        ->with('success','Urban Village updated successfully');
+        return redirect()->back()->with('success','Urban Village updated successfully');
 
     }
 

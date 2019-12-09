@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editEthnic')"
                         type="submit"
                         class="btn btn-primary"
                     >

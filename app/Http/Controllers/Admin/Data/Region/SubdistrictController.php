@@ -69,12 +69,10 @@ class SubdistrictController extends Controller
         $action = Subdistrict::create($district);
 
         if (!$action) {
-            return redirect()->route('admin.region.subdistricts.index')
-                ->with('error','Failed add new Subdistrict');
+            return redirect()->back()->with('error','Failed add new Subdistrict');
         }
 
-        return redirect()->route('admin.region.subdistricts.index')
-                        ->with('success','Subdistrict created successfully');
+        return redirect()->back()->with('success','Subdistrict created successfully');
 
     }
 
@@ -98,8 +96,7 @@ class SubdistrictController extends Controller
         $district->district_id = $request->district_id;
         $district->save();
 
-        return redirect()->route('admin.region.subdistricts.index')
-                        ->with('success','Subdistrict updated successfully');
+        return redirect()->back()->with('success','Subdistrict updated successfully');
 
     }
 

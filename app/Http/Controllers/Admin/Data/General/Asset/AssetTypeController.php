@@ -69,12 +69,10 @@ class AssetTypeController extends Controller
         $action = AssetType::create($type);
 
         if (!$action) {
-            return redirect()->route('admin.general.assets.types.index')
-                ->with('error','Failed add new Asset type');
+            return redirect()->back()->with('error','Failed add new Asset type');
         }
 
-        return redirect()->route('admin.general.assets.types.index')
-                        ->with('success','Asset type created successfully');
+        return redirect()->back()->with('success','Asset type created successfully');
     }
 
     /**
@@ -96,8 +94,7 @@ class AssetTypeController extends Controller
         $type->type = $request->type;
         $type->save();
 
-        return redirect()->route('admin.general.assets.types.index')
-                        ->with('success','Asset type updated successfully');
+        return redirect()->back()->with('success','Asset type updated successfully');
     }
 
     /**

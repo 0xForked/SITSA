@@ -53,6 +53,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editAssetType')"
                         type="submit"
                         class="btn btn-primary"
                     >

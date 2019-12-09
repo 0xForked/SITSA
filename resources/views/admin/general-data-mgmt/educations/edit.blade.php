@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editEducation')"
                         type="submit"
                         class="btn btn-primary"
                     >

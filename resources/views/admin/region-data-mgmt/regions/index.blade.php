@@ -29,6 +29,7 @@
                             <input type="number" name="code" class="form-control">
                         </div>
                         <button
+                            onclick="showLoading()"
                             type="submit"
                             class="btn btn-primary float-right"
                         >

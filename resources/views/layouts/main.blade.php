@@ -19,12 +19,15 @@
         <!-- Template CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
         @yield('custom-style')
 
     </head>
 
     <body class="@yield('body-class')">
+
+        @include('layouts._part.loading')
 
         @yield('body')
 
@@ -51,8 +54,13 @@
         <!-- Template JS File -->
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
         <script src="{{ asset('assets/js/custom.js') }}"></script>
-        <script src="{{ asset('assets/js/action-modal.js') }}"></script>
 
         @yield('custom-script')
     </body>
+
+    <script>
+        $(document).ready(function() {
+            $('#loading').hide();
+        });
+    </script>
 </html>

@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editAssetManager')"
                         type="submit"
                         class="btn btn-primary"
                     >

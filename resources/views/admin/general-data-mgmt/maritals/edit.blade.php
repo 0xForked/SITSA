@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editMarital')"
                         type="submit"
                         class="btn btn-primary"
                     >

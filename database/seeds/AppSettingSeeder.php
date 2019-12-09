@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Setting;
 use Illuminate\Database\Seeder;
 
 class AppSettingSeeder extends Seeder
@@ -11,7 +12,7 @@ class AppSettingSeeder extends Seeder
      */
     public function run()
     {
-        $data =[
+        $data = [
             [
                 'key' => 'site_title',
                 'value' => 'SITSA'
@@ -54,12 +55,16 @@ class AppSettingSeeder extends Seeder
             ],
             [
                 'key' => 'site_address_coordinate',
-                'value' => [1.1111, 124.1111]
+                'value' => json_encode([1.1111, 124.1111])
             ],
             [
                 'key' => 'site_db_last_backup',
                 'value' => 'NOT_SET'
             ],
         ];
+
+        foreach ($data as $setting) {
+            Setting::create($setting);
+        }
     }
 }

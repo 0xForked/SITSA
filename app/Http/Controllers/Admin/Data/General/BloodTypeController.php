@@ -71,8 +71,7 @@ class BloodTypeController extends Controller
         $blood->description = $request->description;
         $blood->save();
 
-        return redirect()->route('admin.general.bloods.index')
-                        ->with('success','Blood type updated successfully');
+        return redirect()->back()->with('success','Blood type updated successfully');
     }
 
     /**

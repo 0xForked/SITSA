@@ -17,6 +17,7 @@
                     @include('layouts._part.breadcrumb')
 
                     @yield('content')
+
                 </section>
             </div>
 

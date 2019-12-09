@@ -68,12 +68,10 @@ class EthnicController extends Controller
         $action = Ethnic::create($ethnic);
 
         if (!$action) {
-            return redirect()->route('admin.general.ethnics.index')
-                ->with('error','Failed add new Ethnic');
+            return redirect()->back()->with('error','Failed add new Ethnic');
         }
 
-        return redirect()->route('admin.general.ethnics.index')
-                        ->with('success','Ethnic created successfully');
+        return redirect()->back()->with('success','Ethnic created successfully');
 
     }
 
@@ -95,8 +93,7 @@ class EthnicController extends Controller
         $ethnic->description = $request->description;
         $ethnic->save();
 
-        return redirect()->route('admin.general.ethnics.index')
-                        ->with('success','Ethnic updated successfully');
+        return redirect()->back()->with('success','Ethnic updated successfully');
 
     }
 

@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editTopography')"
                         type="submit"
                         class="btn btn-primary"
                     >

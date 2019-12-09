@@ -68,12 +68,10 @@ class MemberMoveTypeController extends Controller
         $action = MemberMoveType::create($move);
 
         if (!$action) {
-            return redirect()->route('admin.general.member-moves.index')
-                ->with('error','Failed add new Move type');
+            return redirect()->back()->with('error','Failed add new Move type');
         }
 
-        return redirect()->route('admin.general.member-moves.index')
-                        ->with('success','Move type created successfully');
+        return redirect()->back()->with('success','Move type created successfully');
     }
 
     /**
@@ -94,8 +92,7 @@ class MemberMoveTypeController extends Controller
         $move->description = $request->description;
         $move->save();
 
-        return redirect()->route('admin.general.member-moves.index')
-                        ->with('success','Move type updated successfully');
+        return redirect()->back()->with('success','Move type updated successfully');
     }
 
     /**

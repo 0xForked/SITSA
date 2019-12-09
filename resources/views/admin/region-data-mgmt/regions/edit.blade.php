@@ -45,6 +45,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editRegion')"
                         type="submit"
                         class="btn btn-primary"
                     >

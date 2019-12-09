@@ -57,6 +57,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editSubdistrict')"
                         type="submit"
                         class="btn btn-primary"
                     >

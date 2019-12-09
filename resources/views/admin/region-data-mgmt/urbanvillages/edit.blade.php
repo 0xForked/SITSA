@@ -57,6 +57,7 @@
                     </button>
 
                     <button
+                        onclick="updateProcess('editUrbanVillage')"
                         type="submit"
                         class="btn btn-primary"
                     >

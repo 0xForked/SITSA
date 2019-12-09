@@ -77,7 +77,7 @@ class PermissionController extends Controller
         }
 
         return redirect()
-                ->route('admin.permissions.index')
+                ->back()
                 ->with('success','Permission created successfully');
 
     }
