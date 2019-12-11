@@ -73,7 +73,9 @@
                     id="pills-general"
                     role="tabpanel"
                     aria-labelledby="pills-general-tab">
-                    <form id="setting-form">
+                    <form id="setting-form" action="{{route('admin.app.setting.generals')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
                         <div class="card" id="settings-card">
                             <div class="card-header">
                                 <h4>General Settings</h4>
@@ -99,9 +101,9 @@
                                     <div class="col-sm-6 col-md-9">
                                         <div class="custom-file">
                                             <input type="file" name="site_logo" class="custom-file-input" id="site-logo">
-                                            <label class="custom-file-label">{{ $settings['site_logo']->value }}</label>
+                                            <label class="custom-file-label" id="site-logo-label">{{ $settings['site_logo']->value }}</label>
                                         </div>
-                                        <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                        <div class="form-text text-muted">The image must have a maximum size of 2MB</div>
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
@@ -109,26 +111,27 @@
                                     <div class="col-sm-6 col-md-9">
                                         <div class="custom-file">
                                             <input type="file" name="site_favicon" class="custom-file-input" id="site-favicon">
-                                            <label class="custom-file-label">{{ $settings['site_favicon']->value }}</label>
+                                            <label class="custom-file-label" id="site-favicon-label">{{ $settings['site_favicon']->value }}</label>
                                         </div>
-                                        <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                        <div class="form-text text-muted">The image must have a maximum size of 128kb</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer bg-whitesmoke text-md-right">
-                                <button class="btn btn-primary" id="save-btn">Save Changes</button>
+                                <button onclick="showLoading()" type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
                             </div>
                         </div>
                     </form>
                 </div>
-
 
                 <div
                     class="tab-pane fade"
                     id="pills-contact"
                     role="tabpanel"
                     aria-labelledby="pills-contact-tab">
-                    <form id="setting-form">
+                    <form id="setting-form" action="{{route('admin.app.setting.contacts')}}" method="POST">
+                        @csrf
+                        @method('PUT')
                         <div class="card" id="settings-card">
                             <div class="card-header">
                                 <h4>Contact Settings</h4>
@@ -140,19 +143,19 @@
                                 <div class="form-group row align-items-center">
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Alamat Kantor</label>
                                     <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="site_title" class="form-control" value="{{ $settings['site_address']->value }}">
+                                    <input type="text" name="site_address" class="form-control" value="{{ $settings['site_address']->value }}">
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Nomor Ponsel Kantor</label>
                                     <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="site_title" class="form-control" value="{{ $settings['site_phone']->value }}">
+                                    <input type="text" name="site_phone" class="form-control" value="{{ $settings['site_phone']->value }}">
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">E-Mail Kantor</label>
                                     <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="site_title" class="form-control" value="{{ $settings['site_email']->value }}">
+                                    <input type="text" name="site_email" class="form-control" value="{{ $settings['site_email']->value }}">
                                     </div>
                                 </div>
                                 <p class="text-muted">
@@ -161,19 +164,19 @@
                                 <div class="form-group row align-items-center">
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Facebook</label>
                                     <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="site_title" class="form-control" value="{{ $settings['site_facebook_link']->value }}">
+                                    <input type="text" name="site_facebook_link" class="form-control" value="{{ $settings['site_facebook_link']->value }}">
                                     </div>
                                 </div>
                                  <div class="form-group row align-items-center">
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Twitter</label>
                                     <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="site_title" class="form-control" value="{{ $settings['site_twitter_link']->value }}">
+                                    <input type="text" name="site_twitter_link" class="form-control" value="{{ $settings['site_twitter_link']->value }}">
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Instagram</label>
                                     <div class="col-sm-6 col-md-9">
-                                    <input type="text" name="site_title" class="form-control" value="{{ $settings['site_instagram_link']->value }}">
+                                    <input type="text" name="site_instagram_link" class="form-control" value="{{ $settings['site_instagram_link']->value }}">
                                     </div>
                                 </div>
                                 <p class="text-muted">
@@ -183,12 +186,14 @@
                                     <label for="site-title" class="form-control-label col-sm-3 text-md-right">Titik Kordinat</label>
                                     <div class="col-sm-6 col-md-9">
                                         <div class="row">
+                                            <input type="hidden" name="site_address_coordinate" value="true">
                                             <div class="col">
                                                 <div class="form-text text-muted">Latitude</div>
                                                 <input
                                                     type="text"
                                                     class="form-control"
                                                     placeholder="e.g: 1.121212"
+                                                    name="site_lat"
                                                     value="{{ extract_location_coordinate($settings['site_address_coordinate']->value)->lat}}"
                                                 >
                                             </div>
@@ -198,6 +203,7 @@
                                                     type="text"
                                                     class="form-control"
                                                     placeholder="e.g: 124.121212"
+                                                    name="site_lng"
                                                     value="{{extract_location_coordinate($settings['site_address_coordinate']->value)->lng}}"
                                                 >
                                             </div>
@@ -207,7 +213,7 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-whitesmoke text-md-right">
-                                <button class="btn btn-primary" id="save-btn">Save Changes</button>
+                                <button onclick="showLoading()" type="submit" class="btn btn-primary" >Save Changes</button>
                             </div>
                         </div>
                     </form>

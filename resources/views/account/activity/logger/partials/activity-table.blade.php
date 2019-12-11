@@ -138,7 +138,7 @@ if (Request::is('account/activity/cleared')) {
                     </td>
                     <td>
                         @if($hoverable)
-                            {{ cleanRouteUrl($activity->route) }}
+                            {{ clean_route_url($activity->route) }}
                         @else
                             <a href="{{ $activity->route }}">
                                 {{$activity->route}}

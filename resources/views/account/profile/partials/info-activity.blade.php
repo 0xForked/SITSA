@@ -39,7 +39,7 @@
                                     <span class="badge badge-{{ $methodClass }}">
                                         {{ $activity->methodType }}
                                     </span>
-                                    on <span href="#" class="badge badge-light">{{ cleanRouteUrl($activity->route) }}</span>
+                                    on <span href="#" class="badge badge-light">{{ clean_route_url($activity->route) }}</span>
                                     @php
                                         $eventTime = \Carbon\Carbon::parse($activity->created_at);
                                         $timePassed = $eventTime->diffForHumans();

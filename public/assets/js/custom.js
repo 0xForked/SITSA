@@ -8,6 +8,20 @@
 "use strict";
 
 /**
+ *  Show File Upload name to File upload label
+ *  file upload id must not equal with file upload label + add -label world
+ *  e.g on {input=file id="file-upload" } {label id="file-upload-label"}
+ */
+
+$(document).ready(function() {
+    $('input[type="file"]').change(function(e) {
+        var fileName = e.target.files[0].name;
+        var targetId = '#'+e.target.id + '-label'
+        $(targetId).text(fileName);
+    });
+});
+
+/**
  *  Show Loading Function
  *
  */
@@ -15,6 +29,7 @@
 function showLoading() {
     $('#loading').show();
 }
+
 
 /**
  *  Delete Function
@@ -43,5 +58,10 @@ function deleteProcess() {
 function updateProcess(modal) {
     var id = '#'+modal
     $(id).modal('hide');
+    showLoading()
+}
+
+function logoutProcess() {
+    $('#logoutModal').hide()
     showLoading()
 }

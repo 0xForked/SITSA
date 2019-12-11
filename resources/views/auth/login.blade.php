@@ -60,7 +60,7 @@
 
                         <div class="form-group text-right">
                             @if (Route::has('password.request'))
-                                <a  href="{{ route('password.request') }}" class="float-left mt-3">
+                                <a onclick="showLoading()" href="{{ route('password.request') }}" class="float-left mt-3">
                                     Lupa kata sandi?
                                 </a>
                             @endif
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="mt-5 text-center">
-                            Belum punya akun? <a href="{{ route('register') }}">Buat baru</a>
+                            Belum punya akun? <a onclick="showLoading()" href="{{ route('register') }}">Buat baru</a>
                         </div>
                     </form>
                     @include('auth.items.footer-nav')

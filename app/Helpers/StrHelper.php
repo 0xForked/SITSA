@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Carbon;
 
-if (!function_exists('cleanRouteUrl')) {
+if (!function_exists('clean_route_url')) {
     /**
      * Clean the url for the front end to display.
      *
@@ -10,7 +10,7 @@ if (!function_exists('cleanRouteUrl')) {
      *
      * @return echo string
      */
-    function cleanRouteUrl($link)
+    function clean_route_url($link)
     {
         $parsedUrl = parse_url($link);
         $routeUrl = '';
@@ -24,9 +24,9 @@ if (!function_exists('cleanRouteUrl')) {
     }
 }
 
-if (!function_exists('lastName')) {
+if (!function_exists('last_name')) {
     // use this function to get user last name from inline user full name
-    function lastName($name)
+    function last_name($name)
     {
         $splitName = explode(' ', $name);
         $lastNameIndex = (count($splitName)-1);
@@ -34,10 +34,10 @@ if (!function_exists('lastName')) {
     }
 }
 
-if (! function_exists('lastLoggedin')) {
+if (! function_exists('last_logged_in')) {
     // use this function to show currently logged in time
     // to user in local time and language
-    function lastLoggedin($date)
+    function last_logged_in($date)
     {
         $diff = $date->diffForHumans();
         return str_replace(
@@ -49,10 +49,10 @@ if (! function_exists('lastLoggedin')) {
 }
 
 
-if (! function_exists('currentGreeting')) {
+if (! function_exists('current_greeting')) {
     // use this function to return greeting message on user
     // in realtime with Carbon date and time library
-    function currentGreeting()
+    function current_greeting()
     {
         $hour = Carbon::now()->format('H');
         if ($hour < 11) return 'Selamat Pagi';

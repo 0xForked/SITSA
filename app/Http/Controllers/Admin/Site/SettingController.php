@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\Site;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
@@ -28,7 +27,7 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $settings = to_assoc_array(Setting::all());
+        $settings = app_settings();
         $disk = Storage::disk(config('backup.backup.destination.disks')[0]);
         $files = $disk->files(config('backup.backup.name'));
         $backups = [];
@@ -43,7 +42,6 @@ class SettingController extends Controller
             }
         }
         $backups = array_reverse($backups);
-
         return view('admin.settings.app-setting', compact('settings', 'backups'));
     }
 
@@ -56,7 +54,38 @@ class SettingController extends Controller
      */
     public function updateGeneralData(Request $request)
     {
-        //
+        $data = (Object)$request->only(
+            'site_title',
+            'site_description',
+            'site_logo',
+            'site_favicon'
+        );
+        foreach ($data as $key => $value) {
+            $setting = Setting::where('key', $key)->first();
+            if ($value != NULL) {
+                if ($setting->value != $value) {
+                    if ($key == 'site_logo') {
+                        $this->validate($request, [
+                            'site_logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                        ]);
+                    }
+                    if ($key == 'site_favicon') {
+                        $this->validate($request, [
+                            'site_favicon' => 'required|image|mimes:jpeg,png,jpg,svg,ico|max:128',
+                        ]);
+                    }
+                    if (is_file($value)) {
+                        $file_name = time()."_{$key}.{$value->getClientOriginalExtension()}";
+                        $file_path = 'assets/img/sites';
+                        $value->move($file_path, $file_name);
+                        $value = $file_name;
+                    }
+                    $setting->value = $value;
+                    $setting->save();
+                }
+            }
+        }
+        return redirect()->back()->with('success', 'Action success with out errors');
     }
 
     /**
@@ -68,7 +97,25 @@ class SettingController extends Controller
      */
     public function updateContactData(Request $request)
     {
-        //
+        $data = (Object)$request->only(
+            'site_address',
+            'site_phone',
+            'site_email',
+            'site_facebook_link',
+            'site_twitter_link',
+            'site_instagram_link',
+            'site_address_coordinate'
+        );
+        foreach ($data as $key => $value) {
+            $setting = Setting::where('key', $key)->first();
+            if ($value != NULL) {
+                if ($key == 'site_address_coordinate')
+                    $value = json_encode([$request->site_lat, $request->site_lng]);
+                $setting->value = $value;
+                $setting->save();
+            }
+        }
+        return redirect()->back()->with('success', 'Action success with out errors');
     }
 
 }

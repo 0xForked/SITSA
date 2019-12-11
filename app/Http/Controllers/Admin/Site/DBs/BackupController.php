@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Site\DBs;
 
-use Prologue\Alerts\Facades\Alert;
-use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
+use App\Models\Setting;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
@@ -16,6 +16,9 @@ class BackupController extends Controller
         try {
             Artisan::call('backup:run --only-db');
             Artisan::output();
+            Setting::where('key', 'site_db_last_backup')->update([
+                'value' => Carbon::now()->toDateTimeString()
+            ]);
             return redirect()->back()->with('success', 'Database backup successfully');
         } catch (Exception $e) {
             return redirect()->back()->with('error', "Failed create new backup ${e}.");

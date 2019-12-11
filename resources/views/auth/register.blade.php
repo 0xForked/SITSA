@@ -85,7 +85,7 @@
                         </button>
                     </div>
                     <div class="mt-5 text-center">
-                        Sudah punya akun? <a href="{{ route('login') }}">Masuk</a>
+                        Sudah punya akun? <a onclick="showLoading()" href="{{ route('login') }}">Masuk</a>
                     </div>
                 </form>
                 @include('auth.items.footer-nav')

@@ -68,11 +68,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('/home', 'HomeController@index')->name('home');
 
-        Route::get('/settings', 'Site\SettingController@index')->name('app.setting');
-        Route::get('/settings/databases/backup', 'Site\DBs\BackupController@create')->name('setting.database.backup');
-        Route::get('/settings/databases/download/{file_name}', 'Site\DBs\BackupController@download')->name('setting.database.download');
-        Route::get('/settings/databases/delete/{file_name}', 'Site\DBs\BackupController@delete')->name('setting.database.delete');
-
         Route::group([
             'namespace' => 'Data\User'
         ], function () {
@@ -210,6 +205,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         });
 
+
+
+        Route::group([
+            'namespace' => 'Site'
+        ], function () {
+
+            Route::get('/settings', 'SettingController@index')->name('app.setting');
+            Route::put('/settings/generals', 'SettingController@updateGeneralData')->name('app.setting.generals');
+            Route::put('/settings/contacts', 'SettingController@updateContactData')->name('app.setting.contacts');
+
+            Route::get('/settings/databases/backup', 'DBs\BackupController@create')->name('setting.database.backup');
+            Route::get('/settings/databases/download/{file_name}', 'DBs\BackupController@download')->name('setting.database.download');
+            Route::get('/settings/databases/delete/{file_name}', 'DBs\BackupController@delete')->name('setting.database.delete');
+
+        });
 
     });
 
