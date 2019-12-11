@@ -206,19 +206,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         });
 
 
-
         Route::group([
             'namespace' => 'Site'
         ], function () {
-
             Route::get('/settings', 'SettingController@index')->name('app.setting');
             Route::put('/settings/generals', 'SettingController@updateGeneralData')->name('app.setting.generals');
             Route::put('/settings/contacts', 'SettingController@updateContactData')->name('app.setting.contacts');
-
-            Route::get('/settings/databases/backup', 'DBs\BackupController@create')->name('setting.database.backup');
-            Route::get('/settings/databases/download/{file_name}', 'DBs\BackupController@download')->name('setting.database.download');
-            Route::get('/settings/databases/delete/{file_name}', 'DBs\BackupController@delete')->name('setting.database.delete');
-
+            Route::get('/settings/databases/backup', 'DatabaseSettingController@create')->name('setting.database.backup');
+            Route::get('/settings/databases/download/{file_name}', 'DatabaseSettingController@download')->name('setting.database.download');
+            Route::get('/settings/databases/delete/{file_name}', 'DatabaseSettingController@delete')->name('setting.database.delete');
+            Route::put('/settings/databases/restore', 'DatabaseSettingController@restore')->name('setting.database.restore');
         });
 
     });

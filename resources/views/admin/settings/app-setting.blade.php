@@ -314,15 +314,24 @@
                                                     Import skema basis data hasil export.
                                                     (tipe file adalah <a href="https://fileinfo.com/extension/sql">.sql</a>).
                                                 </p>
+                                                <form
+                                                    id="setting-form"
+                                                    action="{{route('admin.setting.database.restore')}}"
+                                                    method="POST"
+                                                    enctype="multipart/form-data"
+                                                >
+                                                    @csrf
+                                                    @method('PUT')
                                                     <div class="input-group">
                                                         <div class="custom-file text-left" style="margin-top:20px">
-                                                            <input type="file" name="database" class="custom-file-input" id="site-favicon">
-                                                            <label class="custom-file-label">Choose</label>
+                                                            <input type="file" name="site_database" class="custom-file-input" id="site-database">
+                                                            <label class="custom-file-label" id="site-database-label">Choose</label>
                                                         </div>
-                                                        <span class="input-group-btn">
-                                                            <a href="#" class="btn btn-primary mt-4 ml-2">Import</a>
-                                                        </span>
                                                     </div>
+                                                    <span class="input-group-btn">
+                                                        <button onclick="" type="submit" class="btn btn-primary mt-4 ml-2">Mulai Proses Restorasi</button>
+                                                    </span>
+                                                </form>
                                                 <a href="#" class="mt-4 bb">Butuh bantuan?</a>
                                             </div>
                                         </div>
@@ -333,8 +342,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
             </div>
         </div>

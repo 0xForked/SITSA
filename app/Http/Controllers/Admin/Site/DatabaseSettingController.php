@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Site\DBs;
+namespace App\Http\Controllers\Admin\Site;
 
 use Carbon\Carbon;
 use App\Models\Setting;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 
-class BackupController extends Controller
+class DatabaseSettingController extends Controller
 {
 
     public function create()
@@ -61,5 +62,25 @@ class BackupController extends Controller
         } else {
             return redirect()->back()->with('error', "The backup file doesn't exist.");
         }
+    }
+
+
+    public function restore(Request $request)
+    {
+        // store function
+        $file_original_ext = $request->site_database->getClientOriginalExtension();
+        if($file_original_ext !== 'sql') { // pathinfo($file_original_name, PATHINFO_EXTENSION)
+            return redirect()->back()->with('error', "Failed to restore database, Invalid sql file.");
+        }
+        $file_new_name = "_database_restore.{$file_original_ext}";
+        $request->site_database->storeAs('restore/', $file_new_name);
+
+        // validate function
+        $disk = Storage::disk('restore');
+        if (!$disk->exists($file_new_name)) {
+            return redirect()->back()->with('error', "Failed to restore database, Sql file not found.");
+        }
+
+        // migration/database restore function
     }
 }

@@ -62,6 +62,13 @@ return [
             'visibility' => 'backups',
         ],
 
+        'restore' => [
+            'driver' => 'local',
+            'root' => storage_path('app/restore'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'restore',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

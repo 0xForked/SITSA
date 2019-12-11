@@ -11,3 +11,4 @@ todo next
 
 fixing app database migration schema and app sedder
 
+add restore database function
