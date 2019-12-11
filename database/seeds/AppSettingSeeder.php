@@ -47,11 +47,11 @@ class AppSettingSeeder extends Seeder
             ],
             [
                 'key' => 'site_twitter_link',
-                'value' => 'twitter.com/sitsa'
+                'value' => 'https://twitter.com/sitsa'
             ],
             [
                 'key' => 'site_instagram_link',
-                'value' => 'instagram.com/sitsa'
+                'value' => 'https://instagram.com/sitsa'
             ],
             [
                 'key' => 'site_address_coordinate',
