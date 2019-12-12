@@ -1873,409 +1873,1490 @@ class GeneralTableSeeder extends Seeder
                 "name" => "SINSINGON TIMUR",
                 "subdistrict_id" => 13
             ],
-            // [
-            //     "name" => "",
-            //     "subdistrict_id" => 0
-            // ],
-            // [
-            //     "name" => "",
-            //     "subdistrict_id" => 0
-            // ],
+            [
+                "name" => "GOGALUMAN",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "MARIRI BARU",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "MARIRI I",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "MARIRI II",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "MARIRI LAMA",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "MONDATONG",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "MONDATONG BARU",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "NANASI",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "NONAPAN",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "NONAPAN I",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "NONAPAN II",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "PERS NANASI TIMUR",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "PERS NONAPAN BARU",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "POIGAR I",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "POIGAR II",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "POIGAR III",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "POMOMAN",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "TANJUNG MARIRI",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "TIBERIAS",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "WINERU",
+                "subdistrict_id" => 14
+            ],
+            [
+                "name" => "AYONG",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "BABO",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "BATU MERAH",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "BOLANGAT",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "BOLANGAT TIMUR",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "CEMPAKA",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "DOMISIL MOONOW",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "LOLANAN",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "MAELANG",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "PANGI",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "PANGI TIMUR",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "PASIR PUTIH",
+                "subdistrict_id" => 15
+            ],
+            [
+                "name" => "BAKIDA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "BINIHA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "BINIHA TIMUR",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "DUDEPO",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "DUMINANGA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "MOLIBAGU",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "PANGIA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "PINOLANTUNGAN",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "POPODU",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "SALONGO",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "SIANANDAKA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "SOGUO",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "SONDANA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "SOPUTA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "TABILAA",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "TANGAGAH",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "TOLONDADU",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "TOLONDADU I",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "TOLONDADU II",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "TOLUAYU",
+                "subdistrict_id" => 16
+            ],
+            [
+                "name" => "ILOMATA",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "KOMBOT",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "LINAWAN",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "LINAWAN I",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "LUNGKAP",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "NUNUK",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "PINOLOSIAN",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "PINOLOSIAN SELATAN",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "TOLOTOYAN",
+                "subdistrict_id" => 17
+            ],
+            [
+                "name" => "ADOW",
+                "subdistrict_id" => 18
+            ],
+            [
+                "name" => "ADOW SELATAN",
+                "subdistrict_id" => 18
+            ],
+            [
+                "name" => "DEAGA",
+                "subdistrict_id" => 18
+            ],
+            [
+                "name" => "MATAINDO",
+                "subdistrict_id" => 18
+            ],
+            [
+                "name" => "TOBAYAGAN",
+                "subdistrict_id" => 18
+            ],
+            [
+                "name" => "TOROSIK",
+                "subdistrict_id" => 18
+            ],
+            [
+                "name" => "DAYOW",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "DUMAGIN A",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "DUMAGIN B",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "ILIGON",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "MATANDOI",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "MODISI",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "ONGGUNOI",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "PIDUNG",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "POSILAGON",
+                "subdistrict_id" => 19
+            ],
+            [
+                "name" => "BOTULIODU",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "LION",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "LUWOO",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "MANGGADAA",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "MEYAMBANGA",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "MILANGODAA",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "MILANGODAA BARAT",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "MOMALIA I",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "MOMALIA II",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "PILOLAHUNGA",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "SAIBUAH",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "SAKTI",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "SINOMBAYUGA",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "TOLUTU",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "TONALA",
+                "subdistrict_id" => 20
+            ],
+            [
+                "name" => "BUKAKA",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BULAWAN",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BULAWAN DUA",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BULAWAN SATU",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BUYAT",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BUYAT BARAT",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BUYAT I",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BUYAT II",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BUYAT SELATAN",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BUYAT TENGAH",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "KOTABUNAN",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "KOTABUNAN BARAT",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "KOTABUNAN SELATAN",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "PARET",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "PARET TIMUR",
+                "subdistrict_id" => 21
+            ],
+            [
+                "name" => "BADARO",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "BONGKUDAI BARU",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "BONGKUDAI SELATAN",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "BONGKUDAI TIMUR",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "BONGKUDAI UTARA",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "BUYANDI",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "CANDI REJO",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "GUAAN",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "KOKAPOI",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "KOKAPOI TIMUR",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "LANUT",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "LIBERIA",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "LIBERIA TIMUR",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MOAT",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MODAYAG",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MODAYAG BARAT",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MODAYAG III",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MODAYAG TIMUR",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MOKITOMPIA",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "MOTOTOMPIAN",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "PURWOREJO",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "PURWOREJO TENGAH",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "PURWOREJO TIMUR",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "SUMBER REJO",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "TOBONGON",
+                "subdistrict_id" => 22
+            ],
+            [
+                "name" => "BANGKUDAI BARAT",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "BANGUNAN WUWUK",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "BANGUNAN WUWUK TIMUR",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "BONGKUDAI",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "INATON",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "MOONOW",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "MOYONGKOTA",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "MOYONGKOTA BARU",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "PINONOBATUAN",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "TANGATON",
+                "subdistrict_id" => 23
+            ],
+            [
+                "name" => "ATOGA",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "ATOGA TIMUR",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "BAI",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "IDUMUN",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "IYOK",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "JIKO",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "JIKO BELANGA",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "JIKO UTARA",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "LOYOW",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MATABULU",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MATABULU TIMUR",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOLOBOG",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOLOBOG BARAT",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOLOBOG TIMUR",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOTONGKAD",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOTONGKAD SELATAN",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOTONGKAD TENGAH",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "MOTONGKAD UTARA",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "NUANGAN",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "NUANGAN BARAT",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "NUANGAN I",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "NUANGAN SELATAN",
+                "subdistrict_id" => 24
+            ],
+            [
+                "name" => "DODAP",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "DODAP PANTAI",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "DODOP MIKASA",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "KAYUMOYONDI",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "TOGID",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "TOMBOLIKAT",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "TOMBOLIKAT SELATAN",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "TUTUYAN",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "TUTUYAN II",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "TUTUYAN III",
+                "subdistrict_id" => 25
+            ],
+            [
+                "name" => "BATULINTIK",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "BINTAUNA",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "BINTAUNA PANTAI",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "BUNIA",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "BUNONG",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "HUNTUK",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "KOPI",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "KUHANGA",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "MINANGA",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "MOME",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "PADANG",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "PADANG BARAT",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "PIMPI",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "TALAGA",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "VAHUTA",
+                "subdistrict_id" => 26
+            ],
+            [
+                "name" => "BOLANGITANG",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "BOLANGITANG I",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "BOLANGITANG II",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "IYOK",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "JAMBUSARANG",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "KEIMANGA",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "LANGI",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "OLLOT",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "OLLOT I",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "OLLOT II",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "PAKU",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "PAKU SELATAN",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "SONUO",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "TALAGA",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "TALAGA TOMOAGU",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "TANJUNG BUAYA",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "TOTE",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "WAKAT",
+                "subdistrict_id" => 27
+            ],
+            [
+                "name" => "BINJEITA",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BINJEITA I",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BINJEITA II",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BINUANGA",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BINUNI",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BIONTONG",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BIONTONG I",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BIONTONG II",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BOHABAK I",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BOHABAK II",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BOHABAK III",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BOHABAK IV",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "LIPU BOGU",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "MOKODITEK",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "MOKODITEK I",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "NAGARA",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "NUNUKA",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "SALEO",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "SALEO SATU",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "TANJUNG LABOU",
+                "subdistrict_id" => 28
+            ],
+            [
+                "name" => "BIGO",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "BIGO SELATAN",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "BOROKO",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "BOROKO TIMUR",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "BOROKO UTARA",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "GIHANG",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "INOMUNGA",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "INOMUNGA UTARA",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "KOMUS DUA TIMUR",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "KOMUS II",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "KUALA",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "KUALA UTARA",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "PONTAK",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "SOLIGIR",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "SOLO",
+                "subdistrict_id" => 29
+            ],
+            [
+                "name" => "BATU BANTAYO",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "BATU TAJAM",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "BUKO",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "BUKO SELATAN",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "BUKO UTARA",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "BUSATO",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "DALAPULI",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "DALAPULI BARAT",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "DALAPULI TIMUR",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "DENGI",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "DUINI",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "KAYU OGU",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "KOMUS I",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "PADANGO",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TAMBULONG PANTAI",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TAMBULONG TIMUR",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TANJUNG SIDUPA",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TINTULOW UTARA",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TOMBULANG",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TUNTULOW",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TUNTUNG",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "TUNTUNG TIMUR",
+                "subdistrict_id" => 30
+            ],
+            [
+                "name" => "AMPENG SEMBEKA",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "BUSISINGO",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "BUSISINGO UTARA",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "MOKUSATO",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "MONOMPIA",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "PANGKUSA",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SAMPIRO",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SANGKUB I",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SANGKUB II",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SANGKUB III",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SANGKUB TIMUR",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SANGLUP EMPAT",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SANGTOMBOLANG",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SIDODADI",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "SUKA MAKMUR",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "TOMBOLANGO",
+                "subdistrict_id" => 31
+            ],
+            [
+                "name" => "BUANG",
+                "subdistrict_id" => 32
+            ],
+            [
+                "name" => "DALINSAHENG",
+                "subdistrict_id" => 32
+            ],
+            [
+                "name" => "KARUNGO",
+                "subdistrict_id" => 32
+            ],
+            [
+                "name" => "LAMANGGO",
+                "subdistrict_id" => 32
+            ],
+            [
+                "name" => "TOPE",
+                "subdistrict_id" => 32
+            ],
+            [
+                "name" => "BUMBIHA",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "KANAWONG",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "LEHI",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "MAKALEHI",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "MAKALEHI TIMUR",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "MAKALEHI UTARA",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "ONDONG",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "PANIKI",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "PASENG",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "PEHE",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "PELING",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "PELING SAWANG",
+                "subdistrict_id" => 33
+            ],
+            [
+                "name" => "BATUSENGGO",
+                "subdistrict_id" => 34
+            ],
+            [
+                "name" => "KAPETA",
+                "subdistrict_id" => 34
+            ],
+            [
+                "name" => "LAGHAENG",
+                "subdistrict_id" => 34
+            ],
+
+            [
+                "name" => "MAHUNENI",
+                "subdistrict_id" => 34
+            ],
+            [
+                "name" => "MAKOA",
+                "subdistrict_id" => 34
+            ],
+            [
+                "name" => "TALAWID",
+                "subdistrict_id" => 34
+            ],
+            [
+                "name" => "TANAKI",
+                "subdistrict_id" => 34
+            ],
+            [
+                "name" => "BATUBULAN",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "HIUNG",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "KAWAHANG",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "KIAWANG",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "KINALI",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "MINI",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "NAMENG",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "WINANGUN",
+                "subdistrict_id" => 35
+            ],
+            [
+                "name" => "BEONG",
+                "subdistrict_id" => 36
+            ],
+            [
+                "name" => "DOMPASE",
+                "subdistrict_id" => 36
+            ],
+            [
+                "name" => "LAI",
+                "subdistrict_id" => 36
+            ],
+            [
+                "name" => "SALILI",
+                "subdistrict_id" => 36
+            ],
+            [
+                "name" => "AKESIMBEKA",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "APELAWO",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "BAHU",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "BEBALI",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "BUISE",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "BUKIDE",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "DAME",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "DAME",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "DEAHE",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "KANANG",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "KARALUNG",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "KARALUNG SATU",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "LIA",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "LIA SATU",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "TARORANE",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "TATAHADENG",
+                "subdistrict_id" => 37
+            ],
+            [
+                "name" => "BALIRANGENG",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "BANDIL",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "BIAU",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "BIAU SEHA",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "BINALU",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "BUHIAS",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "KALIHIANG",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "LAHOPANG",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "MALA",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "MATOLE",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "PAHEPA",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "PANGIROLONG",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "SAWANG",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "TAPILE",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "APENGSALA",
+                "subdistrict_id" => 38
+            ],
+            [
+                "name" => "BAHOI",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "BALEHUMARA",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "BARANGKA PEHE",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "BOTO",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "HAASI",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "LAINGPATEHI",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "LESAH",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "LESAH RENDE",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "MAHANGIANG",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "MOHONGSAWANG",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "MULENGAN",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "PAHIAMA",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "PUMPENTE",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "TULUSAN",
+                "subdistrict_id" => 39
+            ],
+            [
+                "name" => "BATUMAWIRA",
+                "subdistrict_id" => 40
+            ],
+            [
+                "name" => "BIRA KIAMA",
+                "subdistrict_id" => 40
+            ],
+            [
+                "name" => "BIRARIKEI",
+                "subdistrict_id" => 40
+            ],
+            [
+                "name" => "BUHA",
+                "subdistrict_id" => 40
+            ],
+            [
+                "name" => "HUMBIA",
+                "subdistrict_id" => 40
+            ],
+            [
+                "name" => "KISIHANG",
+                "subdistrict_id" => 40
+            ],
 
 
 
-            // " GOGALUMAN",14,1
-            // " MARIRI BARU",14,2
-            // " MARIRI I",14,3
-            // " MARIRI II",14,4
-            // " MARIRI LAMA",14,5
-            // " MONDATONG",14,6
-            // " MONDATONG BARU",14,7
-            // " NANASI",14,8
-            // " NONAPAN",14,9
-            // " NONAPAN I",14,10
-            // " NONAPAN II",14,11
-            // " PERS NANASI TIMUR",14,12
-            // " PERS NONAPAN BARU",14,13
-            // " POIGAR I",14,14
-            // " POIGAR II",14,15
-            // " POIGAR III",14,16
-            // " POMOMAN",14,17
-            // " TANJUNG MARIRI",14,18
-            // " TIBERIAS",14,19
-            // " WINERU",14,20
 
-            // " AYONG",15,1
-            // " BABO",15,2
-            // " BATU MERAH",15,3
-            // " BOLANGAT",15,4
-            // " BOLANGAT TIMUR",15,5
-            // " CEMPAKA",15,6
-            // " DOMISIL MOONOW",15,7
-            // " LOLANAN",15,8
-            // " MAELANG",15,9
-            // " PANGI",15,10
-            // " PANGI TIMUR",15,11
-            // " PASIR PUTIH",15,12
 
-            // " BAKIDA",16,1
-            // " BINIHA",16,2
-            // " BINIHA TIMUR",16,3
-            // " DUDEPO",16,4
-            // " DUMINANGA",16,5
-            // " MOLIBAGU",16,6
-            // " PANGIA",16,7
-            // " PINOLANTUNGAN",16,8
-            // " POPODU",16,9
-            // " SALONGO",16,10
-            // " SIANANDAKA",16,11
-            // " SOGUO",16,12
-            // " SONDANA",16,13
-            // " SOPUTA",16,14
-            // " TABILAA",16,15
-            // " TANGAGAH",16,16
-            // " TOLONDADU",16,17
-            // " TOLONDADU I",16,18
-            // " TOLONDADU II",16,19
-            // " TOLUAYU",16,20
 
-            // " ILOMATA",17,1
-            // " KOMBOT",17,2
-            // " LINAWAN",17,3
-            // " LINAWAN I",17,4
-            // " LUNGKAP",17,5
-            // " NUNUK",17,6
-            // " PINOLOSIAN",17,7
-            // " PINOLOSIAN SELATAN",17,8
-            // " TOLOTOYAN",17,9
 
-            // " ADOW",18,1
-            // " ADOW SELATAN",18,2
-            // " DEAGA",18,3
-            // " MATAINDO",18,4
-            // " TOBAYAGAN",18,5
-            // " TOROSIK",18,6
 
-            // " DAYOW",19,1
-            // " DUMAGIN A",19,2
-            // " DUMAGIN B",19,3
-            // " ILIGON",19,4
-            // " MATANDOI",19,5
-            // " MODISI",19,6
-            // " ONGGUNOI",19,7
-            // " PIDUNG",19,8
-            // " POSILAGON",19,9
 
-            // " BOTULIODU",20,1
-            // " LION",20,2
-            // " LUWOO",20,3
-            // " MANGGADAA",20,4
-            // " MEYAMBANGA",20,5
-            // " MILANGODAA",20,6
-            // " MILANGODAA BARAT",20,7
-            // " MOMALIA I",20,8
-            // " MOMALIA II",20,9
-            // " PILOLAHUNGA",20,10
-            // " SAIBUAH",20,11
-            // " SAKTI",20,12
-            // " SINOMBAYUGA",20,13
-            // " TOLUTU",20,14
-            // " TONALA",20,15
 
-            // " BUKAKA",21,1
-            // " BULAWAN",21,2
-            // " BULAWAN DUA",21,3
-            // " BULAWAN SATU",21,4
-            // " BUYAT",21,5
-            // " BUYAT BARAT",21,6
-            // " BUYAT I",21,7
-            // " BUYAT II",21,8
-            // " BUYAT SELATAN",21,9
-            // " BUYAT TENGAH",21,10
-            // " KOTABUNAN",21,11
-            // " KOTABUNAN BARAT",21,12
-            // " KOTABUNAN SELATAN",21,13
-            // " PARET",21,14
-            // " PARET TIMUR",21,15
 
-            // " BADARO",22,1
-            // " BONGKUDAI BARU",22,2
-            // " BONGKUDAI SELATAN",22,3
-            // " BONGKUDAI TIMUR",22,4
-            // " BONGKUDAI UTARA",22,5
-            // " BUYANDI",22,6
-            // " CANDI REJO",22,7
-            // " GUAAN",22,8
-            // " KOKAPOI",22,9
-            // " KOKAPOI TIMUR",22,10
-            // " LANUT",22,11
-            // " LIBERIA",22,12
-            // " LIBERIA TIMUR",22,13
-            // " MOAT",22,14
-            // " MODAYAG",22,15
-            // " MODAYAG BARAT",22,16
-            // " MODAYAG III",22,17
-            // " MODAYAG TIMUR",22,18
-            // " MOKITOMPIA",22,19
-            // " MOTOTOMPIAN",22,20
-            // " PURWOREJO",22,21
-            // " PURWOREJO TENGAH",22,22
-            // " PURWOREJO TIMUR",22,23
-            // " SUMBER REJO",22,24
-            // " TOBONGON",22,25
 
-            // " BANGKUDAI BARAT",23,1
-            // " BANGUNAN WUWUK",23,2
-            // " BANGUNAN WUWUK TIMUR",23,3
-            // " BONGKUDAI",23,4
-            // " INATON",23,5
-            // " MOONOW",23,6
-            // " MOYONGKOTA",23,7
-            // " MOYONGKOTA BARU",23,8
-            // " PINONOBATUAN",23,9
-            // " TANGATON",23,10
-
-            // " ATOGA",24,1
-            // " ATOGA TIMUR",24,2
-            // " BAI",24,3
-            // " IDUMUN",24,4
-            // " IYOK",24,5
-            // " JIKO",24,6
-            // " JIKO BELANGA",24,7
-            // " JIKO UTARA",24,8
-            // " LOYOW",24,9
-            // " MATABULU",24,10
-            // " MATABULU TIMUR",24,11
-            // " MOLOBOG",24,12
-            // " MOLOBOG BARAT",24,13
-            // " MOLOBOG TIMUR",24,14
-            // " MOTONGKAD",24,15
-            // " MOTONGKAD SELATAN",24,16
-            // " MOTONGKAD TENGAH",24,17
-            // " MOTONGKAD UTARA",24,18
-            // " NUANGAN",24,19
-            // " NUANGAN BARAT",24,20
-            // " NUANGAN I",24,21
-            // " NUANGAN SELATAN",24,22
-
-            // " DODAP",25,1
-            // " DODAP PANTAI",25,2
-            // " DODOP MIKASA",25,3
-            // " KAYUMOYONDI",25,4
-            // " TOGID",25,5
-            // " TOMBOLIKAT",25,6
-            // " TOMBOLIKAT SELATAN",25,7
-            // " TUTUYAN",25,8
-            // " TUTUYAN II",25,9
-            // " TUTUYAN III",25,10
-
-            // " BATULINTIK",26,1
-            // " BINTAUNA",26,2
-            // " BINTAUNA PANTAI",26,3
-            // " BUNIA",26,4
-            // " BUNONG",26,5
-            // " HUNTUK",26,6
-            // " KOPI",26,7
-            // " KUHANGA",26,8
-            // " MINANGA",26,9
-            // " MOME",26,10
-            // " PADANG",26,11
-            // " PADANG BARAT",26,12
-            // " PIMPI",26,13
-            // " TALAGA",26,14
-            // " VAHUTA",26,15
-
-            // " BOLANGITANG",27,1
-            // " BOLANGITANG I",27,2
-            // " BOLANGITANG II",27,3
-            // " IYOK",27,4
-            // " JAMBUSARANG",27,5
-            // " KEIMANGA",27,6
-            // " LANGI",27,7
-            // " OLLOT",27,8
-            // " OLLOT I",27,9
-            // " OLLOT II",27,10
-            // " PAKU",27,11
-            // " PAKU SELATAN",27,12
-            // " SONUO",27,13
-            // " TALAGA",27,14
-            // " TALAGA TOMOAGU",27,15
-            // " TANJUNG BUAYA",27,16
-            // " TOTE",27,17
-            // " WAKAT",27,18
-
-            // " BINJEITA",28,1
-            // " BINJEITA I",28,2
-            // " BINJEITA II",28,3
-            // " BINUANGA",28,4
-            // " BINUNI",28,5
-            // " BIONTONG",28,6
-            // " BIONTONG I",28,7
-            // " BIONTONG II",28,8
-            // " BOHABAK I",28,9
-            // " BOHABAK II",28,10
-            // " BOHABAK III",28,11
-            // " BOHABAK IV",28,12
-            // " LIPU BOGU",28,13
-            // " MOKODITEK",28,14
-            // " MOKODITEK I",28,15
-            // " NAGARA",28,16
-            // " NUNUKA",28,17
-            // " SALEO",28,18
-            // " SALEO SATU",28,19
-            // " TANJUNG LABOU",28,20
-
-            // " BIGO",29,1
-            // " BIGO SELATAN",29,2
-            // " BOROKO",29,3
-            // " BOROKO TIMUR",29,4
-            // " BOROKO UTARA",29,5
-            // " GIHANG",29,6
-            // " INOMUNGA",29,7
-            // " INOMUNGA UTARA",29,8
-            // " KOMUS DUA TIMUR",29,9
-            // " KOMUS II",29,10
-            // " KUALA",29,11
-            // " KUALA UTARA",29,12
-            // " PONTAK",29,13
-            // " SOLIGIR",29,14
-            // " SOLO",29,15
-
-            // " BATU BANTAYO",30,1
-            // " BATU TAJAM",30,2
-            // " BUKO",30,3
-            // " BUKO SELATAN",30,4
-            // " BUKO UTARA",30,5
-            // " BUSATO",30,6
-            // " DALAPULI",30,7
-            // " DALAPULI BARAT",30,8
-            // " DALAPULI TIMUR",30,9
-            // " DENGI",30,10
-            // " DUINI",30,11
-            // " KAYU OGU",30,12
-            // " KOMUS I",30,13
-            // " PADANGO",30,14
-            // " TAMBULONG PANTAI",30,15
-            // " TAMBULONG TIMUR",30,16
-            // " TANJUNG SIDUPA",30,17
-            // " TINTULOW UTARA",30,18
-            // " TOMBULANG",30,19
-            // " TUNTULOW",30,20
-            // " TUNTUNG",30,21
-            // " TUNTUNG TIMUR",30,22
-
-            // " AMPENG SEMBEKA",31,1
-            // " BUSISINGO",31,2
-            // " BUSISINGO UTARA",31,3
-            // " MOKUSATO",31,4
-            // " MONOMPIA",31,5
-            // " PANGKUSA",31,6
-            // " SAMPIRO",31,7
-            // " SANGKUB I",31,8
-            // " SANGKUB II",31,9
-            // " SANGKUB III",31,10
-            // " SANGKUB TIMUR",31,11
-            // " SANGLUP EMPAT",31,12
-            // " SANGTOMBOLANG",31,13
-            // " SIDODADI",31,14
-            // " SUKA MAKMUR",31,15
-            // " TOMBOLANGO",31,16
-
-            // " BUANG",32,1
-            // " DALINSAHENG",32,2
-            // " KARUNGO",32,3
-            // " LAMANGGO",32,4
-            // " TOPE",32,5
-            // " BUMBIHA",33,1
-            // " KANAWONG",33,2
-            // " LEHI",33,3
-            // " MAKALEHI",33,4
-            // " MAKALEHI TIMUR",33,5
-            // " MAKALEHI UTARA",33,6
-            // " ONDONG",33,7
-            // " PANIKI",33,8
-            // " PASENG",33,9
-            // " PEHE",33,10
-            // " PELING",33,11
-            // " PELING SAWANG",33,12
-
-            // " BATUSENGGO",34,1
-            // " KAPETA",34,2
-            // " LAGHAENG",34,3
-            // " MAHUNENI",34,4
-            // " MAKOA",34,5
-            // " TALAWID",34,6
-            // " TANAKI",34,7
-
-            // " BATUBULAN",35,1
-            // " HIUNG",35,2
-            // " KAWAHANG",35,3
-            // " KIAWANG",35,4
-            // " KINALI",35,5
-            // " MINI",35,6
-            // " NAMENG",35,7
-            // " WINANGUN",35,8
-            // " BEONG",36,1
-            // " DOMPASE",36,2
-            // " LAI",36,3
-            // " SALILI",36,4
-            // " AKESIMBEKA",37,1
-            // " APELAWO",37,2
-            // " BAHU",37,3
-            // " BEBALI",37,4
-            // " BUISE",37,5
-            // " BUKIDE",37,6
-            // " DAME",37,7
-            // " DAME I",37,8
-            // " DEAHE",37,9
-            // " KANANG",37,10
-            // " KARALUNG",37,11
-            // " KARALUNG SATU",37,12
-            // " LIA",37,13
-            // " LIA SATU",37,14
-            // " TARORANE",37,15
-            // " TATAHADENG",37,16
-            // " BALIRANGENG",38,1
-            // " BANDIL",38,2
-            // " BIAU",38,3
-            // " BIAU SEHA",38,4
-            // " BINALU",38,5
-            // " BUHIAS",38,6
-            // " KALIHIANG",38,7
-            // " LAHOPANG",38,8
-            // " MALA",38,9
-            // " MATOLE",38,10
-            // " PAHEPA",38,11
-            // " PANGIROLONG",38,12
-            // " SAWANG",38,13
-            // " TAPILE",38,14
-            // " APENGSALA",39,1
-            // " BAHOI",39,2
-            // " BALEHUMARA",39,3
-            // " BARANGKA PEHE",39,4
-            // " BOTO",39,5
-            // " HAASI",39,6
-            // " LAINGPATEHI",39,7
-            // " LESAH",39,8
-            // " LESAH RENDE",39,9
-            // " MAHANGIANG",39,10
-            // " MOHONGSAWANG",39,11
-            // " MULENGAN",39,12
-            // " PAHIAMA",39,13
-            // " PUMPENTE",39,14
-            // " TULUSAN",39,15
-            // " BATUMAWIRA",40,1
-            // " BIRA KIAMA",40,2
-            // " BIRARIKEI",40,3
-            // " BUHA",40,4
-            // " HUMBIA",40,5
-            // " KISIHANG",40,6
             // " BAWO",41,1
             // " BAWOLEU",41,2
             // " BULANGAN",41,3
             // " LUMBO",41,4
             // " MINANGA",41,5
             // " WO",41,6
+
             // " KAWALUSO",42,1
             // " KENDAHE I",42,2
             // " KENDAHE II",42,3
@@ -2284,9 +3365,11 @@ class GeneralTableSeeder extends Seeder
             // " PEMPALARAENG",42,6
             // " TALAWID",42,7
             // " TARIANG LAMA",42,8
+
             // " KAWIO",43,1
             // " MARORE",43,2
             // " MATUTUANG",43,3
+
             // " BAKALAENG",44,1
             // " BARANGKA",44,2
             // " BARANGKALANG",44,3
@@ -2305,6 +3388,7 @@ class GeneralTableSeeder extends Seeder
             // " TALOARANE",44,16
             // " TALOARANE I",44,17
             // " TAWOALI",44,18
+
             // " BATUNDERANG",45,1
             // " BEBALANG",45,2
             // " KALUWATU",45,3
@@ -2318,11 +3402,14 @@ class GeneralTableSeeder extends Seeder
             // " NGALIPAENG II",45,11
             // " PINDANG",45,12
             // " SOWAENG",45,13
+
+
             // " BUKIDE",46,1
             // " BUKIDE TIMUR",46,2
             // " NANEDAKELE",46,3
             // " NANUSA",46,4
             // " NUSA",46,5
+
             // " BATUWINGKUNG",47,1
             // " BENTUNG",47,2
             // " BINEBAS",47,3
@@ -2337,6 +3424,7 @@ class GeneralTableSeeder extends Seeder
             // " MANDOI",47,12
             // " PALARENG",47,13
             // " SIMUENG",47,14
+
             // " AHA PATUNG",48,1
             // " BEENG",48,2
             // " BEENG LAUT",48,3
@@ -2346,12 +3434,14 @@ class GeneralTableSeeder extends Seeder
             // " SALURANG",48,7
             // " TAMBUNG",48,8
             // " TENDA",48,9
+
             // " BASAUH",49,1
             // " DALOKAWENG",49,2
             // " MALISADE",49,3
             // " PINTARENG",49,4
             // " SAMPAKANG",49,5
             // " TUMALEDE",49,6
+
             // " BIRA",50,1
             // " BIRU",50,2
             // " BOWONGKALI",50,3
@@ -2370,6 +3460,7 @@ class GeneralTableSeeder extends Seeder
             // " TALENGEN",50,16
             // " TARIANG BARU",50,17
             // " TIMBELANG",50,18
+
             // " BAHU",51,1
             // " BEHA",51,2
             // " BENGKETANG",51,3
@@ -2394,6 +3485,7 @@ class GeneralTableSeeder extends Seeder
             // " TAROLANG",51,22
             // " TOLA",51,23
             // " UTAURANO",51,24
+
             // " APENGSEMBEKA",52,1
             // " BUNGALAWANG",52,2
             // " MAHENA",52,3
@@ -2402,12 +3494,14 @@ class GeneralTableSeeder extends Seeder
             // " SAWANG BENDAR",52,6
             // " SOATALOARA I",52,7
             // " SOATALOARA II",52,8
+
             // " ANGGES",53,1
             // " KOLONGAN AKEMBAWI",53,2
             // " KOLONGAN BEHA",53,3
             // " KOLONGAN BEHA BARU",53,4
             // " KOLONGAN MITUNG",53,5
             // " PANANEKENG",53,6
+
             // " BALANE",55,1
             // " BEBU",55,2
             // " BINALA",55,3

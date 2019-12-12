@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function () { return view('landing'); })->name('landing');
+Route::get('/', 'LandingController@index')->name('landing');
 
+Route::get('/articles', function () { abort(404); })->name('articles');
+Route::get('/articles/{slug}', function () { abort(404); })->name('articles.detail');
+Route::get('/contacts', function () { abort(404); })->name('contacts');
 Route::get('/faqs', function () { abort(404); })->name('faqs');
-
-Route::get('/docs', function () { abort(404); })->name('docs');
-
+Route::get('/docs/{version}', function () { abort(404); })->name('docs');
 Route::get('/helps', function () { abort(404); })->name('helps');
+Route::get('/helps/{topic}', function () { abort(404); })->name('help.detail');
+
 
 Auth::routes(['verify' => true]);
 

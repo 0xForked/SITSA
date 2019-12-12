@@ -241,50 +241,52 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover pb-0 mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Location</th>
-                                        <th>Date</th>
-                                        <th class="text-right">File Size</th>
-                                        <th class="text-right">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($backups as $k => $b)
+                            <div class="table-responsive">
+                                <table class="table table-hover pb-0 mb-0">
+                                    <thead>
                                         <tr>
-                                            <th scope="row">{{ $k+1 }}</th>
-                                            <td>
-                                                {{ $b['file_name'] }}
-                                            </td>
-                                            <td>
-                                                {{ \Carbon\Carbon::createFromTimeStamp($b['last_modified'])->formatLocalized('%d %B %Y, %H:%M') }}
-                                            </td>
-                                            <td class="text-right">
-                                                {{ round((int)$b['file_size']/1048576, 2).' MB' }}
-                                            </td>
-                                            <td class="text-right">
-                                                <a
-                                                    class="btn btn-sm btn-success"
-                                                    href="{{ route('admin.setting.database.download', urlencode($b['file_name'])) }}"
-                                                >
-                                                    <i class="fas fa-cloud-download-alt"></i>
-                                                    Download
-                                                </a>
-                                                <a
-                                                    onclick="showLoading()"
-                                                    class="btn btn-sm btn-danger"
-                                                    href="{{ route('admin.setting.database.delete', urlencode($b['file_name'])) }}"
-                                                >
-                                                    <i class="fas fa-trash-alt"></i>
-                                                    Delete
-                                                </a>
-                                            </td>
+                                            <th>#</th>
+                                            <th>Location</th>
+                                            <th>Date</th>
+                                            <th class="text-right">File Size</th>
+                                            <th class="text-right">Action</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($backups as $k => $b)
+                                            <tr>
+                                                <th scope="row">{{ $k+1 }}</th>
+                                                <td>
+                                                    {{ $b['file_name'] }}
+                                                </td>
+                                                <td>
+                                                    {{ \Carbon\Carbon::createFromTimeStamp($b['last_modified'])->formatLocalized('%d %B %Y, %H:%M') }}
+                                                </td>
+                                                <td class="text-right">
+                                                    {{ round((int)$b['file_size']/1048576, 2).' MB' }}
+                                                </td>
+                                                <td class="text-right">
+                                                    <a
+                                                        class="btn btn-sm btn-success"
+                                                        href="{{ route('admin.setting.database.download', urlencode($b['file_name'])) }}"
+                                                    >
+                                                        <i class="fas fa-cloud-download-alt"></i>
+                                                        Download
+                                                    </a>
+                                                    <a
+                                                        onclick="showLoading()"
+                                                        class="btn btn-sm btn-danger"
+                                                        href="{{ route('admin.setting.database.delete', urlencode($b['file_name'])) }}"
+                                                    >
+                                                        <i class="fas fa-trash-alt"></i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="table-footer bg-whitesmoke">
                             <p class="mt-5 ml-5">

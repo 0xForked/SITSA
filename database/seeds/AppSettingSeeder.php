@@ -35,7 +35,7 @@ class AppSettingSeeder extends Seeder
             ],
             [
                 'key' => 'site_phone',
-                'value' => '+62 822 1234 5678'
+                'value' => '+6282212345678'
             ],
             [
                 'key' => 'site_email',
