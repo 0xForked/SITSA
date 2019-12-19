@@ -1,23 +1,25 @@
 <?php
 
-use App\Models\General\AssetCondition;
-use App\Models\General\AssetManager;
-use App\Models\General\AssetObtain;
-use App\Models\General\AssetType;
-use App\Models\General\BloodType;
-use App\Models\General\DisabilityType;
-use App\Models\Region\District;
-use App\Models\General\Education;
+use App\Models\Region\Region;
 use App\Models\General\Ethnic;
-use App\Models\General\FamilyTree;
 use App\Models\General\JobType;
 use App\Models\General\Marital;
-use App\Models\General\MemberMoveType;
-use App\Models\Region\Region;
-use App\Models\Region\RegionPosition;
-use App\Models\Region\Topography;
-use App\Models\General\TrainingType;
+use App\Models\Region\District;
 use Illuminate\Database\Seeder;
+use App\Models\General\AssetType;
+use App\Models\General\BloodType;
+use App\Models\General\Education;
+use App\Models\Region\Topography;
+use App\Models\General\FamilyTree;
+use Illuminate\Support\Facades\DB;
+use App\Models\General\AssetObtain;
+use App\Models\General\AssetManager;
+use App\Models\General\TrainingType;
+use Illuminate\Support\Facades\File;
+use App\Models\Region\RegionPosition;
+use App\Models\General\AssetCondition;
+use App\Models\General\DisabilityType;
+use App\Models\General\MemberMoveType;
 
 class GeneralTableSeeder extends Seeder
 {
@@ -256,6 +258,11 @@ class GeneralTableSeeder extends Seeder
         foreach($data as $district) {
             District::create(['name' => $district]);
         }
+
+        DB::unprepared(File::get(storage_path('app/schema') .'/ref_subdistricts.sql'));
+
+        DB::unprepared(File::get(storage_path('app/schema') .'/ref_urban_villages.sql'));
+
     }
 
     private function education()

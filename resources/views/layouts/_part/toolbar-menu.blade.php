@@ -69,7 +69,7 @@
         <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-title">Masuk  {{ (!is_null(login_activity())) ? last_logged_in(login_activity()->created_at) : "0 min lalu" }}</div>
             <a href="{{ route('account.profile') }}" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profil
+                <i class="far fa-user"></i> Akun
             </a>
             <a href="{{ route('account.activity') }}" class="dropdown-item has-icon">
                 <i class="fas fa-bolt"></i> Aktifitas

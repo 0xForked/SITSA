@@ -1,10 +1,10 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">{{ config('app.name', 'laravel') }}</a>
+            <a href="index.html">{{ app_settings()['site_title']->value }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">SITSA</a>
+            <img src="{{ asset('assets/img/sites/' . app_settings()['site_logo']->value) }}" alt="logo" width="30">
         </div>
         <ul class="sidebar-menu">
             <li class="{{ (Request::segment(2) == 'home') ? 'active' : '' }}">
@@ -90,23 +90,23 @@
                 </ul>
             </li>
             <li class="menu-header">DATA</li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {{ (Request::segment(2) == 'profile') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
-                    <i class="fas fa-church"></i>
-                    <span>Jemaat</span>
+                    <i class="fas fa-id-card"></i>
+                    <span>Profil</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="">
-                        <a class="nav-link" href="">Tentang Jemaat</a>
+                    <li class="{{ Route::is('admin.profile.congregations.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.profile.congregations.index') }}">Jemaat</a>
                     </li>
-                    <li class="">
-                        <a class="nav-link" href="">Aset</a>
+                    <li class="{{ Route::is('admin.profile.assets.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.profile.assets.index') }}">Aset</a>
                     </li>
-                    <li class="">
-                        <a class="nav-link" href="">Komisi BIPRA</a>
+                    <li class="{{ Route::is('admin.profile.commissions.bipra.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.profile.commissions.bipra.index') }}">Komisi BIPRA</a>
                     </li>
-                    <li class="">
-                        <a class="nav-link" href="">Komisi Kerja</a>
+                    <li class="{{ Route::is('admin.profile.commissions.work.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.profile.commissions.work.index') }}">Komisi Kerja</a>
                     </li>
                 </ul>
             </li>
@@ -140,25 +140,6 @@
                     <span>Umum</span>
                 </a>
                 <ul class="dropdown-menu">
-                    {{-- <li class="{{ (Request::segment(3) == 'assets') ? 'active' : '' }}">
-                        <a href="{{ route('admin.general.assets.overview') }}" class="menu-item">
-                            Asset
-                        </a>
-                        <ul class="menu-content">
-                            <li class="{{ Route::is('admin.general.assets.conditions.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.general.assets.conditions.index') }}" class="menu-item">Kondisi</a>
-                            </li>
-                            <li class="{{ Route::is('admin.general.assets.managers.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.general.assets.managers.index') }}" class="menu-item">Pengelola</a>
-                            </li>
-                            <li class="{{ Route::is('admin.general.assets.obtains.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.general.assets.obtains.index') }}" class="menu-item">Cara dapat</a>
-                            </li>
-                            <li class="{{ Route::is('admin.general.assets.types.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.general.assets.types.index') }}" class="nav-link">Jenis</a>
-                            </li>
-                        </ul>
-                    </li> --}}
                     <li class="{{ Route::is('admin.general.assets.conditions.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.general.assets.conditions.index') }}" class="menu-item">Kondisi Aset</a>
                     </li>

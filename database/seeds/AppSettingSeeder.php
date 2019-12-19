@@ -27,7 +27,7 @@ class AppSettingSeeder extends Seeder
             ],
             [
                 'key' => 'site_favicon',
-                'value' => 'favicon.ico'
+                'value' => 'favicon.png'
             ],
             [
                 'key' => 'site_address',
@@ -56,6 +56,10 @@ class AppSettingSeeder extends Seeder
             [
                 'key' => 'site_address_coordinate',
                 'value' => json_encode([1.1111, 124.1111])
+            ],
+            [
+                'key' => 'site_analytics_id',
+                'value' => 'NOT_SET'
             ],
             [
                 'key' => 'site_db_last_backup',

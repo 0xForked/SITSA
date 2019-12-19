@@ -61,3 +61,15 @@ if (! function_exists('current_greeting')) {
         return 'Selamat Malam';
     }
 }
+
+
+if (! function_exists('background_walk')) {
+    // use this function to get/return image/background walk
+    function background_walk()
+    {
+        $hour = Carbon::now()->format('H');
+        if ($hour < 12) return 'gunung-tumpa.jpg';
+        if ($hour < 17) return 'jembatan-soekarno.jpg';
+        return 'malam-di-manado.jpg';
+    }
+}

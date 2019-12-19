@@ -2,7 +2,9 @@
 
 use App\Models\OldDB;
 use App\Models\Region\Subdistrict;
+use Illuminate\Support\Facades\DB;
 use App\Models\Region\UrbanVillage;
+use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +59,7 @@ Auth::routes(['verify' => true]);
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/route-verify', function () {
-        if (Auth::user()->hasRole('admin'))
+        if (Auth::user()->hasRole('root'))
             return redirect('admin/home');
         if (Auth::user()->hasRole('staff'))
             return redirect('staff/home');
@@ -95,7 +97,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'prefix'=>'admin',
         'as' => 'admin.',
         'namespace' => 'Admin',
-        'middleware' => ['role:admin', 'access.log']
+        'middleware' => ['role:root,admin', 'access.log']
     ], function () {
         Route::get('/', function () { return redirect('admin/home'); });
 
@@ -115,6 +117,37 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::resource('permissions', 'PermissionController')
             ->only(['index', 'store']);
             Route::get('/permissions/{id}/delete', 'PermissionController@destroy');
+        });
+
+        Route::group([
+            'prefix'=>'profile',
+            'as' => 'profile.',
+            'namespace' => 'Data\Profile'
+        ], function () {
+
+            Route::resource('congregations', 'CongregationController')
+            ->only(['index', 'show', 'store']);
+            // Route::put('/districts', 'DistrictController@update')->name('districts.update');
+            // Route::get('/districts/{id}/delete', 'DistrictController@destroy');
+
+            Route::resource('assets', 'AssetController')
+            ->only(['index', 'show', 'store']);
+
+            Route::group([
+                'prefix'=>'commissions',
+                'as' => 'commissions.',
+            ], function () {
+                Route::resource('bipra', 'BipraCommissionController')
+                    ->only(['index', 'show', 'store']);
+
+                Route::resource('work', 'WorkCommissionController')
+                    ->only(['index', 'show', 'store']);
+
+            });
+
+            Route::resource('period', 'ServicePeriodController')
+                ->only(['index', 'update', 'show', 'store']);
+
         });
 
 

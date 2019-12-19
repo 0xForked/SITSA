@@ -37,7 +37,7 @@
                                 href="#pills-contact"
                                 aria-controls="pills-contact"
                                 aria-selected="true"
-                            >Contact</a>
+                            >Kontak</a>
                         </li>
                         <li class="nav-item">
                             <a
@@ -78,32 +78,32 @@
                         @method('PUT')
                         <div class="card" id="settings-card">
                             <div class="card-header">
-                                <h4>General Settings</h4>
+                                <h4>Pengaturan Umum</h4>
                             </div>
                             <div class="card-body">
                                 <p class="text-muted">
-                                    General settings such as, site title, site description, address and so on.
+                                    Pengaturan Umum seperti, Judul, Deskripsi, dll.
                                 </p>
                                 <div class="form-group row align-items-center">
-                                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Site Title</label>
+                                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Judul situs</label>
                                     <div class="col-sm-6 col-md-9">
                                     <input type="text" name="site_title" class="form-control" value="{{$settings['site_title']->value}}">
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
-                                    <label for="site-description" class="form-control-label col-sm-3 text-md-right">Site Description</label>
+                                    <label for="site-description" class="form-control-label col-sm-3 text-md-right">Deskripsi situs</label>
                                     <div class="col-sm-6 col-md-9">
                                         <textarea class="form-control h-auto" name="site_description" id="site-description" rows="3">{{$settings['site_description']->value}}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
-                                    <label class="form-control-label col-sm-3 text-md-right">Site Logo</label>
+                                    <label class="form-control-label col-sm-3 text-md-right">Logo</label>
                                     <div class="col-sm-6 col-md-9">
                                         <div class="custom-file">
                                             <input type="file" name="site_logo" class="custom-file-input" id="site-logo">
                                             <label class="custom-file-label" id="site-logo-label">{{ $settings['site_logo']->value }}</label>
                                         </div>
-                                        <div class="form-text text-muted">The image must have a maximum size of 2MB</div>
+                                        <div class="form-text text-muted">Ukuran gambar maksimal adalah 2MB</div>
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center">
@@ -113,7 +113,14 @@
                                             <input type="file" name="site_favicon" class="custom-file-input" id="site-favicon">
                                             <label class="custom-file-label" id="site-favicon-label">{{ $settings['site_favicon']->value }}</label>
                                         </div>
-                                        <div class="form-text text-muted">The image must have a maximum size of 128kb</div>
+                                        <div class="form-text text-muted">Ukuran gambar maksimal adalah 128kb</div>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label for="site-title" class="form-control-label col-sm-3 text-md-right">Kode Pelacakan </label>
+                                    <div class="col-sm-6 col-md-9">
+                                        <input type="text" name="site_analytics_id" class="form-control" value="{{$settings['site_analytics_id']->value}}">
+                                        <div class="form-text text-muted">Id atau Kode pelacakan untuk <a href="https://support.google.com/analytics/answer/7372977?hl=en">google analitics</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +141,7 @@
                         @method('PUT')
                         <div class="card" id="settings-card">
                             <div class="card-header">
-                                <h4>Contact Settings</h4>
+                                <h4>Pengaturan Kontak</h4>
                             </div>
                             <div class="card-body">
                                 <p class="text-muted">
@@ -246,10 +253,10 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Location</th>
-                                            <th>Date</th>
-                                            <th class="text-right">File Size</th>
-                                            <th class="text-right">Action</th>
+                                            <th>Nama</th>
+                                            <th>Tanggal</th>
+                                            <th class="text-right">Ukuran</th>
+                                            <th class="text-right">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -271,7 +278,7 @@
                                                         href="{{ route('admin.setting.database.download', urlencode($b['file_name'])) }}"
                                                     >
                                                         <i class="fas fa-cloud-download-alt"></i>
-                                                        Download
+                                                        Unduh
                                                     </a>
                                                     <a
                                                         onclick="showLoading()"
@@ -279,7 +286,7 @@
                                                         href="{{ route('admin.setting.database.delete', urlencode($b['file_name'])) }}"
                                                     >
                                                         <i class="fas fa-trash-alt"></i>
-                                                        Delete
+                                                        Hapus
                                                     </a>
                                                 </td>
                                             </tr>
@@ -290,10 +297,10 @@
                         </div>
                         <div class="table-footer bg-whitesmoke">
                             <p class="mt-5 ml-5">
-                                <span class="text-info">(*)</span>
+                                <span class="text-info">(*) ~ disini untuk informasi</span>
                             </p>
                             <p class="ml-5">
-                                <span class="text-warning">(*)</span> This backup files will auto delete every 1 week, you can change the periodic deletion time on automation menu, you will able to set backup periodical at this menu too
+                                <span class="text-warning">(*) ~ disini untuk peringatan</span>
                             </p>
                         </div>
                     </div>
@@ -314,7 +321,7 @@
                                                 <h2>Import Basis Data</h2>
                                                 <p class="lead">
                                                     Import skema basis data hasil export.
-                                                    (tipe file adalah <a href="https://fileinfo.com/extension/sql">.sql</a>).
+                                                    (tipe file adalah <a target="_blank" href="https://fileinfo.com/extension/sql">.sql</a>).
                                                 </p>
                                                 <form
                                                     id="setting-form"

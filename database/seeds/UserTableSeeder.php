@@ -20,14 +20,40 @@ class UserTableSeeder extends Seeder
         $root->syncPermissions($root_has_permission);
         $root_user = [
             'name' => 'Super Admin',
-            'username' => 'admin',
+            'username' => 'super_admin',
             'phone' => '+6282270001111',
-            'email' => 'super-admin@gmim.co.id',
+            'email' => 'super-admin@sitsa.id',
             'email_verified_at' => now(),
             'password' => Hash::make('secret'),
             'status' => 'ACTIVE'
         ];
         $root = User::create($root_user);
         $root->assignRole($root_id);
+
+        $admin_id = 2;
+        $admin_user = [
+            'name' => 'Admin',
+            'username' => 'admin',
+            'phone' => '+6282270002222',
+            'email' => 'admin@sitsa.id',
+            'email_verified_at' => now(),
+            'password' => Hash::make('secret'),
+            'status' => 'ACTIVE'
+        ];
+        $admin = User::create($admin_user);
+        $admin->assignRole($admin_id);
+
+        $staff_id = 3;
+        $staff_user = [
+            'name' => 'Staff',
+            'username' => 'staff',
+            'phone' => '+6282270003333',
+            'email' => 'staff@sitsa.id',
+            'email_verified_at' => now(),
+            'password' => Hash::make('secret'),
+            'status' => 'ACTIVE'
+        ];
+        $staff = User::create($staff_user);
+        $staff->assignRole($staff_id);
     }
 }
