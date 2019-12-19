@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/ping', function() {
+    return response()->json([
+        'status' => 'ok',
+        'timestamp' => \Carbon\Carbon::now(),
+        'host' => request()->ip(),
+        'message' => 'pong'
+    ]);
+});
+
 Route::group([
     'prefix'=>'v1',
     'as' => 'api.',
@@ -20,4 +29,7 @@ Route::group([
 ], function () {
     Route::get('/role/{id}/permissions', 'PermissionApiController@permissionsByRole');
 });
+
+
+
 

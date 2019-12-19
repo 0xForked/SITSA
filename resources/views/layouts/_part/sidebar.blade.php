@@ -140,7 +140,7 @@
                     <span>Umum</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="{{ (Request::segment(3) == 'assets') ? 'active' : '' }}">
+                    {{-- <li class="{{ (Request::segment(3) == 'assets') ? 'active' : '' }}">
                         <a href="{{ route('admin.general.assets.overview') }}" class="menu-item">
                             Asset
                         </a>
@@ -158,6 +158,18 @@
                                 <a href="{{ route('admin.general.assets.types.index') }}" class="nav-link">Jenis</a>
                             </li>
                         </ul>
+                    </li> --}}
+                    <li class="{{ Route::is('admin.general.assets.conditions.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.general.assets.conditions.index') }}" class="menu-item">Kondisi Aset</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.assets.managers.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.general.assets.managers.index') }}" class="menu-item">Pengelola Aset</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.assets.obtains.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.general.assets.obtains.index') }}" class="menu-item">Cara dapat Aset</a>
+                    </li>
+                    <li class="{{ Route::is('admin.general.assets.types.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.general.assets.types.index') }}" class="nav-link">Jenis Aset</a>
                     </li>
                     <li class="{{ Route::is('admin.general.ethnics.*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.general.ethnics.index') }}">Jenis Etnis</a>

@@ -14,7 +14,7 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "jaybizzle/laravel-crawler-detect": "1.*",
-        "laravel/framework": "^6.6",
+        "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0",
         "pusher/pusher-php-server": "^4.1",

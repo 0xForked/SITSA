@@ -52,7 +52,7 @@
                         </li>
                         <li class="nav-item">
                             <a
-                                class="nav-link"
+                                class="nav-link disabled text-muted"
                                 data-toggle="pill"
                                 role="tab"
                                 {{-- id="pills-backup-tab" --}}

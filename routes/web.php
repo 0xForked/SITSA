@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\OldDB;
+use App\Models\Region\Subdistrict;
+use App\Models\Region\UrbanVillage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +14,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/migrate-old-data', function() {
+    // $kecamatan = OldDB::all();
+    // foreach($kecamatan as $subdistrict) {
+    //     Subdistrict::create([
+    //         "name" => $subdistrict->kecamatan,
+    //         "district_id" => $subdistrict->id_kabkota
+    //     ]);
+    // }
+    // $kelurahan = OldDB::all();
+    // $id_lanjutan = 0;
+    // foreach($kelurahan as $urban_village) {
+    //     if ($urban_village->id_kecamatan >= 113) {
+    //         $id_lanjutan = $urban_village->id_kecamatan - 1;
+    //         $urban_village->id_kecamatan = $id_lanjutan;
+    //     }
+    //     if ($id_lanjutan == 174) {
+    //         $urban_village->id_kecamatan = 167;
+    //     }
+    //     UrbanVillage::create([
+    //         "name" => $urban_village->kelurahan,
+    //         "subdistrict_id" => $urban_village->id_kecamatan
+    //     ]);
+    // }
+    // return response()->json($test);
+});
 
 Route::get('/', 'LandingController@index')->name('landing');
 
@@ -138,7 +168,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
                 'as' => 'assets.',
                 'namespace' => 'Asset'
             ], function () {
-                Route::get('/', 'AssetOverviewController@index')->name('overview');
+                // Route::get('/', 'AssetOverviewController@index')->name('overview');
 
                 Route::resource('conditions', 'AssetConditionController')
                 ->only(['index', 'show', 'store']);
