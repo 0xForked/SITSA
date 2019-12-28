@@ -1,10 +1,5 @@
 <?php
 
-use App\Models\OldDB;
-use App\Models\Region\Subdistrict;
-use Illuminate\Support\Facades\DB;
-use App\Models\Region\UrbanVillage;
-use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
